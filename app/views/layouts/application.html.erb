@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Portfolus</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="portfolus" ng-controller="MainCtrl" ng-cloak layout-fill layout="column">
+  <!-- TopBar  -->
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <h2>
+        <span>Меню</span>
+      </h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+
+  <md-content flex>
+    <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column">
+      <md-list>
+          <md-list-item>
+
+              <md-item-content md-ink-ripple>
+                  <div class="inset">Item 1</div>
+              </md-item-content>
+
+          </md-list-item>
+      </md-list>
+    </md-sidenav>
+
+    <!-- Content -->
+    <md-content flex layout-padding layout="row" flex-order-gt-sm="80" flex-offset-gt-sm="10">
+      <ui-view></ui-view>
+    </md-content>
+  </md-content>
+</body>
+</html>

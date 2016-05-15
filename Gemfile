@@ -19,6 +19,12 @@ gem 'has_scope'
 #gem 'draper'
 gem "autoprefixer-rails"
 gem 'email_validator'
+gem 'sprockets'
+gem 'sprockets-rails'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'angular-rails-templates'
+gem 'material_icons'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -35,6 +41,7 @@ group :development, :test do
   gem 'bullet'
   gem 'rails-footnotes'
   gem "parallel_tests"
+  gem 'rb-inotify'
 end
 
 group :development do
@@ -42,8 +49,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'annotate'
   gem 'guard'
+  gem 'guard-rails'
   gem 'guard-rspec'
-  gem "guard-zeus"
+  gem 'guard-spring'
 end
 
 group :test do
