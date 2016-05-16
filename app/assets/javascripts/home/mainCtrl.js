@@ -1,6 +1,7 @@
 angular.module('portfolus')
 .controller('MainCtrl',
-function($scope, $mdSidenav, $mdUtil){
+function($scope, $mdSidenav, $mdUtil, $location, Page) {
+  $scope.Page = Page;
   $scope.test = 'Hello world!';
   $scope.openLeftMenu = buildToggler('left');
 
@@ -10,5 +11,9 @@ function($scope, $mdSidenav, $mdUtil){
             .toggle()
     }, 100);
     return debounceFn;
+  }
+
+  $scope.getClass = function (path) {
+    return ($location.path().substr(0, path.length) === path) ? 'active' : '';
   }
 });

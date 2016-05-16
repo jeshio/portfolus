@@ -1,0 +1,25 @@
+@import 'vars';
+@import 'mixins';
+@import 'def-classes';
+
+#top-menu-list {
+  a:not([disabled]) {
+    line-height: 64px;
+    display: block;
+    padding: 0 20px;
+
+    &:not(.active):hover {
+      background-color: #014f93;
+    }
+
+    @include animate-hover(0.6s)
+  }
+}
+
+@media only screen and (min-width: 0) and (max-width: 959px) and (orientation: landscape) {
+  #top-menu-list {
+    a {
+      line-height: 48px;
+    }
+  }
+}

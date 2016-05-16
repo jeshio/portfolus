@@ -1,0 +1,48 @@
+.md-sidenav-left {
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    display:block!important;
+  }
+
+  &.ng-hide-add-active {
+    -webkit-animation:0.5s slide-down;
+    animation:0.5s slide-down;
+  }
+  &.ng-hide-remove-active {
+    -webkit-animation:0.5s slide-up;
+    animation:0.5s slide-up;
+  }
+
+  &.ng-hide {
+    margin-left:-320px;
+    display:block!important;
+  }
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-up
+{
+  0%   {margin-left:-320px;}
+  100%  {margin-left:0;}
+}
+
+/* Standard syntax */
+@keyframes slide-up
+{
+  0%   {margin-left:-320px;}
+  100%  {margin-left:0;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-down
+{
+  0%  {margin-left:0;}
+  100%   {margin-left:-320px;}
+}
+
+/* Standard syntax */
+@keyframes slide-down
+{
+  0%  {margin-left:0;}
+  100%   {margin-left:-320px;}
+}

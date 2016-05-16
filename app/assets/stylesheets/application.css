@@ -1,5 +1,7 @@
 /*
 *= require angular-material
 *= require material_icons
-*= require_tree .
+*= require classes
+*= require ids
+*= require sidenav-animation
 */

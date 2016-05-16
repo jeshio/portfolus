@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" ng-app="portfolus" ng-controller="MainCtrl">
 <head>
   <meta charset="UTF-8">
 
-  <title>Portfolus</title>
+  <title>Portfolus - {{Page.title()}}</title>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="portfolus" ng-controller="MainCtrl" ng-cloak layout-fill layout="column">
-  <!-- TopBar  -->
+<body ng-cloak layout-fill layout="column">
+  <!-- Меню вверху  -->
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
+      <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()" hide-gt-md>
         <md-icon>menu</md-icon>
       </md-button>
-      <h2>
-        <span>Меню</span>
-      </h2>
-      <span flex></span>
+      <div layout="row" layout-align="center center" id="top-menu-list" layout-fill>
+        <a href="#/home" ng-class="getClass('/home')">Главная</a>
+        <a href="#" ng-class="getClass('/statistics')">Статистика</a>
+        <a href="#/auth" ng-class="getClass('/auth')">Войти</a>
+      </div>
     </div>
   </md-toolbar>
 
-  <md-content flex>
-    <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column">
-      <md-list>
-          <md-list-item>
+  <section layout="row" flex>
+    <!-- Боковое меню -->
+    <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="$mdMedia('gt-md')" ng-show="Page.sideNav()">
+      <md-content layout="column" flex>
+        <md-list>
+            <md-list-item>
 
-              <md-item-content md-ink-ripple>
-                  <div class="inset">Item 1</div>
-              </md-item-content>
+                <md-item-content md-ink-ripple>
+                    <div class="inset">Item 1</div>
+                </md-item-content>
 
-          </md-list-item>
-      </md-list>
+            </md-list-item>
+        </md-list>
+      </md-content>
     </md-sidenav>
 
-    <!-- Content -->
-    <md-content flex layout-padding layout="row" flex-order-gt-sm="80" flex-offset-gt-sm="10">
-      <ui-view></ui-view>
-    </md-content>
-  </md-content>
+    <!-- Контент -->
+    <md-content ui-view flex layout-padding layout="row"></md-content>
+  </section>
 </body>
 </html>
