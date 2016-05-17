@@ -1,0 +1,7 @@
+<a href="#/home" ng-class="getClass('/home')">Главная</a>
+<a href="#" ng-class="getClass('/projects')">Проекты</a>
+
+<a ng-hide="signedIn()" href="#/auth" ng-class="getClass('/auth')">Войти</a></li>
+<a ng-hide="signedIn()" href="#/register" ng-class="getClass('/register')">Присоединиться</a>
+<a ng-show="signedIn()" href="#/" ng-class="getClass('/')">{{user.username }}</a>
+<a ng-show="signedIn()" ng-click="logout()">Выйти</a>

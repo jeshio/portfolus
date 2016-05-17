@@ -2,8 +2,15 @@
 @import 'mixins';
 @import 'def-classes';
 
+a {
+  color: #0074c4;
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}
+
 #top-menu-list {
-  a:not([disabled]) {
+  a {
     line-height: 64px;
     display: block;
     padding: 0 20px;

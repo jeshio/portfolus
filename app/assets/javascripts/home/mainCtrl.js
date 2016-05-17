@@ -1,7 +1,6 @@
 angular.module('portfolus')
 .controller('MainCtrl',
-function($scope, $mdSidenav, $mdUtil, $location, Page) {
-  $scope.Page = Page;
+function($scope, $mdSidenav, $mdUtil, $location) {
   $scope.test = 'Hello world!';
   $scope.openLeftMenu = buildToggler('left');
 

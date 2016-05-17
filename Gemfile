@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.rc1', '< 5.1'
+gem 'rails', '>= 5.0.0.rc1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -26,6 +26,10 @@ gem 'uglifier'
 gem 'angular-rails-templates'
 gem 'material_icons'
 
+gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
+gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,6 +46,7 @@ group :development, :test do
   gem 'rails-footnotes'
   gem "parallel_tests"
   gem 'rb-inotify'
+  gem 'guard-spring'
 end
 
 group :development do
@@ -51,11 +56,17 @@ group :development do
   gem 'guard'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'guard-spring'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec', github: 'rspec/rspec'
+  gem 'rspec-mocks', github: 'rspec/rspec-mocks'
+  gem 'rspec-expectations', github: 'rspec/rspec-expectations'
+  gem 'rspec-support', github: 'rspec/rspec-support'
+  gem 'rspec-core', github: 'rspec/rspec-core'
+  gem 'rspec-rails', github: 'rspec/rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'fuubar'

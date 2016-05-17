@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Portfolus - {{Page.title()}}</title>
+  <title ng-bind="'Portfolus' + title">Portfolus</title>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -13,20 +13,20 @@
   <!-- Меню вверху  -->
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()" hide-gt-md>
+      <!-- Иконка бокового меню -->
+      <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()" hide-gt-md ng-show="sideNav">
         <md-icon>menu</md-icon>
       </md-button>
-      <div layout="row" layout-align="center center" id="top-menu-list" layout-fill>
-        <a href="#/home" ng-class="getClass('/home')">Главная</a>
-        <a href="#" ng-class="getClass('/statistics')">Статистика</a>
-        <a href="#/auth" ng-class="getClass('/auth')">Войти</a>
-      </div>
+
+      <!-- Список меню -->
+      <div layout="row" layout-align="center center" id="top-menu-list" layout-fill ng-include="'nav/_nav.html'"></div>
+
     </div>
   </md-toolbar>
 
   <section layout="row" flex>
     <!-- Боковое меню -->
-    <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="$mdMedia('gt-md')" ng-show="Page.sideNav()">
+    <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="$mdMedia('gt-md')" ng-show="sideNav">
       <md-content layout="column" flex>
         <md-list>
             <md-list-item>
