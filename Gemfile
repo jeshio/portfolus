@@ -28,16 +28,15 @@ gem 'material_icons'
 
 gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
-
+gem 'ng-rails-csrf'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'jazz_fingers'
   gem 'pry-rails'
@@ -51,9 +50,7 @@ end
 
 group :development do
   gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'annotate'
-  gem 'guard'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'spring'
@@ -67,13 +64,16 @@ group :test do
   gem 'rspec-support', github: 'rspec/rspec-support'
   gem 'rspec-core', github: 'rspec/rspec-core'
   gem 'rspec-rails', github: 'rspec/rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'headless'
   gem 'fuubar'
   gem 'rspec-retry'
-  gem 'simplecov', :require => false
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

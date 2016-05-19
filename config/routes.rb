@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  resources :cities
-  resources :countries
+  scope '/api' do
+    resources :cities
+    resources :countries
+  end
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  match "api", to: proc { [404, {}, ['Invalid API endpoint']] }, via: :all
+  match "api/*path", to: proc { [404, {}, ['Invalid API endpoint']] }, via: :all
+
+  match "/*path", to: "application#angular", via: :all
+
   root 'application#angular'
 end

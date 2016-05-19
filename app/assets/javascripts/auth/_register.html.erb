@@ -1,0 +1,131 @@
+<!-- Форма регистрации -->
+<div flex-offset-md="20" flex-md="60" flex-offset-gt-md="30" flex-gt-md="40" flex="100">
+
+  <h1 class="md-headline">Регистрация</h1>
+
+  <form ng-submit="register()" name="User" novalidate="">
+    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+      <md-tab label="Шаг первый">
+        <md-content class="md-padding">
+          <h2 class="md-title">Основные данные</h2>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>E-mail</label>
+            <input ng-model="user.email" name="email" required type="email">
+
+            <div ng-messages="User.email.$error" role="alert" md-auto-hide="false">
+              <div ng-message="serverMessage">{{User.email.$error.serverMessage}}</div>
+              <span ng-show="!User.$submitted && User.email.$touched">
+                <div ng-messages-include="errorMessages.html" ></div>
+              </span>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Пароль</label>
+            <input ng-model="user.password" name="password" minlength="8" required type="password">
+
+            <div ng-messages="User.password.$error" role="alert" md-auto-hide="false">
+              <div ng-message="serverMessage">{{User.password.$error.serverMessage}}</div>
+              <span ng-show="!User.$submitted && User.password.$touched">
+                <div ng-messages-include="errorMessages.html" ></div>
+              </span>
+            </div>
+          </md-input-container>
+
+          <div class="text-center">
+            <md-button class="btn" ng-click="nextTab()" ng-disabled="!User.$submitted && (User.email.$invalid || User.password.$invalid)">Далее</md-button>
+          </div>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Шаг второй" ng-disabled="selectedIndex < 1">
+        <md-content class="md-padding">
+          <h2 class="md-title">Дополнительная информация</h2>
+
+          <p class="md-body-2">Рекомендуется заполнить эти поля, чтобы вас было проще найти.</p>
+
+          <!-- <md-autocomplete
+            md-selected-item="ctrl.selectedItem"
+            md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+            md-search-text="ctrl.searchText"
+            md-selected-item-change="ctrl.selectedItemChange(item)"
+            md-items="item in ctrl.querySearch(ctrl.searchText)"
+            md-item-text="item.display"
+            min-length="0"
+            placeholder="What is your favorite US state?">
+            <md-item-template>
+              <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+            </md-item-template>
+            <md-not-found>
+              Город "{{ctrl.searchText}}" не найден.
+              <a ng-click="ctrl.newState(ctrl.searchText)">Добавить город!</a>
+            </md-not-found>
+          </md-autocomplete> -->
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Фамилия</label>
+            <input name="family" ng-model="user.family" minlength="2" />
+
+            <div ng-messages="User.family.$error" role="alert" md-auto-hide="false">
+              <div ng-message="serverMessage">{{User.family.$error.serverMessage}}</div>
+              <span ng-show="!User.$submitted && User.family.$touched">
+                <div ng-messages-include="errorMessages.html" ></div>
+              </span>
+            </div>
+          </md-input-container>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Имя</label>
+              <input name="name" ng-model="user.name" minlength="2" />
+
+              <div ng-messages="User.name.$error" role="alert" md-auto-hide="false">
+                <div ng-message="serverMessage">{{User.name.$error.serverMessage}}</div>
+                <span ng-show="!User.$submitted && User.name.$touched">
+                  <div ng-messages-include="errorMessages.html" ></div>
+                </span>
+              </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Отчество</label>
+              <input name="middlename" ng-model="user.middlename" minlength="2" />
+
+              <div ng-messages="User.middlename.$error" role="alert" md-auto-hide="false">
+                <div ng-message="serverMessage">{{User.middlename.$error.serverMessage}}</div>
+                <span ng-show="!User.$submitted && User.middlename.$touched">
+                  <div ng-messages-include="errorMessages.html" ></div>
+                </span>
+              </div>
+            </md-input-container>
+          </div>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Город</label>
+            <md-select name="city_id" ng-model="user.city_id">
+              <md-option ng-repeat="city in cities" value="{{city.id}}">
+                {{city.name}}
+              </md-option>
+            </md-select>
+
+            <div ng-messages="User.city_id.$error" role="alert" md-auto-hide="false">
+              <div ng-message="serverMessage">{{User.city_id.$error.serverMessage}}</div>
+              <span ng-show="!User.$submitted && User.city_id.$touched">
+                <div ng-messages-include="errorMessages.html" ></div>
+              </span>
+            </div>
+          </md-input-container>
+
+          <div class="text-center">
+            <md-button class="btn" type="submit">Далее</md-button>
+          </div>
+
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </form>
+
+</div>
+
+<span flex></span>

@@ -129,6 +129,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     coolline (0.5.0)
@@ -145,6 +148,8 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    faker (1.6.3)
+      i18n (~> 0.5)
     ffi (1.9.10)
     formatador (0.2.5)
     fuubar (2.0.0)
@@ -176,6 +181,7 @@ GEM
     has_scope (0.7.0)
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
+    headless (2.2.3)
     hirb (0.7.3)
     i18n (0.7.0)
     jazz_fingers (3.0.1)
@@ -204,6 +210,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     nenv (0.3.0)
+    ng-rails-csrf (0.1.0)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -235,6 +242,7 @@ GEM
     puma (3.4.0)
     rack (2.0.0.rc1)
       json
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.rc1)
@@ -332,24 +340,28 @@ DEPENDENCIES
   bullet
   byebug
   capybara
+  capybara-webkit
   database_cleaner
   devise!
   email_validator
   factory_girl_rails
+  faker
   fuubar
-  guard
   guard-rails
   guard-rspec
   guard-spring
   has_scope
+  headless
   jazz_fingers
   listen (~> 3.0.5)
   material_icons
+  ng-rails-csrf
   parallel_tests
   pg (~> 0.18)
   pry-byebug
   pry-rails
   puma (~> 3.0)
+  rack-cors
   rails (>= 5.0.0.rc1)
   rails-assets-angular-devise!
   rails-footnotes

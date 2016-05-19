@@ -1,0 +1,1855 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'uninstall',
+1 verbose cli   '-g',
+1 verbose cli   'grunt-cli',
+1 verbose cli   'bower',
+1 verbose cli   'yo',
+1 verbose cli   'generator-karma',
+1 verbose cli   'generator-angular' ]
+2 info using npm@3.8.6
+3 info using node@v5.11.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly uninstall loadAllDepsIntoIdealtree
+19 silly loadAllDepsIntoIdealTree Finishing
+20 silly idealTree:prePrune lib
+21 silly loadIdealTree Finishing
+22 silly currentTree lib
+22 silly currentTree ├── bower@1.7.9
+22 silly currentTree ├─┬ generator-angular@0.15.1
+22 silly currentTree │ ├── abbrev@1.0.7
+22 silly currentTree │ ├── adm-zip@0.4.7
+22 silly currentTree │ ├── ansi-regex@2.0.0
+22 silly currentTree │ ├── ansi-styles@2.2.1
+22 silly currentTree │ ├── asn1@0.2.3
+22 silly currentTree │ ├── assert-plus@0.2.0
+22 silly currentTree │ ├── async@0.2.10
+22 silly currentTree │ ├── aws-sign2@0.6.0
+22 silly currentTree │ ├── aws4@1.3.2
+22 silly currentTree │ ├── balanced-match@0.3.0
+22 silly currentTree │ ├─┬ bl@1.1.2
+22 silly currentTree │ │ ├── isarray@1.0.0
+22 silly currentTree │ │ └── readable-stream@2.0.6
+22 silly currentTree │ ├── block-stream@0.0.8
+22 silly currentTree │ ├── boom@2.10.1
+22 silly currentTree │ ├── bower-config@0.5.2
+22 silly currentTree │ ├── brace-expansion@1.1.3
+22 silly currentTree │ ├── caseless@0.11.0
+22 silly currentTree │ ├── chalk@1.1.3
+22 silly currentTree │ ├── cheerio@0.13.1
+22 silly currentTree │ ├── class-extend@0.1.2
+22 silly currentTree │ ├── cli-color@0.2.3
+22 silly currentTree │ ├── code-point-at@1.0.0
+22 silly currentTree │ ├── combined-stream@1.0.5
+22 silly currentTree │ ├── commander@2.9.0
+22 silly currentTree │ ├── concat-map@0.0.1
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── cryptiles@2.0.5
+22 silly currentTree │ ├── CSSselect@0.4.1
+22 silly currentTree │ ├── CSSwhat@0.4.7
+22 silly currentTree │ ├── ctype@0.5.3
+22 silly currentTree │ ├── dargs@0.1.0
+22 silly currentTree │ ├─┬ dashdash@1.13.0
+22 silly currentTree │ │ └── assert-plus@1.0.0
+22 silly currentTree │ ├── debug@0.7.4
+22 silly currentTree │ ├── decompress@0.2.5
+22 silly currentTree │ ├── delayed-stream@1.0.0
+22 silly currentTree │ ├── diff@1.0.8
+22 silly currentTree │ ├── domelementtype@1.3.0
+22 silly currentTree │ ├── domhandler@2.2.1
+22 silly currentTree │ ├── domutils@1.4.3
+22 silly currentTree │ ├─┬ download@0.1.19
+22 silly currentTree │ │ ├── request@2.70.0
+22 silly currentTree │ │ ├── through2@0.4.2
+22 silly currentTree │ │ └── xtend@2.1.2
+22 silly currentTree │ ├── duplexer@0.1.1
+22 silly currentTree │ ├── each-async@0.1.3
+22 silly currentTree │ ├── ecc-jsbn@0.1.1
+22 silly currentTree │ ├── entities@0.5.0
+22 silly currentTree │ ├── es5-ext@0.9.2
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── event-emitter@0.2.2
+22 silly currentTree │ ├── ext-list@0.2.0
+22 silly currentTree │ ├── ext-name@1.0.1
+22 silly currentTree │ ├── extend@3.0.0
+22 silly currentTree │ ├── extsprintf@1.0.2
+22 silly currentTree │ ├─┬ file-utils@0.1.5
+22 silly currentTree │ │ ├─┬ glob@3.2.11
+22 silly currentTree │ │ │ └── minimatch@0.3.0
+22 silly currentTree │ │ ├── isbinaryfile@0.1.9
+22 silly currentTree │ │ ├── lodash@2.1.0
+22 silly currentTree │ │ ├── lru-cache@2.7.3
+22 silly currentTree │ │ └── minimatch@0.2.14
+22 silly currentTree │ ├─┬ findup-sync@0.1.3
+22 silly currentTree │ │ ├── glob@3.2.11
+22 silly currentTree │ │ ├── lru-cache@2.7.3
+22 silly currentTree │ │ └── minimatch@0.3.0
+22 silly currentTree │ ├── forever-agent@0.6.1
+22 silly currentTree │ ├─┬ form-data@1.0.0-rc4
+22 silly currentTree │ │ └── async@1.5.2
+22 silly currentTree │ ├─┬ fstream@0.1.31
+22 silly currentTree │ │ ├── graceful-fs@3.0.8
+22 silly currentTree │ │ ├── minimist@0.0.8
+22 silly currentTree │ │ └── mkdirp@0.5.1
+22 silly currentTree │ ├── generate-function@2.0.0
+22 silly currentTree │ ├── generate-object-property@1.2.0
+22 silly currentTree │ ├── get-stdin@0.1.0
+22 silly currentTree │ ├── get-urls@0.1.2
+22 silly currentTree │ ├── glob@4.5.3
+22 silly currentTree │ ├─┬ got@0.2.0
+22 silly currentTree │ │ └── object-assign@0.3.1
+22 silly currentTree │ ├── graceful-fs@2.0.3
+22 silly currentTree │ ├── graceful-readlink@1.0.1
+22 silly currentTree │ ├── har-validator@2.0.6
+22 silly currentTree │ ├── has-ansi@2.0.0
+22 silly currentTree │ ├── has-color@0.1.7
+22 silly currentTree │ ├── hawk@3.1.3
+22 silly currentTree │ ├── hoek@2.16.3
+22 silly currentTree │ ├─┬ htmlparser2@3.4.0
+22 silly currentTree │ │ ├── domutils@1.3.0
+22 silly currentTree │ │ └── readable-stream@1.1.13
+22 silly currentTree │ ├── http-signature@1.1.1
+22 silly currentTree │ ├── iconv-lite@0.2.11
+22 silly currentTree │ ├── inflight@1.0.4
+22 silly currentTree │ ├── inherits@2.0.1
+22 silly currentTree │ ├── inquirer@0.4.1
+22 silly currentTree │ ├── is-finite@1.0.1
+22 silly currentTree │ ├── is-fullwidth-code-point@1.0.0
+22 silly currentTree │ ├── is-my-json-valid@2.13.1
+22 silly currentTree │ ├── is-property@1.0.2
+22 silly currentTree │ ├── is-typedarray@1.0.0
+22 silly currentTree │ ├── isarray@0.0.1
+22 silly currentTree │ ├── isbinaryfile@2.0.4
+22 silly currentTree │ ├── isstream@0.1.2
+22 silly currentTree │ ├── jodid25519@1.0.2
+22 silly currentTree │ ├── jsbn@0.1.0
+22 silly currentTree │ ├── json-schema@0.2.2
+22 silly currentTree │ ├── json-stringify-safe@5.0.1
+22 silly currentTree │ ├── jsonpointer@2.0.0
+22 silly currentTree │ ├── jsprim@1.2.2
+22 silly currentTree │ ├── lodash@2.4.2
+22 silly currentTree │ ├── lru-cache@4.0.1
+22 silly currentTree │ ├── memoizee@0.2.6
+22 silly currentTree │ ├── mime-db@1.22.0
+22 silly currentTree │ ├── mime-types@2.1.10
+22 silly currentTree │ ├── mime@1.2.11
+22 silly currentTree │ ├── minimatch@2.0.10
+22 silly currentTree │ ├── minimist@1.2.0
+22 silly currentTree │ ├── mkdirp@0.3.5
+22 silly currentTree │ ├── mout@0.9.1
+22 silly currentTree │ ├── mute-stream@0.0.4
+22 silly currentTree │ ├── next-tick@0.1.0
+22 silly currentTree │ ├── node-uuid@1.4.7
+22 silly currentTree │ ├── nopt@2.2.1
+22 silly currentTree │ ├── number-is-nan@1.0.0
+22 silly currentTree │ ├── oauth-sign@0.8.1
+22 silly currentTree │ ├── object-assign@2.1.1
+22 silly currentTree │ ├── object-keys@0.4.0
+22 silly currentTree │ ├── once@1.3.3
+22 silly currentTree │ ├─┬ optimist@0.6.1
+22 silly currentTree │ │ └── minimist@0.0.10
+22 silly currentTree │ ├── osenv@0.0.3
+22 silly currentTree │ ├── pad-component@0.0.1
+22 silly currentTree │ ├── pinkie-promise@2.0.0
+22 silly currentTree │ ├── pinkie@2.0.4
+22 silly currentTree │ ├── process-nextick-args@1.0.6
+22 silly currentTree │ ├── propprop@0.3.0
+22 silly currentTree │ ├── pseudomap@1.0.2
+22 silly currentTree │ ├── punycode@1.4.1
+22 silly currentTree │ ├── qs@6.1.0
+22 silly currentTree │ ├── readable-stream@1.0.33
+22 silly currentTree │ ├─┬ readline2@0.1.1
+22 silly currentTree │ │ ├── ansi-regex@1.1.1
+22 silly currentTree │ │ └── strip-ansi@2.0.1
+22 silly currentTree │ ├── repeating@2.0.0
+22 silly currentTree │ ├─┬ request@2.30.0
+22 silly currentTree │ │ ├── asn1@0.1.11
+22 silly currentTree │ │ ├── assert-plus@0.1.5
+22 silly currentTree │ │ ├── async@0.9.2
+22 silly currentTree │ │ ├── aws-sign2@0.5.0
+22 silly currentTree │ │ ├── boom@0.4.2
+22 silly currentTree │ │ ├── combined-stream@0.0.7
+22 silly currentTree │ │ ├── cryptiles@0.2.2
+22 silly currentTree │ │ ├── delayed-stream@0.0.5
+22 silly currentTree │ │ ├── forever-agent@0.5.2
+22 silly currentTree │ │ ├── form-data@0.1.4
+22 silly currentTree │ │ ├── hawk@1.0.0
+22 silly currentTree │ │ ├── hoek@0.9.1
+22 silly currentTree │ │ ├── http-signature@0.10.1
+22 silly currentTree │ │ ├── oauth-sign@0.3.0
+22 silly currentTree │ │ ├── qs@0.6.6
+22 silly currentTree │ │ ├── sntp@0.2.4
+22 silly currentTree │ │ ├── tough-cookie@0.9.15
+22 silly currentTree │ │ └── tunnel-agent@0.3.0
+22 silly currentTree │ ├── rimraf@2.2.8
+22 silly currentTree │ ├── shelljs@0.2.6
+22 silly currentTree │ ├── sigmund@1.0.1
+22 silly currentTree │ ├── sntp@1.0.9
+22 silly currentTree │ ├── sshpk@1.7.4
+22 silly currentTree │ ├── stream-combiner@0.0.4
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── string-width@1.0.1
+22 silly currentTree │ ├── stringstream@0.0.5
+22 silly currentTree │ ├── strip-ansi@3.0.1
+22 silly currentTree │ ├── supports-color@2.0.0
+22 silly currentTree │ ├─┬ taketalk@1.0.0
+22 silly currentTree │ │ └── get-stdin@4.0.1
+22 silly currentTree │ ├── tar@0.1.20
+22 silly currentTree │ ├── tempfile@0.1.3
+22 silly currentTree │ ├── text-table@0.2.0
+22 silly currentTree │ ├── through@2.3.8
+22 silly currentTree │ ├── through2@0.6.5
+22 silly currentTree │ ├── tough-cookie@2.2.2
+22 silly currentTree │ ├── tunnel-agent@0.4.2
+22 silly currentTree │ ├── tweetnacl@0.14.3
+22 silly currentTree │ ├── underscore.string@2.3.3
+22 silly currentTree │ ├── underscore@1.5.2
+22 silly currentTree │ ├── util-deprecate@1.0.2
+22 silly currentTree │ ├── uuid@1.4.2
+22 silly currentTree │ ├── verror@1.3.6
+22 silly currentTree │ ├─┬ wiredep@2.2.2
+22 silly currentTree │ │ ├── ansi-regex@0.2.1
+22 silly currentTree │ │ ├── ansi-styles@1.1.0
+22 silly currentTree │ │ ├── chalk@0.5.1
+22 silly currentTree │ │ ├── has-ansi@0.1.0
+22 silly currentTree │ │ ├── strip-ansi@0.3.0
+22 silly currentTree │ │ └── supports-color@0.2.0
+22 silly currentTree │ ├── wordwrap@0.0.3
+22 silly currentTree │ ├── wrap-ansi@2.0.0
+22 silly currentTree │ ├── wrappy@1.0.1
+22 silly currentTree │ ├── xtend@4.0.1
+22 silly currentTree │ ├── yallist@2.0.0
+22 silly currentTree │ ├─┬ yeoman-generator@0.16.0
+22 silly currentTree │ │ ├── ansi-styles@1.0.0
+22 silly currentTree │ │ ├── chalk@0.4.0
+22 silly currentTree │ │ ├── glob@3.2.11
+22 silly currentTree │ │ ├── lru-cache@2.7.3
+22 silly currentTree │ │ ├── minimatch@0.3.0
+22 silly currentTree │ │ └── strip-ansi@0.1.1
+22 silly currentTree │ └── yosay@1.1.1
+22 silly currentTree ├─┬ generator-karma@2.0.0
+22 silly currentTree │ ├── abbrev@1.0.7
+22 silly currentTree │ ├── amdefine@1.0.0
+22 silly currentTree │ ├── ansi-escapes@1.3.0
+22 silly currentTree │ ├── ansi-regex@2.0.0
+22 silly currentTree │ ├── ansi-styles@2.2.1
+22 silly currentTree │ ├── archive-type@3.2.0
+22 silly currentTree │ ├── arr-diff@2.0.0
+22 silly currentTree │ ├── arr-flatten@1.0.1
+22 silly currentTree │ ├── array-differ@1.0.0
+22 silly currentTree │ ├── array-find-index@1.0.1
+22 silly currentTree │ ├── array-union@1.0.1
+22 silly currentTree │ ├── array-uniq@1.0.2
+22 silly currentTree │ ├── array-unique@0.2.1
+22 silly currentTree │ ├── arrify@1.0.1
+22 silly currentTree │ ├─┬ ast-query@1.2.0
+22 silly currentTree │ │ └── lodash@4.9.0
+22 silly currentTree │ ├── async@1.5.2
+22 silly currentTree │ ├── balanced-match@0.3.0
+22 silly currentTree │ ├── beeper@1.1.0
+22 silly currentTree │ ├── binaryextensions@1.0.0
+22 silly currentTree │ ├── bl@1.1.2
+22 silly currentTree │ ├── boolbase@1.0.0
+22 silly currentTree │ ├── brace-expansion@1.1.3
+22 silly currentTree │ ├── braces@1.8.3
+22 silly currentTree │ ├── buffer-to-vinyl@1.1.0
+22 silly currentTree │ ├── builtin-modules@1.1.1
+22 silly currentTree │ ├── camelcase-keys@2.1.0
+22 silly currentTree │ ├── camelcase@2.1.1
+22 silly currentTree │ ├── capture-stack-trace@1.0.0
+22 silly currentTree │ ├─┬ caw@1.2.0
+22 silly currentTree │ │ └── object-assign@3.0.0
+22 silly currentTree │ ├── chalk@1.1.3
+22 silly currentTree │ ├── cheerio@0.19.0
+22 silly currentTree │ ├── class-extend@0.1.2
+22 silly currentTree │ ├── cli-cursor@1.0.2
+22 silly currentTree │ ├── cli-table@0.3.1
+22 silly currentTree │ ├── cli-width@1.1.1
+22 silly currentTree │ ├── clone-stats@0.0.1
+22 silly currentTree │ ├── clone@1.0.2
+22 silly currentTree │ ├── co@3.1.0
+22 silly currentTree │ ├── code-point-at@1.0.0
+22 silly currentTree │ ├── colors@1.0.3
+22 silly currentTree │ ├── commander@2.8.1
+22 silly currentTree │ ├── commondir@1.0.1
+22 silly currentTree │ ├── concat-map@0.0.1
+22 silly currentTree │ ├── concat-stream@1.5.1
+22 silly currentTree │ ├── convert-source-map@1.2.0
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── create-error-class@3.0.2
+22 silly currentTree │ ├── cross-spawn-async@2.2.1
+22 silly currentTree │ ├── cross-spawn@2.2.2
+22 silly currentTree │ ├── css-select@1.0.0
+22 silly currentTree │ ├── css-what@1.0.0
+22 silly currentTree │ ├── dargs@4.1.0
+22 silly currentTree │ ├── dateformat@1.0.12
+22 silly currentTree │ ├── debug@2.2.0
+22 silly currentTree │ ├── decamelize@1.2.0
+22 silly currentTree │ ├─┬ decompress-tar@3.1.0
+22 silly currentTree │ │ ├── clone@0.2.0
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ ├── readable-stream@1.0.33
+22 silly currentTree │ │ ├── through2@0.6.5
+22 silly currentTree │ │ └── vinyl@0.4.6
+22 silly currentTree │ ├─┬ decompress-tarbz2@3.1.0
+22 silly currentTree │ │ ├── clone@0.2.0
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ ├── readable-stream@1.0.33
+22 silly currentTree │ │ ├── through2@0.6.5
+22 silly currentTree │ │ └── vinyl@0.4.6
+22 silly currentTree │ ├─┬ decompress-targz@3.1.0
+22 silly currentTree │ │ ├── clone@0.2.0
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ ├── readable-stream@1.0.33
+22 silly currentTree │ │ ├── through2@0.6.5
+22 silly currentTree │ │ └── vinyl@0.4.6
+22 silly currentTree │ ├── decompress-unzip@3.4.0
+22 silly currentTree │ ├── decompress@3.0.0
+22 silly currentTree │ ├── deep-extend@0.4.1
+22 silly currentTree │ ├── deep-is@0.1.3
+22 silly currentTree │ ├── detect-conflict@1.0.0
+22 silly currentTree │ ├── detect-newline@1.0.3
+22 silly currentTree │ ├── diff@2.2.2
+22 silly currentTree │ ├─┬ dom-serializer@0.1.0
+22 silly currentTree │ │ └── domelementtype@1.1.3
+22 silly currentTree │ ├── domelementtype@1.3.0
+22 silly currentTree │ ├── domhandler@2.3.0
+22 silly currentTree │ ├── domutils@1.4.3
+22 silly currentTree │ ├─┬ download@4.4.3
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── duplexer2@0.1.4
+22 silly currentTree │ ├─┬ duplexify@3.4.3
+22 silly currentTree │ │ └── end-of-stream@1.0.0
+22 silly currentTree │ ├── each-async@1.1.1
+22 silly currentTree │ ├── ejs@2.4.1
+22 silly currentTree │ ├── end-of-stream@1.1.0
+22 silly currentTree │ ├── entities@1.1.1
+22 silly currentTree │ ├── error-ex@1.3.0
+22 silly currentTree │ ├── error@7.0.2
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── escodegen@1.8.0
+22 silly currentTree │ ├── esprima@2.7.2
+22 silly currentTree │ ├── estraverse@1.9.3
+22 silly currentTree │ ├── esutils@2.0.2
+22 silly currentTree │ ├── exit-hook@1.1.1
+22 silly currentTree │ ├── expand-brackets@0.1.5
+22 silly currentTree │ ├── expand-range@1.8.1
+22 silly currentTree │ ├── extend-shallow@2.0.1
+22 silly currentTree │ ├── extend@3.0.0
+22 silly currentTree │ ├── extglob@0.3.2
+22 silly currentTree │ ├── fancy-log@1.2.0
+22 silly currentTree │ ├── fast-levenshtein@1.1.3
+22 silly currentTree │ ├── fd-slicer@1.0.1
+22 silly currentTree │ ├── figures@1.5.0
+22 silly currentTree │ ├── file-type@3.8.0
+22 silly currentTree │ ├── filename-regex@2.0.0
+22 silly currentTree │ ├── filename-reserved-regex@1.0.0
+22 silly currentTree │ ├── filenamify@1.2.1
+22 silly currentTree │ ├── fill-range@2.2.3
+22 silly currentTree │ ├── find-up@1.1.2
+22 silly currentTree │ ├── first-chunk-stream@1.0.0
+22 silly currentTree │ ├── for-in@0.1.5
+22 silly currentTree │ ├── for-own@0.1.4
+22 silly currentTree │ ├── formatio@1.1.1
+22 silly currentTree │ ├── get-proxy@1.1.0
+22 silly currentTree │ ├── get-stdin@4.0.1
+22 silly currentTree │ ├─┬ gh-got@2.4.0
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── github-username@2.1.0
+22 silly currentTree │ ├── glob-base@0.3.0
+22 silly currentTree │ ├── glob-parent@2.0.0
+22 silly currentTree │ ├─┬ glob-stream@5.3.2
+22 silly currentTree │ │ ├── glob@5.0.15
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ ├── readable-stream@1.0.33
+22 silly currentTree │ │ └── through2@0.6.5
+22 silly currentTree │ ├── glob@6.0.4
+22 silly currentTree │ ├─┬ globby@4.0.0
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── glogg@1.0.0
+22 silly currentTree │ ├─┬ got@5.6.0
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── graceful-fs@4.1.3
+22 silly currentTree │ ├── graceful-readlink@1.0.1
+22 silly currentTree │ ├── grouped-queue@0.3.2
+22 silly currentTree │ ├─┬ gruntfile-editor@1.2.0
+22 silly currentTree │ │ └── lodash@4.9.0
+22 silly currentTree │ ├── gulp-decompress@1.2.0
+22 silly currentTree │ ├── gulp-rename@1.2.2
+22 silly currentTree │ ├── gulp-sourcemaps@1.6.0
+22 silly currentTree │ ├─┬ gulp-util@3.0.7
+22 silly currentTree │ │ ├── object-assign@3.0.0
+22 silly currentTree │ │ └── vinyl@0.5.3
+22 silly currentTree │ ├── gulplog@1.0.0
+22 silly currentTree │ ├── has-ansi@2.0.0
+22 silly currentTree │ ├── has-gulplog@0.1.0
+22 silly currentTree │ ├── hosted-git-info@2.1.4
+22 silly currentTree │ ├── html-wiring@1.2.0
+22 silly currentTree │ ├─┬ htmlparser2@3.8.3
+22 silly currentTree │ │ ├── domutils@1.5.1
+22 silly currentTree │ │ ├── entities@1.0.0
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ └── readable-stream@1.1.13
+22 silly currentTree │ ├── indent-string@2.1.0
+22 silly currentTree │ ├── inflight@1.0.4
+22 silly currentTree │ ├── inherits@2.0.1
+22 silly currentTree │ ├── ini@1.3.4
+22 silly currentTree │ ├─┬ inquirer@0.11.4
+22 silly currentTree │ │ └── run-async@0.1.0
+22 silly currentTree │ ├── is-absolute@0.1.7
+22 silly currentTree │ ├── is-arrayish@0.2.1
+22 silly currentTree │ ├── is-buffer@1.1.3
+22 silly currentTree │ ├── is-builtin-module@1.0.0
+22 silly currentTree │ ├── is-bzip2@1.0.0
+22 silly currentTree │ ├── is-dotfile@1.0.2
+22 silly currentTree │ ├── is-equal-shallow@0.1.3
+22 silly currentTree │ ├── is-extendable@0.1.1
+22 silly currentTree │ ├── is-extglob@1.0.0
+22 silly currentTree │ ├── is-finite@1.0.1
+22 silly currentTree │ ├── is-fullwidth-code-point@1.0.0
+22 silly currentTree │ ├── is-glob@2.0.1
+22 silly currentTree │ ├── is-gzip@1.0.0
+22 silly currentTree │ ├── is-natural-number@2.0.0
+22 silly currentTree │ ├── is-number@2.1.0
+22 silly currentTree │ ├── is-obj@1.0.1
+22 silly currentTree │ ├── is-plain-obj@1.1.0
+22 silly currentTree │ ├── is-posix-bracket@0.1.1
+22 silly currentTree │ ├── is-primitive@2.0.0
+22 silly currentTree │ ├── is-promise@2.1.0
+22 silly currentTree │ ├── is-redirect@1.0.0
+22 silly currentTree │ ├── is-relative@0.1.3
+22 silly currentTree │ ├── is-retry-allowed@1.0.0
+22 silly currentTree │ ├── is-stream@1.0.1
+22 silly currentTree │ ├── is-tar@1.0.0
+22 silly currentTree │ ├── is-url@1.2.1
+22 silly currentTree │ ├── is-utf8@0.2.1
+22 silly currentTree │ ├── is-valid-glob@0.3.0
+22 silly currentTree │ ├── is-zip@1.0.0
+22 silly currentTree │ ├── isarray@1.0.0
+22 silly currentTree │ ├── isexe@1.1.2
+22 silly currentTree │ ├─┬ isobject@2.0.0
+22 silly currentTree │ │ └── isarray@0.0.1
+22 silly currentTree │ ├── istextorbinary@1.0.2
+22 silly currentTree │ ├── json-stable-stringify@1.0.1
+22 silly currentTree │ ├── jsonify@0.0.0
+22 silly currentTree │ ├── kind-of@3.0.2
+22 silly currentTree │ ├── lazystream@1.0.0
+22 silly currentTree │ ├── levn@0.3.0
+22 silly currentTree │ ├── load-json-file@1.1.0
+22 silly currentTree │ ├── lodash._basecopy@3.0.1
+22 silly currentTree │ ├── lodash._basetostring@3.0.1
+22 silly currentTree │ ├── lodash._basevalues@3.0.0
+22 silly currentTree │ ├── lodash._getnative@3.9.1
+22 silly currentTree │ ├── lodash._isiterateecall@3.0.9
+22 silly currentTree │ ├── lodash._reescape@3.0.0
+22 silly currentTree │ ├── lodash._reevaluate@3.0.0
+22 silly currentTree │ ├── lodash._reinterpolate@3.0.0
+22 silly currentTree │ ├── lodash._root@3.0.1
+22 silly currentTree │ ├── lodash._stack@4.1.3
+22 silly currentTree │ ├── lodash.escape@3.2.0
+22 silly currentTree │ ├── lodash.isarguments@3.0.8
+22 silly currentTree │ ├── lodash.isarray@3.0.4
+22 silly currentTree │ ├── lodash.isequal@4.1.4
+22 silly currentTree │ ├── lodash.keys@4.0.6
+22 silly currentTree │ ├── lodash.restparam@3.6.1
+22 silly currentTree │ ├─┬ lodash.template@3.6.2
+22 silly currentTree │ │ └── lodash.keys@3.1.2
+22 silly currentTree │ ├── lodash.templatesettings@3.1.1
+22 silly currentTree │ ├── lodash@3.10.1
+22 silly currentTree │ ├── log-symbols@1.0.2
+22 silly currentTree │ ├── lolex@1.3.2
+22 silly currentTree │ ├── loud-rejection@1.3.0
+22 silly currentTree │ ├── lowercase-keys@1.0.0
+22 silly currentTree │ ├── lru-cache@4.0.1
+22 silly currentTree │ ├── map-obj@1.0.1
+22 silly currentTree │ ├── mem-fs-editor@2.2.0
+22 silly currentTree │ ├── mem-fs@1.1.2
+22 silly currentTree │ ├─┬ meow@3.7.0
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── merge-stream@1.0.0
+22 silly currentTree │ ├── micromatch@2.3.7
+22 silly currentTree │ ├── minimatch@3.0.0
+22 silly currentTree │ ├── minimist@1.2.0
+22 silly currentTree │ ├─┬ mkdirp@0.5.1
+22 silly currentTree │ │ └── minimist@0.0.8
+22 silly currentTree │ ├── ms@0.7.1
+22 silly currentTree │ ├── multimatch@2.1.0
+22 silly currentTree │ ├─┬ multipipe@0.1.2
+22 silly currentTree │ │ ├── duplexer2@0.0.2
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ └── readable-stream@1.1.13
+22 silly currentTree │ ├── mute-stream@0.0.5
+22 silly currentTree │ ├── node-status-codes@1.0.0
+22 silly currentTree │ ├── nopt@3.0.6
+22 silly currentTree │ ├── normalize-package-data@2.3.5
+22 silly currentTree │ ├── normalize-path@2.0.1
+22 silly currentTree │ ├── nth-check@1.0.1
+22 silly currentTree │ ├── number-is-nan@1.0.0
+22 silly currentTree │ ├── object-assign@2.1.1
+22 silly currentTree │ ├── object.omit@2.0.0
+22 silly currentTree │ ├── once@1.3.3
+22 silly currentTree │ ├── onetime@1.1.0
+22 silly currentTree │ ├── optionator@0.8.1
+22 silly currentTree │ ├── ordered-read-streams@0.3.0
+22 silly currentTree │ ├── os-homedir@1.0.1
+22 silly currentTree │ ├── os-shim@0.1.3
+22 silly currentTree │ ├── parse-glob@3.0.4
+22 silly currentTree │ ├── parse-json@2.2.0
+22 silly currentTree │ ├── path-exists@2.1.0
+22 silly currentTree │ ├── path-is-absolute@1.0.0
+22 silly currentTree │ ├── path-type@1.1.0
+22 silly currentTree │ ├── pend@1.2.0
+22 silly currentTree │ ├── pify@2.3.0
+22 silly currentTree │ ├── pinkie-promise@2.0.0
+22 silly currentTree │ ├── pinkie@2.0.4
+22 silly currentTree │ ├── prelude-ls@1.1.2
+22 silly currentTree │ ├── prepend-http@1.0.3
+22 silly currentTree │ ├── preserve@0.2.0
+22 silly currentTree │ ├── pretty-bytes@2.0.1
+22 silly currentTree │ ├── process-nextick-args@1.0.6
+22 silly currentTree │ ├── pseudomap@1.0.2
+22 silly currentTree │ ├── randomatic@1.1.5
+22 silly currentTree │ ├── rc@1.1.6
+22 silly currentTree │ ├── read-all-stream@3.1.0
+22 silly currentTree │ ├── read-chunk@1.0.1
+22 silly currentTree │ ├── read-pkg-up@1.0.1
+22 silly currentTree │ ├── read-pkg@1.1.0
+22 silly currentTree │ ├── readable-stream@2.0.6
+22 silly currentTree │ ├── readline2@1.0.1
+22 silly currentTree │ ├── redent@1.0.0
+22 silly currentTree │ ├── regex-cache@0.4.3
+22 silly currentTree │ ├── repeat-element@1.1.2
+22 silly currentTree │ ├── repeat-string@1.5.4
+22 silly currentTree │ ├── repeating@2.0.0
+22 silly currentTree │ ├── replace-ext@0.0.1
+22 silly currentTree │ ├── restore-cursor@1.0.1
+22 silly currentTree │ ├─┬ rimraf@2.5.2
+22 silly currentTree │ │ └── glob@7.0.3
+22 silly currentTree │ ├── run-async@2.2.0
+22 silly currentTree │ ├── rx-lite@3.1.2
+22 silly currentTree │ ├── samsam@1.1.2
+22 silly currentTree │ ├── seek-bzip@1.0.5
+22 silly currentTree │ ├── semver@5.1.0
+22 silly currentTree │ ├── set-immediate-shim@1.0.1
+22 silly currentTree │ ├── shelljs@0.5.3
+22 silly currentTree │ ├── signal-exit@2.1.2
+22 silly currentTree │ ├── sinon@1.17.3
+22 silly currentTree │ ├── source-map@0.2.0
+22 silly currentTree │ ├── sparkles@1.0.0
+22 silly currentTree │ ├── spawn-sync@1.0.15
+22 silly currentTree │ ├── spdx-correct@1.0.2
+22 silly currentTree │ ├── spdx-exceptions@1.0.4
+22 silly currentTree │ ├── spdx-expression-parse@1.0.2
+22 silly currentTree │ ├── spdx-license-ids@1.2.1
+22 silly currentTree │ ├── sprintf-js@1.0.3
+22 silly currentTree │ ├── stat-mode@0.2.1
+22 silly currentTree │ ├── stream-combiner2@1.1.1
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── string-template@0.2.1
+22 silly currentTree │ ├── string-width@1.0.1
+22 silly currentTree │ ├── strip-ansi@3.0.1
+22 silly currentTree │ ├── strip-bom-stream@1.0.0
+22 silly currentTree │ ├── strip-bom@2.0.0
+22 silly currentTree │ ├── strip-dirs@1.1.1
+22 silly currentTree │ ├── strip-indent@1.0.1
+22 silly currentTree │ ├── strip-json-comments@1.0.4
+22 silly currentTree │ ├── strip-outer@1.0.0
+22 silly currentTree │ ├── sum-up@1.0.3
+22 silly currentTree │ ├── supports-color@2.0.0
+22 silly currentTree │ ├── tar-stream@1.5.1
+22 silly currentTree │ ├── text-table@0.2.0
+22 silly currentTree │ ├── textextensions@1.0.1
+22 silly currentTree │ ├── through@2.3.8
+22 silly currentTree │ ├── through2-filter@2.0.0
+22 silly currentTree │ ├── through2@2.0.1
+22 silly currentTree │ ├── time-stamp@1.0.1
+22 silly currentTree │ ├── timed-out@2.0.0
+22 silly currentTree │ ├── to-absolute-glob@0.1.1
+22 silly currentTree │ ├── traverse@0.6.6
+22 silly currentTree │ ├── trim-newlines@1.0.0
+22 silly currentTree │ ├── trim-repeated@1.0.0
+22 silly currentTree │ ├── tunnel-agent@0.4.2
+22 silly currentTree │ ├── type-check@0.3.2
+22 silly currentTree │ ├── typedarray@0.0.6
+22 silly currentTree │ ├── underscore.string@3.3.4
+22 silly currentTree │ ├── unique-stream@2.2.1
+22 silly currentTree │ ├── untildify@2.1.0
+22 silly currentTree │ ├── unzip-response@1.0.0
+22 silly currentTree │ ├── url-parse-lax@1.0.0
+22 silly currentTree │ ├── user-home@2.0.0
+22 silly currentTree │ ├── util-deprecate@1.0.2
+22 silly currentTree │ ├── util@0.10.3
+22 silly currentTree │ ├── uuid@2.0.1
+22 silly currentTree │ ├── vali-date@1.0.0
+22 silly currentTree │ ├── validate-npm-package-license@3.0.1
+22 silly currentTree │ ├─┬ vinyl-assign@1.2.1
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── vinyl-file@1.3.0
+22 silly currentTree │ ├─┬ vinyl-fs@2.4.3
+22 silly currentTree │ │ └── object-assign@4.0.1
+22 silly currentTree │ ├── vinyl@1.1.1
+22 silly currentTree │ ├── ware@1.3.0
+22 silly currentTree │ ├── which@1.2.4
+22 silly currentTree │ ├── wordwrap@1.0.0
+22 silly currentTree │ ├── wrap-fn@0.1.5
+22 silly currentTree │ ├── wrappy@1.0.1
+22 silly currentTree │ ├── xdg-basedir@2.0.0
+22 silly currentTree │ ├── xtend@4.0.1
+22 silly currentTree │ ├── yallist@2.0.0
+22 silly currentTree │ ├── yauzl@2.4.1
+22 silly currentTree │ ├── yeoman-assert@2.1.2
+22 silly currentTree │ ├── yeoman-environment@1.5.2
+22 silly currentTree │ ├── yeoman-generator@0.22.5
+22 silly currentTree │ ├─┬ yeoman-test@1.1.0
+22 silly currentTree │ │ ├── cli-width@2.1.0
+22 silly currentTree │ │ ├── inquirer@0.12.0
+22 silly currentTree │ │ ├── lodash@4.9.0
+22 silly currentTree │ │ └── run-async@0.1.0
+22 silly currentTree │ └── yeoman-welcome@1.0.1
+22 silly currentTree ├─┬ grunt-cli@1.2.0
+22 silly currentTree │ ├── abbrev@1.0.7
+22 silly currentTree │ ├── balanced-match@0.3.0
+22 silly currentTree │ ├── brace-expansion@1.1.3
+22 silly currentTree │ ├── concat-map@0.0.1
+22 silly currentTree │ ├── findup-sync@0.3.0
+22 silly currentTree │ ├── glob@5.0.15
+22 silly currentTree │ ├── grunt-known-options@1.1.0
+22 silly currentTree │ ├── inflight@1.0.4
+22 silly currentTree │ ├── inherits@2.0.1
+22 silly currentTree │ ├── minimatch@3.0.0
+22 silly currentTree │ ├── nopt@3.0.6
+22 silly currentTree │ ├── once@1.3.3
+22 silly currentTree │ ├── path-is-absolute@1.0.0
+22 silly currentTree │ ├── resolve@1.1.7
+22 silly currentTree │ └── wrappy@1.0.1
+22 silly currentTree └─┬ yo@1.7.0
+22 silly currentTree   ├── abbrev@1.0.7
+22 silly currentTree   ├── ansi-escapes@1.3.0
+22 silly currentTree   ├── ansi-regex@2.0.0
+22 silly currentTree   ├── ansi-styles@2.2.1
+22 silly currentTree   ├── array-find-index@1.0.1
+22 silly currentTree   ├── array-union@1.0.1
+22 silly currentTree   ├── array-uniq@1.0.2
+22 silly currentTree   ├── arrify@1.0.1
+22 silly currentTree   ├── asn1@0.2.3
+22 silly currentTree   ├── assert-plus@0.2.0
+22 silly currentTree   ├── async@1.5.2
+22 silly currentTree   ├── aws-sign2@0.6.0
+22 silly currentTree   ├── aws4@1.3.2
+22 silly currentTree   ├── balanced-match@0.3.0
+22 silly currentTree   ├─┬ bin-version-check@2.1.0
+22 silly currentTree   │ └── minimist@1.2.0
+22 silly currentTree   ├── bin-version@1.0.4
+22 silly currentTree   ├── bl@1.1.2
+22 silly currentTree   ├── boom@2.10.1
+22 silly currentTree   ├── boxen@0.3.1
+22 silly currentTree   ├── brace-expansion@1.1.3
+22 silly currentTree   ├── builtin-modules@1.1.1
+22 silly currentTree   ├── camelcase-keys@2.1.0
+22 silly currentTree   ├── camelcase@2.1.1
+22 silly currentTree   ├── capture-stack-trace@1.0.0
+22 silly currentTree   ├── caseless@0.11.0
+22 silly currentTree   ├── chalk@1.1.3
+22 silly currentTree   ├── cli-cursor@1.0.2
+22 silly currentTree   ├── cli-list@0.1.6
+22 silly currentTree   ├── cli-width@1.1.1
+22 silly currentTree   ├── clone-stats@0.0.1
+22 silly currentTree   ├── clone@1.0.2
+22 silly currentTree   ├── code-point-at@1.0.0
+22 silly currentTree   ├── combined-stream@1.0.5
+22 silly currentTree   ├── commander@2.9.0
+22 silly currentTree   ├── concat-map@0.0.1
+22 silly currentTree   ├── config-chain@1.1.10
+22 silly currentTree   ├── configstore@1.4.0
+22 silly currentTree   ├── core-util-is@1.0.2
+22 silly currentTree   ├── create-error-class@3.0.2
+22 silly currentTree   ├── cross-spawn-async@2.2.1
+22 silly currentTree   ├── cryptiles@2.0.5
+22 silly currentTree   ├─┬ dashdash@1.13.0
+22 silly currentTree   │ └── assert-plus@1.0.0
+22 silly currentTree   ├── debug@2.2.0
+22 silly currentTree   ├── decamelize@1.2.0
+22 silly currentTree   ├── deep-extend@0.4.1
+22 silly currentTree   ├── default-uid@1.0.0
+22 silly currentTree   ├── delayed-stream@1.0.0
+22 silly currentTree   ├── diff@2.2.2
+22 silly currentTree   ├── dot-prop@2.4.0
+22 silly currentTree   ├── downgrade-root@1.1.0
+22 silly currentTree   ├── duplexer2@0.1.4
+22 silly currentTree   ├── each-async@1.1.1
+22 silly currentTree   ├── ecc-jsbn@0.1.1
+22 silly currentTree   ├── error-ex@1.3.0
+22 silly currentTree   ├── escape-string-regexp@1.0.5
+22 silly currentTree   ├── exit-hook@1.1.1
+22 silly currentTree   ├── extend@3.0.0
+22 silly currentTree   ├── extsprintf@1.0.2
+22 silly currentTree   ├── figures@1.5.0
+22 silly currentTree   ├── filled-array@1.1.0
+22 silly currentTree   ├── find-up@1.1.2
+22 silly currentTree   ├── find-versions@1.2.1
+22 silly currentTree   ├── first-chunk-stream@1.0.0
+22 silly currentTree   ├── foreachasync@3.0.0
+22 silly currentTree   ├── forever-agent@0.6.1
+22 silly currentTree   ├── form-data@1.0.0-rc4
+22 silly currentTree   ├── fullname@2.1.0
+22 silly currentTree   ├── generate-function@2.0.0
+22 silly currentTree   ├── generate-object-property@1.2.0
+22 silly currentTree   ├── get-stdin@4.0.1
+22 silly currentTree   ├── glob@6.0.4
+22 silly currentTree   ├── globby@4.0.0
+22 silly currentTree   ├── got@5.6.0
+22 silly currentTree   ├── graceful-fs@4.1.3
+22 silly currentTree   ├── graceful-readlink@1.0.1
+22 silly currentTree   ├── grouped-queue@0.3.2
+22 silly currentTree   ├── har-validator@2.0.6
+22 silly currentTree   ├── has-ansi@2.0.0
+22 silly currentTree   ├── has-flag@1.0.0
+22 silly currentTree   ├── hawk@3.1.3
+22 silly currentTree   ├── hoek@2.16.3
+22 silly currentTree   ├── hosted-git-info@2.1.4
+22 silly currentTree   ├── http-signature@1.1.1
+22 silly currentTree   ├── humanize-string@1.0.1
+22 silly currentTree   ├── imurmurhash@0.1.4
+22 silly currentTree   ├── indent-string@2.1.0
+22 silly currentTree   ├── inflight@1.0.4
+22 silly currentTree   ├── inherits@2.0.1
+22 silly currentTree   ├── ini@1.3.4
+22 silly currentTree   ├── inquirer@0.11.4
+22 silly currentTree   ├─┬ insight@0.7.0
+22 silly currentTree   │ └── inquirer@0.10.1
+22 silly currentTree   ├── is-absolute@0.1.7
+22 silly currentTree   ├── is-arrayish@0.2.1
+22 silly currentTree   ├── is-builtin-module@1.0.0
+22 silly currentTree   ├── is-docker@1.0.0
+22 silly currentTree   ├── is-finite@1.0.1
+22 silly currentTree   ├── is-fullwidth-code-point@1.0.0
+22 silly currentTree   ├── is-my-json-valid@2.13.1
+22 silly currentTree   ├── is-npm@1.0.0
+22 silly currentTree   ├── is-obj@1.0.1
+22 silly currentTree   ├── is-plain-obj@1.1.0
+22 silly currentTree   ├── is-property@1.0.2
+22 silly currentTree   ├── is-redirect@1.0.0
+22 silly currentTree   ├── is-relative@0.1.3
+22 silly currentTree   ├── is-retry-allowed@1.0.0
+22 silly currentTree   ├── is-root@1.0.0
+22 silly currentTree   ├── is-stream@1.0.1
+22 silly currentTree   ├── is-typedarray@1.0.0
+22 silly currentTree   ├── is-utf8@0.2.1
+22 silly currentTree   ├── isarray@1.0.0
+22 silly currentTree   ├── isexe@1.1.2
+22 silly currentTree   ├── isstream@0.1.2
+22 silly currentTree   ├── jodid25519@1.0.2
+22 silly currentTree   ├── jsbn@0.1.0
+22 silly currentTree   ├── json-schema@0.2.2
+22 silly currentTree   ├── json-stringify-safe@5.0.1
+22 silly currentTree   ├── jsonpointer@2.0.0
+22 silly currentTree   ├── jsprim@1.2.2
+22 silly currentTree   ├── latest-version@2.0.0
+22 silly currentTree   ├── load-json-file@1.1.0
+22 silly currentTree   ├── lodash._getnative@3.9.1
+22 silly currentTree   ├── lodash.debounce@3.1.1
+22 silly currentTree   ├── lodash@3.10.1
+22 silly currentTree   ├── log-symbols@1.0.2
+22 silly currentTree   ├── loud-rejection@1.3.0
+22 silly currentTree   ├── lowercase-keys@1.0.0
+22 silly currentTree   ├── lru-cache@4.0.1
+22 silly currentTree   ├── map-obj@1.0.1
+22 silly currentTree   ├── mem-fs@1.1.2
+22 silly currentTree   ├─┬ meow@3.7.0
+22 silly currentTree   │ └── minimist@1.2.0
+22 silly currentTree   ├── mime-db@1.22.0
+22 silly currentTree   ├── mime-types@2.1.10
+22 silly currentTree   ├── minimatch@3.0.0
+22 silly currentTree   ├── minimist@0.0.8
+22 silly currentTree   ├── mkdirp@0.5.1
+22 silly currentTree   ├── ms@0.7.1
+22 silly currentTree   ├── mute-stream@0.0.5
+22 silly currentTree   ├── node-status-codes@1.0.0
+22 silly currentTree   ├── node-uuid@1.4.7
+22 silly currentTree   ├── nopt@3.0.6
+22 silly currentTree   ├── normalize-package-data@2.3.5
+22 silly currentTree   ├── npm-keyword@4.2.0
+22 silly currentTree   ├── npmconf@2.1.2
+22 silly currentTree   ├── number-is-nan@1.0.0
+22 silly currentTree   ├── oauth-sign@0.8.1
+22 silly currentTree   ├── object-assign@4.0.1
+22 silly currentTree   ├── object-values@1.0.0
+22 silly currentTree   ├── once@1.3.3
+22 silly currentTree   ├── onetime@1.1.0
+22 silly currentTree   ├── opn@3.0.3
+22 silly currentTree   ├── os-homedir@1.0.1
+22 silly currentTree   ├── os-name@1.0.3
+22 silly currentTree   ├── os-tmpdir@1.0.1
+22 silly currentTree   ├── osenv@0.1.3
+22 silly currentTree   ├─┬ osx-release@1.1.0
+22 silly currentTree   │ └── minimist@1.2.0
+22 silly currentTree   ├─┬ package-json@2.3.2
+22 silly currentTree   │ └── semver@5.1.0
+22 silly currentTree   ├── pad-component@0.0.1
+22 silly currentTree   ├── parse-json@2.2.0
+22 silly currentTree   ├── path-exists@2.1.0
+22 silly currentTree   ├── path-is-absolute@1.0.0
+22 silly currentTree   ├── path-type@1.1.0
+22 silly currentTree   ├── pify@2.3.0
+22 silly currentTree   ├── pinkie-promise@2.0.0
+22 silly currentTree   ├── pinkie@2.0.4
+22 silly currentTree   ├── prepend-http@1.0.3
+22 silly currentTree   ├── process-nextick-args@1.0.6
+22 silly currentTree   ├── proto-list@1.2.4
+22 silly currentTree   ├── pseudomap@1.0.2
+22 silly currentTree   ├── qs@6.1.0
+22 silly currentTree   ├─┬ rc@1.1.6
+22 silly currentTree   │ └── minimist@1.2.0
+22 silly currentTree   ├── read-all-stream@3.1.0
+22 silly currentTree   ├── read-pkg-up@1.0.1
+22 silly currentTree   ├── read-pkg@1.1.0
+22 silly currentTree   ├── readable-stream@2.0.6
+22 silly currentTree   ├── readline2@1.0.1
+22 silly currentTree   ├── redent@1.0.0
+22 silly currentTree   ├── registry-url@3.1.0
+22 silly currentTree   ├── repeating@2.0.0
+22 silly currentTree   ├── replace-ext@0.0.1
+22 silly currentTree   ├── request@2.70.0
+22 silly currentTree   ├── restore-cursor@1.0.1
+22 silly currentTree   ├── root-check@1.0.0
+22 silly currentTree   ├── run-async@0.1.0
+22 silly currentTree   ├── rx-lite@3.1.2
+22 silly currentTree   ├─┬ semver-diff@2.1.0
+22 silly currentTree   │ └── semver@5.1.0
+22 silly currentTree   ├── semver-regex@1.0.0
+22 silly currentTree   ├─┬ semver-truncate@1.1.0
+22 silly currentTree   │ └── semver@5.1.0
+22 silly currentTree   ├── semver@4.3.6
+22 silly currentTree   ├── set-immediate-shim@1.0.1
+22 silly currentTree   ├── signal-exit@2.1.2
+22 silly currentTree   ├── slide@1.1.6
+22 silly currentTree   ├── sntp@1.0.9
+22 silly currentTree   ├── sort-on@1.2.2
+22 silly currentTree   ├── spdx-correct@1.0.2
+22 silly currentTree   ├── spdx-exceptions@1.0.4
+22 silly currentTree   ├── spdx-expression-parse@1.0.2
+22 silly currentTree   ├── spdx-license-ids@1.2.1
+22 silly currentTree   ├── sshpk@1.7.4
+22 silly currentTree   ├── string_decoder@0.10.31
+22 silly currentTree   ├── string-length@1.0.1
+22 silly currentTree   ├── string-width@1.0.1
+22 silly currentTree   ├── stringstream@0.0.5
+22 silly currentTree   ├── strip-ansi@3.0.1
+22 silly currentTree   ├── strip-bom-stream@1.0.0
+22 silly currentTree   ├── strip-bom@2.0.0
+22 silly currentTree   ├── strip-indent@1.0.1
+22 silly currentTree   ├── strip-json-comments@1.0.4
+22 silly currentTree   ├── sudo-block@1.2.0
+22 silly currentTree   ├── supports-color@2.0.0
+22 silly currentTree   ├─┬ taketalk@1.0.0
+22 silly currentTree   │ └── minimist@1.2.0
+22 silly currentTree   ├── text-table@0.2.0
+22 silly currentTree   ├── through@2.3.8
+22 silly currentTree   ├── through2@2.0.1
+22 silly currentTree   ├── timed-out@2.0.0
+22 silly currentTree   ├── titleize@1.0.0
+22 silly currentTree   ├── tough-cookie@2.2.2
+22 silly currentTree   ├── trim-newlines@1.0.0
+22 silly currentTree   ├── tunnel-agent@0.4.2
+22 silly currentTree   ├── tweetnacl@0.14.3
+22 silly currentTree   ├── twig@0.8.9
+22 silly currentTree   ├── uid-number@0.0.5
+22 silly currentTree   ├── untildify@2.1.0
+22 silly currentTree   ├── unzip-response@1.0.0
+22 silly currentTree   ├─┬ update-notifier@0.6.3
+22 silly currentTree   │ └── configstore@2.0.0
+22 silly currentTree   ├── url-parse-lax@1.0.0
+22 silly currentTree   ├── user-home@2.0.0
+22 silly currentTree   ├── util-deprecate@1.0.2
+22 silly currentTree   ├── uuid@2.0.1
+22 silly currentTree   ├── validate-npm-package-license@3.0.1
+22 silly currentTree   ├── verror@1.3.6
+22 silly currentTree   ├── vinyl-file@1.3.0
+22 silly currentTree   ├── vinyl@1.1.1
+22 silly currentTree   ├── walk@2.3.9
+22 silly currentTree   ├── which@1.2.4
+22 silly currentTree   ├── widest-line@1.0.0
+22 silly currentTree   ├─┬ win-release@1.1.1
+22 silly currentTree   │ └── semver@5.1.0
+22 silly currentTree   ├── wrap-ansi@2.0.0
+22 silly currentTree   ├── wrappy@1.0.1
+22 silly currentTree   ├── write-file-atomic@1.1.4
+22 silly currentTree   ├── xdg-basedir@2.0.0
+22 silly currentTree   ├── xtend@4.0.1
+22 silly currentTree   ├── yallist@2.0.0
+22 silly currentTree   ├─┬ yeoman-character@1.1.0
+22 silly currentTree   │ └── supports-color@3.1.2
+22 silly currentTree   ├─┬ yeoman-doctor@2.1.0
+22 silly currentTree   │ └── semver@5.1.0
+22 silly currentTree   ├── yeoman-environment@1.5.2
+22 silly currentTree   └── yosay@1.1.1
+23 silly idealTree lib
+24 silly generateActionsToTake Starting
+25 silly install generateActionsToTake
+26 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/abbrev
+27 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/adm-zip
+28 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/ansi-regex
+29 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/ansi-styles
+30 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/asn1
+31 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/assert-plus
+32 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/async
+33 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/aws-sign2
+34 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/balanced-match
+35 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/bl/node_modules/isarray
+36 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/caseless
+37 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/concat-map
+38 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/brace-expansion
+39 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/core-util-is
+40 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/CSSwhat
+41 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/ctype
+42 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/dargs
+43 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/dashdash/node_modules/assert-plus
+44 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/dashdash
+45 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/debug
+46 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/delayed-stream
+47 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/combined-stream
+48 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/diff
+49 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/domelementtype
+50 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/domhandler
+51 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/domutils
+52 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/CSSselect
+53 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/duplexer
+54 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/each-async
+55 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/entities
+56 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/es5-ext
+57 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/escape-string-regexp
+58 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/event-emitter
+59 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/extend
+60 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/extsprintf
+61 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/isbinaryfile
+62 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/lodash
+63 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/lru-cache
+64 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/findup-sync/node_modules/lru-cache
+65 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/forever-agent
+66 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/form-data/node_modules/async
+67 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/fstream/node_modules/graceful-fs
+68 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/fstream/node_modules/minimist
+69 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/fstream/node_modules/mkdirp
+70 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/generate-function
+71 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/get-stdin
+72 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/get-urls
+73 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/got/node_modules/object-assign
+74 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/got
+75 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/ext-list
+76 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/graceful-fs
+77 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/graceful-readlink
+78 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/commander
+79 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/has-ansi
+80 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/has-color
+81 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/hoek
+82 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/boom
+83 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/cryptiles
+84 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/htmlparser2/node_modules/domutils
+85 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/iconv-lite
+86 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/inherits
+87 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/block-stream
+88 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/is-property
+89 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/generate-object-property
+90 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/is-typedarray
+91 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/isarray
+92 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/isbinaryfile
+93 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/isstream
+94 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/jsbn
+95 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/jodid25519
+96 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/ecc-jsbn
+97 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/json-schema
+98 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/json-stringify-safe
+99 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/jsonpointer
+100 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/lodash
+101 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/mime
+102 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/mime-db
+103 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/mime-types
+104 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/form-data
+105 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/minimatch
+106 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/minimist
+107 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/mkdirp
+108 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/mout
+109 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/mute-stream
+110 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/next-tick
+111 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/memoizee
+112 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/cli-color
+113 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/node-uuid
+114 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/nopt
+115 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/number-is-nan
+116 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/is-fullwidth-code-point
+117 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/is-finite
+118 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/code-point-at
+119 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/oauth-sign
+120 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/object-assign
+121 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/class-extend
+122 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/object-keys
+123 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/download/node_modules/xtend
+124 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/optimist/node_modules/minimist
+125 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/osenv
+126 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/pad-component
+127 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/pinkie
+128 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/pinkie-promise
+129 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/process-nextick-args
+130 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/propprop
+131 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/pseudomap
+132 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/punycode
+133 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/qs
+134 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/readline2/node_modules/ansi-regex
+135 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/readline2/node_modules/strip-ansi
+136 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/readline2
+137 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/repeating
+138 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/asn1
+139 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/assert-plus
+140 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/async
+141 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/aws-sign2
+142 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/delayed-stream
+143 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/combined-stream
+144 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/forever-agent
+145 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/form-data
+146 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/hoek
+147 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/boom
+148 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/cryptiles
+149 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/http-signature
+150 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/oauth-sign
+151 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/qs
+152 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/sntp
+153 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/hawk
+154 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/tough-cookie
+155 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules/tunnel-agent
+156 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request
+157 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/rimraf
+158 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/fstream
+159 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/shelljs
+160 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/sigmund
+161 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/findup-sync/node_modules/minimatch
+162 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/findup-sync/node_modules/glob
+163 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/findup-sync
+164 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/minimatch
+165 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/glob/node_modules/minimatch
+166 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/glob
+167 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils
+168 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/sntp
+169 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/hawk
+170 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/stream-combiner
+171 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/string_decoder
+172 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/readable-stream
+173 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/download/node_modules/through2
+174 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/htmlparser2/node_modules/readable-stream
+175 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/htmlparser2
+176 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/stringstream
+177 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/strip-ansi
+178 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/string-width
+179 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/supports-color
+180 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/chalk
+181 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/taketalk/node_modules/get-stdin
+182 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/taketalk
+183 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/tar
+184 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/text-table
+185 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/through
+186 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/inquirer
+187 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/tough-cookie
+188 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/tunnel-agent
+189 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/tweetnacl
+190 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/sshpk
+191 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/underscore
+192 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/cheerio
+193 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/underscore.string
+194 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/ext-name
+195 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/util-deprecate
+196 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/bl/node_modules/readable-stream
+197 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/bl
+198 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/uuid
+199 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/tempfile
+200 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/decompress
+201 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/verror
+202 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/jsprim
+203 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/http-signature
+204 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules/ansi-regex
+205 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules/ansi-styles
+206 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules/has-ansi
+207 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules/strip-ansi
+208 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules/supports-color
+209 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules/chalk
+210 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wordwrap
+211 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/optimist
+212 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/bower-config
+213 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wrap-ansi
+214 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wrappy
+215 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/once
+216 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/inflight
+217 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/glob
+218 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/xtend
+219 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/through2
+220 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep
+221 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/is-my-json-valid
+222 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/har-validator
+223 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yallist
+224 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/lru-cache
+225 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/aws4
+226 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/download/node_modules/request
+227 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/download
+228 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules/ansi-styles
+229 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules/lru-cache
+230 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules/minimatch
+231 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules/glob
+232 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules/strip-ansi
+233 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules/chalk
+234 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator
+235 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yosay
+236 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/abbrev
+237 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/amdefine
+238 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ansi-escapes
+239 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ansi-regex
+240 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ansi-styles
+241 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/arr-flatten
+242 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/arr-diff
+243 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/array-differ
+244 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/array-find-index
+245 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/array-uniq
+246 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/array-union
+247 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/array-unique
+248 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/arrify
+249 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ast-query/node_modules/lodash
+250 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/async
+251 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/balanced-match
+252 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/beeper
+253 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/binaryextensions
+254 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/boolbase
+255 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/builtin-modules
+256 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/camelcase
+257 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/capture-stack-trace
+258 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/caw/node_modules/object-assign
+259 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/cli-width
+260 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/clone
+261 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/clone-stats
+262 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/co
+263 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/colors
+264 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/cli-table
+265 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/commondir
+266 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/concat-map
+267 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/brace-expansion
+268 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/convert-source-map
+269 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/core-util-is
+270 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/create-error-class
+271 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/css-what
+272 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decamelize
+273 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar/node_modules/clone
+274 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar/node_modules/isarray
+275 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar/node_modules/vinyl
+276 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2/node_modules/clone
+277 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2/node_modules/isarray
+278 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2/node_modules/vinyl
+279 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz/node_modules/clone
+280 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz/node_modules/isarray
+281 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz/node_modules/vinyl
+282 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/deep-extend
+283 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/deep-is
+284 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/detect-conflict
+285 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/diff
+286 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/dom-serializer/node_modules/domelementtype
+287 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/domelementtype
+288 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/domhandler
+289 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/domutils
+290 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/download/node_modules/object-assign
+291 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ejs
+292 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/entities
+293 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/dom-serializer
+294 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/escape-string-regexp
+295 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/esprima
+296 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/estraverse
+297 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/esutils
+298 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/exit-hook
+299 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/extend
+300 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/fast-levenshtein
+301 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/figures
+302 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/file-type
+303 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/archive-type
+304 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/filename-regex
+305 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/filename-reserved-regex
+306 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/first-chunk-stream
+307 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/for-in
+308 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/for-own
+309 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/get-stdin
+310 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gh-got/node_modules/object-assign
+311 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-stream/node_modules/isarray
+312 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/globby/node_modules/object-assign
+313 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/got/node_modules/object-assign
+314 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/graceful-fs
+315 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/graceful-readlink
+316 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/commander
+317 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gruntfile-editor/node_modules/lodash
+318 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-rename
+319 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-util/node_modules/object-assign
+320 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/has-ansi
+321 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/hosted-git-info
+322 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/htmlparser2/node_modules/domutils
+323 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/htmlparser2/node_modules/entities
+324 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/htmlparser2/node_modules/isarray
+325 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/inherits
+326 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ini
+327 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-arrayish
+328 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/error-ex
+329 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-buffer
+330 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-builtin-module
+331 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-bzip2
+332 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-dotfile
+333 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-extendable
+334 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/extend-shallow
+335 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-extglob
+336 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/extglob
+337 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-glob
+338 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-parent
+339 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-base
+340 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-gzip
+341 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-natural-number
+342 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-obj
+343 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-plain-obj
+344 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-posix-bracket
+345 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/expand-brackets
+346 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-primitive
+347 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-equal-shallow
+348 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-promise
+349 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-redirect
+350 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-relative
+351 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-absolute
+352 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-retry-allowed
+353 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-stream
+354 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-tar
+355 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-url
+356 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-utf8
+357 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-valid-glob
+358 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-zip
+359 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/isarray
+360 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/isexe
+361 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/isobject/node_modules/isarray
+362 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/isobject
+363 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/jsonify
+364 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/json-stable-stringify
+365 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/kind-of
+366 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-number
+367 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash
+368 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/grouped-queue
+369 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._basecopy
+370 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._basetostring
+371 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._basevalues
+372 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._getnative
+373 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._isiterateecall
+374 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._reescape
+375 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._reevaluate
+376 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._reinterpolate
+377 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._root
+378 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash._stack
+379 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.escape
+380 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.isarguments
+381 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.isarray
+382 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.keys
+383 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.isequal
+384 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.restparam
+385 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.template/node_modules/lodash.keys
+386 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.templatesettings
+387 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.template
+388 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lolex
+389 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lowercase-keys
+390 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/map-obj
+391 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/camelcase-keys
+392 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/meow/node_modules/object-assign
+393 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/minimatch
+394 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/minimist
+395 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/detect-newline
+396 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/mkdirp/node_modules/minimist
+397 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/mkdirp
+398 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ms
+399 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/debug
+400 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/multimatch
+401 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/multipipe/node_modules/isarray
+402 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/mute-stream
+403 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/node-status-codes
+404 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/nopt
+405 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/normalize-path
+406 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/nth-check
+407 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/css-select
+408 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/number-is-nan
+409 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-fullwidth-code-point
+410 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/is-finite
+411 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/dargs
+412 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/code-point-at
+413 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/object-assign
+414 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/class-extend
+415 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/object.omit
+416 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/onetime
+417 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/os-homedir
+418 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/os-shim
+419 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/parse-glob
+420 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/parse-json
+421 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/path-is-absolute
+422 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/pend
+423 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/fd-slicer
+424 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/pify
+425 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/pinkie
+426 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/pinkie-promise
+427 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/path-type
+428 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/path-exists
+429 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/find-up
+430 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/prelude-ls
+431 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/prepend-http
+432 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/preserve
+433 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/process-nextick-args
+434 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/pseudomap
+435 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/randomatic
+436 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/read-chunk
+437 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/readline2
+438 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/regex-cache
+439 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/repeat-element
+440 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/repeat-string
+441 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/fill-range
+442 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/expand-range
+443 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/braces
+444 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/micromatch
+445 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/repeating
+446 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/indent-string
+447 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/replace-ext
+448 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-util/node_modules/vinyl
+449 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/restore-cursor
+450 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/cli-cursor
+451 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/run-async
+452 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/rx-lite
+453 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/samsam
+454 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/formatio
+455 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/seek-bzip
+456 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/semver
+457 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/set-immediate-shim
+458 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/each-async
+459 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/shelljs
+460 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/signal-exit
+461 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/loud-rejection
+462 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/source-map
+463 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/sparkles
+464 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/has-gulplog
+465 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glogg
+466 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulplog
+467 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/spdx-exceptions
+468 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/spdx-license-ids
+469 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/spdx-expression-parse
+470 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/spdx-correct
+471 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/sprintf-js
+472 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/stat-mode
+473 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/string_decoder
+474 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/multipipe/node_modules/readable-stream
+475 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/multipipe/node_modules/duplexer2
+476 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/multipipe
+477 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/htmlparser2/node_modules/readable-stream
+478 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/htmlparser2
+479 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/cheerio
+480 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/html-wiring
+481 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-stream/node_modules/readable-stream
+482 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz/node_modules/readable-stream
+483 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2/node_modules/readable-stream
+484 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar/node_modules/readable-stream
+485 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/string-template
+486 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-ansi
+487 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/string-width
+488 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-bom
+489 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/load-json-file
+490 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-bom-stream
+491 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-indent
+492 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/redent
+493 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-json-comments
+494 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/rc
+495 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/get-proxy
+496 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-outer
+497 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/supports-color
+498 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/chalk
+499 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/sum-up
+500 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/strip-dirs
+501 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/log-symbols
+502 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/text-table
+503 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/textextensions
+504 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/istextorbinary
+505 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/through
+506 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/time-stamp
+507 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/fancy-log
+508 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/timed-out
+509 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/to-absolute-glob
+510 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/traverse
+511 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/trim-newlines
+512 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/trim-repeated
+513 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/filenamify
+514 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/tunnel-agent
+515 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/caw
+516 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/type-check
+517 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/levn
+518 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/typedarray
+519 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/untildify
+520 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/unzip-response
+521 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/url-parse-lax
+522 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/user-home
+523 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/util
+524 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/sinon
+525 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/util-deprecate
+526 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/underscore.string
+527 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/readable-stream
+528 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/read-all-stream
+529 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ordered-read-streams
+530 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/merge-stream
+531 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lazystream
+532 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/duplexer2
+533 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/stream-combiner2
+534 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/got
+535 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gh-got
+536 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/concat-stream
+537 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/spawn-sync
+538 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/bl
+539 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/uuid
+540 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vali-date
+541 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/validate-npm-package-license
+542 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/normalize-package-data
+543 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/read-pkg
+544 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/read-pkg-up
+545 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/meow
+546 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/pretty-bytes
+547 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/github-username
+548 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/dateformat
+549 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl
+550 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/buffer-to-vinyl
+551 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-assign/node_modules/object-assign
+552 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-assign
+553 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-file
+554 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-fs/node_modules/object-assign
+555 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/which
+556 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/wordwrap
+557 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/optionator
+558 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/escodegen
+559 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ast-query
+560 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gruntfile-editor
+561 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/wrap-fn
+562 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ware
+563 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/wrappy
+564 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/once
+565 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/inquirer/node_modules/run-async
+566 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/inquirer
+567 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/end-of-stream
+568 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/duplexify/node_modules/end-of-stream
+569 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/duplexify
+570 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/inflight
+571 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/rimraf/node_modules/glob
+572 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/rimraf
+573 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-stream/node_modules/glob
+574 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob
+575 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/globby
+576 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/xdg-basedir
+577 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/xtend
+578 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/through2
+579 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/through2-filter
+580 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/unique-stream
+581 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/mem-fs-editor
+582 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/mem-fs
+583 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-util
+584 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-sourcemaps
+585 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/tar-stream
+586 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-stream/node_modules/through2
+587 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-stream
+588 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-fs
+589 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/error
+590 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz/node_modules/through2
+591 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz
+592 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2/node_modules/through2
+593 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2
+594 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar/node_modules/through2
+595 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar
+596 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yallist
+597 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lru-cache
+598 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/cross-spawn-async
+599 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/cross-spawn
+600 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yauzl
+601 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-unzip
+602 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress
+603 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-decompress
+604 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/download
+605 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-assert
+606 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-environment
+607 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-test/node_modules/cli-width
+608 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-test/node_modules/lodash
+609 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-test/node_modules/run-async
+610 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-test/node_modules/inquirer
+611 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-welcome
+612 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-generator
+613 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-test
+614 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/abbrev
+615 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/balanced-match
+616 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/concat-map
+617 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/brace-expansion
+618 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/grunt-known-options
+619 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/inherits
+620 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/minimatch
+621 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/nopt
+622 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/path-is-absolute
+623 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/resolve
+624 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/wrappy
+625 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/once
+626 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/inflight
+627 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/glob
+628 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules/findup-sync
+629 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/abbrev
+630 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/ansi-escapes
+631 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/ansi-regex
+632 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/ansi-styles
+633 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/array-find-index
+634 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/array-uniq
+635 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/array-union
+636 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/arrify
+637 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/asn1
+638 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/assert-plus
+639 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/async
+640 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/aws-sign2
+641 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/balanced-match
+642 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/bin-version-check/node_modules/minimist
+643 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/builtin-modules
+644 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/camelcase
+645 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/capture-stack-trace
+646 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/caseless
+647 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/cli-list
+648 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/cli-width
+649 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/clone
+650 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/clone-stats
+651 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/concat-map
+652 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/brace-expansion
+653 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/core-util-is
+654 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/create-error-class
+655 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/dashdash/node_modules/assert-plus
+656 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/dashdash
+657 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/decamelize
+658 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/deep-extend
+659 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/default-uid
+660 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/delayed-stream
+661 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/combined-stream
+662 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/diff
+663 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/escape-string-regexp
+664 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/exit-hook
+665 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/extend
+666 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/extsprintf
+667 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/figures
+668 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/filled-array
+669 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/first-chunk-stream
+670 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/foreachasync
+671 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/forever-agent
+672 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/generate-function
+673 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/get-stdin
+674 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/graceful-fs
+675 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/graceful-readlink
+676 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/commander
+677 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/has-ansi
+678 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/has-flag
+679 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/hoek
+680 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/boom
+681 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/cryptiles
+682 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/hosted-git-info
+683 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/humanize-string
+684 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/imurmurhash
+685 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/inherits
+686 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/ini
+687 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-arrayish
+688 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/error-ex
+689 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-builtin-module
+690 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-docker
+691 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-npm
+692 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-obj
+693 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/dot-prop
+694 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-plain-obj
+695 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-property
+696 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/generate-object-property
+697 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-redirect
+698 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-relative
+699 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-absolute
+700 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-retry-allowed
+701 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-root
+702 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/downgrade-root
+703 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-stream
+704 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-typedarray
+705 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-utf8
+706 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/isarray
+707 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/isexe
+708 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/isstream
+709 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/jsbn
+710 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/jodid25519
+711 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/ecc-jsbn
+712 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/json-schema
+713 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/json-stringify-safe
+714 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/jsonpointer
+715 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/lodash
+716 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/grouped-queue
+717 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/lodash._getnative
+718 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/lodash.debounce
+719 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/lowercase-keys
+720 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/map-obj
+721 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/camelcase-keys
+722 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/meow/node_modules/minimist
+723 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/mime-db
+724 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/mime-types
+725 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/form-data
+726 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/minimatch
+727 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/minimist
+728 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/mkdirp
+729 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/ms
+730 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/debug
+731 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/mute-stream
+732 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/node-status-codes
+733 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/node-uuid
+734 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/nopt
+735 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/number-is-nan
+736 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-fullwidth-code-point
+737 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-finite
+738 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/code-point-at
+739 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/oauth-sign
+740 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/object-assign
+741 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/object-values
+742 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/onetime
+743 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/opn
+744 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/os-homedir
+745 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/os-tmpdir
+746 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/osenv
+747 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/osx-release/node_modules/minimist
+748 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/osx-release
+749 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/package-json/node_modules/semver
+750 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/pad-component
+751 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/parse-json
+752 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/path-is-absolute
+753 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/pify
+754 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/pinkie
+755 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/pinkie-promise
+756 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/path-type
+757 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/path-exists
+758 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/find-up
+759 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/prepend-http
+760 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/process-nextick-args
+761 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/proto-list
+762 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/config-chain
+763 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/pseudomap
+764 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/qs
+765 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/rc/node_modules/minimist
+766 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/readline2
+767 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/repeating
+768 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/indent-string
+769 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/replace-ext
+770 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/restore-cursor
+771 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/cli-cursor
+772 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/rx-lite
+773 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver
+774 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-diff/node_modules/semver
+775 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-diff
+776 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-regex
+777 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-truncate/node_modules/semver
+778 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-truncate
+779 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/set-immediate-shim
+780 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/each-async
+781 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/signal-exit
+782 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/loud-rejection
+783 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/slide
+784 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/sntp
+785 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/hawk
+786 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/sort-on
+787 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/spdx-exceptions
+788 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/spdx-license-ids
+789 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/spdx-expression-parse
+790 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/spdx-correct
+791 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/string_decoder
+792 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/stringstream
+793 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/strip-ansi
+794 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/string-width
+795 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/string-length
+796 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/strip-bom
+797 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/load-json-file
+798 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/strip-bom-stream
+799 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/strip-indent
+800 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/redent
+801 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/strip-json-comments
+802 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/rc
+803 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/registry-url
+804 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/supports-color
+805 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/chalk
+806 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/sudo-block
+807 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/root-check
+808 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/log-symbols
+809 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/taketalk/node_modules/minimist
+810 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/taketalk
+811 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/text-table
+812 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/through
+813 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/timed-out
+814 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/titleize
+815 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/tough-cookie
+816 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/trim-newlines
+817 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/tunnel-agent
+818 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/tweetnacl
+819 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/sshpk
+820 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/uid-number
+821 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/untildify
+822 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/unzip-response
+823 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/url-parse-lax
+824 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/user-home
+825 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/util-deprecate
+826 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/readable-stream
+827 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/read-all-stream
+828 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/duplexer2
+829 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/got
+830 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/package-json
+831 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/latest-version
+832 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/npm-keyword
+833 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/bl
+834 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/uuid
+835 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/validate-npm-package-license
+836 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/normalize-package-data
+837 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/read-pkg
+838 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/read-pkg-up
+839 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/meow
+840 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/find-versions
+841 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/bin-version
+842 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/bin-version-check
+843 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/verror
+844 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/jsprim
+845 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/http-signature
+846 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/vinyl
+847 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/vinyl-file
+848 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/walk
+849 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/twig
+850 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/which
+851 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/widest-line
+852 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/boxen
+853 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/win-release/node_modules/semver
+854 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/win-release
+855 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/os-name
+856 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/wrap-ansi
+857 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/wrappy
+858 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/once
+859 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/run-async
+860 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/insight/node_modules/inquirer
+861 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/inquirer
+862 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/npmconf
+863 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/fullname
+864 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/inflight
+865 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/glob
+866 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/globby
+867 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/write-file-atomic
+868 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/xdg-basedir
+869 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/update-notifier/node_modules/configstore
+870 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/update-notifier
+871 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/configstore
+872 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/xtend
+873 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/through2
+874 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/mem-fs
+875 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/is-my-json-valid
+876 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/har-validator
+877 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yallist
+878 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/lru-cache
+879 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/cross-spawn-async
+880 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/aws4
+881 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/request
+882 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/insight
+883 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-character/node_modules/supports-color
+884 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-character
+885 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-doctor/node_modules/semver
+886 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-doctor
+887 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-environment
+888 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yosay
+889 warn checkPermissions Missing write access to /usr/lib/node_modules/bower
+890 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular
+891 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma
+892 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli
+893 warn checkPermissions Missing write access to /usr/lib/node_modules/yo
+894 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules
+895 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/bl/node_modules
+896 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/dashdash/node_modules
+897 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules
+898 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/findup-sync/node_modules
+899 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/form-data/node_modules
+900 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/fstream/node_modules
+901 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/got/node_modules
+902 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/htmlparser2/node_modules
+903 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/download/node_modules
+904 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/optimist/node_modules
+905 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/readline2/node_modules
+906 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/request/node_modules
+907 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/file-utils/node_modules/glob/node_modules
+908 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/taketalk/node_modules
+909 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/wiredep/node_modules
+910 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-angular/node_modules/yeoman-generator/node_modules
+911 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules
+912 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/ast-query/node_modules
+913 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/caw/node_modules
+914 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tar/node_modules
+915 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-tarbz2/node_modules
+916 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/decompress-targz/node_modules
+917 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/dom-serializer/node_modules
+918 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/download/node_modules
+919 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gh-got/node_modules
+920 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/glob-stream/node_modules
+921 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/globby/node_modules
+922 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/got/node_modules
+923 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gruntfile-editor/node_modules
+924 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/gulp-util/node_modules
+925 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/htmlparser2/node_modules
+926 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/isobject/node_modules
+927 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/lodash.template/node_modules
+928 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/meow/node_modules
+929 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/mkdirp/node_modules
+930 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/multipipe/node_modules
+931 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-assign/node_modules
+932 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/vinyl-fs/node_modules
+933 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/inquirer/node_modules
+934 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/duplexify/node_modules
+935 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/rimraf/node_modules
+936 warn checkPermissions Missing write access to /usr/lib/node_modules/generator-karma/node_modules/yeoman-test/node_modules
+937 warn checkPermissions Missing write access to /usr/lib/node_modules/grunt-cli/node_modules
+938 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules
+939 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/bin-version-check/node_modules
+940 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/dashdash/node_modules
+941 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/meow/node_modules
+942 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/osx-release/node_modules
+943 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/package-json/node_modules
+944 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/rc/node_modules
+945 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-diff/node_modules
+946 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/semver-truncate/node_modules
+947 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/taketalk/node_modules
+948 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/win-release/node_modules
+949 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/insight/node_modules
+950 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/update-notifier/node_modules
+951 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-character/node_modules
+952 warn checkPermissions Missing write access to /usr/lib/node_modules/yo/node_modules/yeoman-doctor/node_modules
+953 warn checkPermissions Missing write access to /usr/lib/node_modules
+954 silly rollbackFailedOptional Starting
+955 silly rollbackFailedOptional Finishing
+956 silly runTopLevelLifecycles Starting
+957 silly runTopLevelLifecycles Finishing
+958 silly install printInstalled
+959 verbose stack Error: EACCES: permission denied, access '/usr/lib/node_modules/generator-angular/node_modules/abbrev'
+959 verbose stack     at Error (native)
+960 verbose cwd /home/jeshio/php-sites/portfolus.rails
+961 error Linux 3.19.0-58-generic
+962 error argv "/usr/bin/nodejs" "/usr/bin/npm" "uninstall" "-g" "grunt-cli" "bower" "yo" "generator-karma" "generator-angular"
+963 error node v5.11.1
+964 error npm  v3.8.6
+965 error path /usr/lib/node_modules/generator-angular/node_modules/abbrev
+966 error code EACCES
+967 error errno -13
+968 error syscall access
+969 error Error: EACCES: permission denied, access '/usr/lib/node_modules/generator-angular/node_modules/abbrev'
+969 error     at Error (native)
+969 error  { [Error: EACCES: permission denied, access '/usr/lib/node_modules/generator-angular/node_modules/abbrev']
+969 error   errno: -13,
+969 error   code: 'EACCES',
+969 error   syscall: 'access',
+969 error   path: '/usr/lib/node_modules/generator-angular/node_modules/abbrev' }
+970 error Please try running this command again as root/Administrator.
+971 verbose exit [ -13, true ]

@@ -5,6 +5,8 @@
 
   <title ng-bind="'Portfolus' + title">Portfolus</title>
 
+  <base href="/" target="_blank" />
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -19,7 +21,7 @@
       </md-button>
 
       <!-- Список меню -->
-      <div layout="row" layout-align="center center" id="top-menu-list" layout-fill ng-include="'nav/_nav.html'"></div>
+      <div layout="row" layout-align="center center" id="top-menu-list" layout-fill ng-controller="NavCtrl" ng-include="'nav/_nav.html'"></div>
 
     </div>
   </md-toolbar>

@@ -25,9 +25,8 @@
 #  * 'just' rspec: 'rspec'
 
 rspec_options = {
-  cmd: "spring rspec",
-  all_after_pass: true,
-  run_all: { parallel: true, parallel_cli: '-n 3' },
+  cmd: "bin/rspec",
+  run_all: { parallel: true, parallel_cli: '-n 4' },
 }
 
 guard :rspec, rspec_options do
@@ -59,7 +58,10 @@ guard :rspec, rspec_options do
 
   watch(%r{^app/(.+)\.rb$})                           { |m| "#{rspec.spec_dir}/#{m[1]}_spec.rb" }
   watch(%r{^app/(.*)(\.erb|\.slim|\.haml)$})          { |m| "#{rspec.spec_dir}/#{m[1]}#{m[2]}_spec.rb" }
-  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| ["#{rspec.spec_dir}/routing/#{m[1]}_routing_spec.rb", "#{rspec.spec_dir}/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb", "#{rspec.spec_dir}/acceptance/#{m[1]}_spec.rb"] }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| ["#{rspec.spec_dir}/routing/#{m[1]}_routing_spec.rb",
+  "#{rspec.spec_dir}/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb",
+  "#{rspec.spec_dir}/acceptance/#{m[1]}_spec.rb"
+  ] }
   watch(%r{^spec/support/(.+)\.rb$})                  { "#{rspec.spec_dir}" }
   watch("config/routes.rb")                           { "#{rspec.spec_dir}/routing" }
   watch("app/controllers/application_controller.rb")  { "#{rspec.spec_dir}/controllers" }
