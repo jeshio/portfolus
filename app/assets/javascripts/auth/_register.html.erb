@@ -104,7 +104,7 @@
           <md-input-container class="md-block" flex-gt-sm>
             <label>Город</label>
             <md-select name="city_id" ng-model="user.city_id">
-              <md-option ng-repeat="city in cities" value="{{city.id}}">
+              <md-option ng-repeat="city in cities" ng-value="{{city.id}}">
                 {{city.name}}
               </md-option>
             </md-select>

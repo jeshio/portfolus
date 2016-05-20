@@ -12,7 +12,6 @@ class <%= class_name %> < <%= parent_class_name.classify %>
 <% end -%>
 <% attributes.select(&:token?).each do |attribute| -%>
   has_secure_token<% if attribute.name != "token" %> :<%= attribute.name %><% end %>
-
 <% end -%>
   # and validation macros
 
@@ -21,7 +20,7 @@ class <%= class_name %> < <%= parent_class_name.classify %>
   # other macros (like devise's) should be placed after the callbacks
 <% if attributes.any?(&:password_digest?) -%>
   has_secure_password
-  
+
 <% end -%>
    # finally, scopes
 end

@@ -26,6 +26,7 @@ function($scope, $state, $parse, Auth){
   };
 
   $scope.register = function() {
+    console.log($scope.user);
     Auth.register($scope.user).then(function(user){
       $state.go('user', {id: user.id});
     }, function(data) {

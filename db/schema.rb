@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516115922) do
+ActiveRecord::Schema.define(version: 20160520064407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_categories_on_name", unique: true, using: :btree
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +35,113 @@ ActiveRecord::Schema.define(version: 20160516115922) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "url"
+    t.string   "reg_hash"
+    t.string   "admin_email"
+    t.string   "domen"
+    t.decimal  "views"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "creater_id"
+    t.index ["admin_email"], name: "index_organizations_on_admin_email", unique: true, using: :btree
+    t.index ["creater_id"], name: "index_organizations_on_creater_id", using: :btree
+    t.index ["domen"], name: "index_organizations_on_domen", unique: true, using: :btree
+    t.index ["reg_hash"], name: "index_organizations_on_reg_hash", unique: true, using: :btree
+    t.index ["url"], name: "index_organizations_on_url", unique: true, using: :btree
+  end
+
+  create_table "project_confirms", force: :cascade do |t|
+    t.integer  "project_executer_id"
+    t.string   "comment"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "confirmer_id"
+    t.index ["confirmer_id"], name: "index_project_confirms_on_confirmer_id", using: :btree
+    t.index ["project_executer_id"], name: "index_project_confirms_on_project_executer_id", using: :btree
+  end
+
+  create_table "project_executers", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "role"
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.boolean  "executer_confirmed", default: false
+    t.boolean  "creater_confirmed",  default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "executer_id"
+    t.index ["executer_id"], name: "index_project_executers_on_executer_id", using: :btree
+    t.index ["project_id"], name: "index_project_executers_on_project_id", using: :btree
+  end
+
+  create_table "project_tags", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_tags_on_project_id", using: :btree
+    t.index ["tag_id"], name: "index_project_tags_on_tag_id", using: :btree
+  end
+
+  create_table "project_technologies", force: :cascade do |t|
+    t.integer  "technology_id"
+    t.integer  "project_id"
+    t.integer  "power",         limit: 2
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["project_id"], name: "index_project_technologies_on_project_id", using: :btree
+    t.index ["technology_id"], name: "index_project_technologies_on_technology_id", using: :btree
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "start_date"
+    t.datetime "dev_finish_date"
+    t.datetime "finish_date"
+    t.decimal  "views"
+    t.string   "version"
+    t.integer  "category_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "client_id"
+    t.integer  "creater_id"
+    t.index ["category_id"], name: "index_projects_on_category_id", using: :btree
+    t.index ["client_id"], name: "index_projects_on_client_id", using: :btree
+    t.index ["creater_id"], name: "index_projects_on_creater_id", using: :btree
+    t.index ["organization_id"], name: "index_projects_on_organization_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  end
+
+  create_table "technologies", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_technologies_on_name", unique: true, using: :btree
+  end
+
+  create_table "user_organizations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.string   "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organization_id"], name: "index_user_organizations_on_organization_id", using: :btree
+    t.index ["user_id"], name: "index_user_organizations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,5 +174,20 @@ ActiveRecord::Schema.define(version: 20160516115922) do
   end
 
   add_foreign_key "cities", "countries"
+  add_foreign_key "organizations", "users", column: "creater_id"
+  add_foreign_key "project_confirms", "project_executers"
+  add_foreign_key "project_confirms", "users", column: "confirmer_id"
+  add_foreign_key "project_executers", "projects"
+  add_foreign_key "project_executers", "users", column: "executer_id"
+  add_foreign_key "project_tags", "projects"
+  add_foreign_key "project_tags", "tags"
+  add_foreign_key "project_technologies", "projects"
+  add_foreign_key "project_technologies", "technologies"
+  add_foreign_key "projects", "categories"
+  add_foreign_key "projects", "organizations"
+  add_foreign_key "projects", "users", column: "client_id"
+  add_foreign_key "projects", "users", column: "creater_id"
+  add_foreign_key "user_organizations", "organizations"
+  add_foreign_key "user_organizations", "users"
   add_foreign_key "users", "cities"
 end
