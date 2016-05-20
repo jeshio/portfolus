@@ -109,6 +109,7 @@ GEM
       railties (>= 4.2, < 6)
       sprockets (~> 3.0)
       tilt
+    angularjs-rails-resource (2.0.0)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -335,6 +336,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-import
   angular-rails-templates
+  angularjs-rails-resource (~> 2.0.0)
   annotate
   autoprefixer-rails
   bullet

@@ -29,6 +29,7 @@ gem 'material_icons'
 gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
 gem 'ng-rails-csrf'
+gem 'angularjs-rails-resource', '~> 2.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

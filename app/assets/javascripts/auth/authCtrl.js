@@ -1,11 +1,17 @@
 angular.module('portfolus')
 .controller('AuthCtrl',
-function($scope, $state, $parse, Auth){
+function($scope, $state, $parse, Auth, City){
 
   // пошаговая регистрация
   $scope.max = 2;
   $scope.selectedIndex = 0;
   $scope.user = {}
+  $scope.cities = [];
+
+  City.query().then(function (result) {
+    $scope.cities = result;
+  });
+
   $scope.nextTab = function() {
     var index = ($scope.selectedIndex == $scope.max) ? 0 : $scope.selectedIndex + 1;
     $scope.selectedIndex = index;
