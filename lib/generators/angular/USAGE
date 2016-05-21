@@ -1,0 +1,11 @@
+Description:
+    Генератор фабрики для ангуляра
+
+Example:
+    rails generate angular Tag
+
+    This will create:
+      app/assets/javascripts/tag
+      app/assets/javascripts/tag/tagFactory.js
+      app/assets/javascripts/tag/tagCtrl.js
+      app/assets/javascripts/tag/_list.html
