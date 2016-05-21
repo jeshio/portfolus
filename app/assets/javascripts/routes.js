@@ -16,7 +16,27 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
           });
         }
       },
-      template: '<ui-view/>'
+      template: '<span ui-view flex></span>'
+    })
+    .state('onlyguest', {
+      abstract: true,
+      parent: 'getuser',
+      template: '<span ui-view flex></span>',
+      onEnter: function ($rootScope, $state) {
+        if ($rootScope.signedIn){
+          $state.go('home');
+        }
+      }
+    })
+    .state('onlyusers', {
+      abstract: true,
+      parent: 'getuser',
+      template: '<span ui-view flex></span>',
+      onEnter: function ($rootScope, $state) {
+        if (!$rootScope.signedIn){
+          $state.go('home');
+        }
+      }
     })
     .state('home', {
       title: 'электроное портфолио',
@@ -27,26 +47,40 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       parent: 'getuser'
     })
     .state('user', {
-      title: 'портфолио пользователя',
+      title: 'пользователь',
       sideNav: true,
       url: '/{id:int}',
       templateUrl: 'user/_user.html',
       controller: 'UserCtrl',
-      parent: 'getuser'
+      parent: 'onlyusers'
     })
     .state('auth', {
       title: 'авторизация',
       url: '/auth',
       templateUrl: 'auth/_auth.html',
       controller: 'AuthCtrl',
-      onlyGuest: true
+      parent: 'onlyguest'
     })
     .state('register', {
       title: 'присоединиться и создать электроное портфолио',
       url: '/register',
       templateUrl: 'auth/_register.html',
       controller: 'AuthCtrl',
-      onlyGuest: true
+      parent: 'onlyguest'
+    })
+    .state('projects', {
+      title: 'портфолио пользователя',
+      url: '/projects',
+      templateUrl: 'project/_list.html',
+      controller: 'ProjectCtrl',
+      parent: 'onlyusers'
+    })
+    .state('project_new', {
+      title: 'портфолио пользователя',
+      url: '/projects/new',
+      templateUrl: 'project/_new.html',
+      controller: 'ProjectCtrl',
+      parent: 'onlyusers'
     });
 
   $urlRouterProvider.otherwise('home');
@@ -55,12 +89,5 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
       $rootScope.sideNav = !!toState.sideNav;
       $rootScope.title = toState.title ? ' - ' + toState.title : '';
-
-      // только гости
-      if (toState.onlyGuest) {
-        Auth.currentUser().then(function (){
-          $state.go('home');
-        })
-      }
     });
 });

@@ -1,3 +1,31 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default("0"), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  created_at             :datetime
+#  updated_at             :datetime
+#  username               :string
+#  family                 :string
+#  name                   :string
+#  middlename             :string
+#  city_id                :integer
+#  views                  :integer
+#
+
 
 class User < ApplicationRecord
 
@@ -6,21 +34,19 @@ class User < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :user_organization
+  has_many :user_organization, :dependent => :destroy
   has_many :organization, through: :user_organization
-  has_many :created_organization, :foreign_key => "creater", :class_name => "Organization"
-  has_many :confirms, :foreign_key => "confirmer", :class_name => "ProjectConfirm"
-  has_many :project_executer, :foreign_key => "executer", :class_name => "ProjectExecuter"
-  has_many :created_projects, :foreign_key => "creater", :class_name => "Project"
-  has_many :ordered_projects, :foreign_key => "client", :class_name => "Project"
+  has_many :created_organization, :foreign_key => "creater", :class_name => "Organization", :dependent => :nullify
+  has_many :confirms, :foreign_key => "confirmer", :class_name => "ProjectConfirm", :dependent => :destroy
+  has_many :project_executer, :foreign_key => "executer", :class_name => "ProjectExecuter", :dependent => :destroy
+  has_many :created_projects, :foreign_key => "creater", :class_name => "Project", :dependent => :nullify
+  has_many :ordered_projects, :foreign_key => "client", :class_name => "Project", :dependent => :nullify
 
   belongs_to :city, optional: true
 
   # followed by association macros
 
   # and validation macros
-
-  # next we have callbacks
 
   # other macros (like devise's) should be placed after the callbacks
   protected

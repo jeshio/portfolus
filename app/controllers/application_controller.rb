@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # Проверка что текущий пользователь тот же, что в params[:id]
+  def current_user?
+    raise ActionController::RoutingError.new("Not found") if !authenticate_user! || current_user.id != params[:id].to_i
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :city_id, :name, :family, :middlename, :remember_me) }
     devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:email, :password) }

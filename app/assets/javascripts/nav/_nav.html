@@ -2,5 +2,6 @@
 
 <a ng-hide="signedIn" href="/auth" ng-class="getClass('/auth')">Войти</a></li>
 <a ng-hide="signedIn" href="/register" ng-class="getClass('/register')">Присоединиться</a>
+<a ng-show="signedIn" href="/projects" ng-class="getClass('/projects')">Проекты</a>
 <a ng-show="signedIn" href="/{{authUser.id}}" ng-class="getClass('/' + authUser.id)">{{authUser.email }}</a>
 <a ng-show="signedIn" href="#" ng-click="logout()">Выйти</a>

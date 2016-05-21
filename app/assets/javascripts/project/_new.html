@@ -1,0 +1,63 @@
+<!-- Форма регистрации -->
+<div flex-offset-md="20" flex-md="60" flex-offset-gt-md="30" flex-gt-md="40" flex="100">
+
+  <h1 class="md-headline">Добавить проект</h1>
+
+  <form ng-submit="create()" name="Project" novalidate="">
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Название</label>
+      <input ng-model="project.name" name="name" required type="text">
+
+      <div ng-messages="project.name.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{project.name.$error.serverMessage}}</div>
+        <span ng-show="!project.$submitted && project.name.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Текущая версия</label>
+      <input ng-model="project.version" name="version" required type="text">
+
+      <div ng-messages="project.version.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{project.version.$error.serverMessage}}</div>
+        <span ng-show="!project.$submitted && project.version.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Описание</label>
+      <textarea ng-model="project.description" name="description" rows="5" required></textarea>
+
+      <div ng-messages="project.description.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{project.description.$error.serverMessage}}</div>
+        <span ng-show="!project.$submitted && project.description.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </md-input-container>
+
+    <div layout-gt-sm="row">
+      <md-datepicker ng-model="project.start_date" md-placeholder="Введите дату начала разработки проекта" flex="50">
+      </md-datepicker>
+
+      <md-datepicker ng-model="project.dev_finish_date" md-placeholder="Введите дату окончания разработки проекта" flex="50">
+      </md-datepicker>
+    </div>
+
+    <md-datepicker ng-model="project.finish_date" md-placeholder="Введите дату завершения проекта">
+    </md-datepicker>
+
+    <div class="text-center">
+      <md-button class="btn" ng-click="nextTab()" ng-disabled="!User.$submitted && (User.email.$invalid || User.password.$invalid)">Далее</md-button>
+    </div>
+  </md-content>
+
+  </form>
+
+</div>
+
+<span flex></span>

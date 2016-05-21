@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: technologies
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 
 class Technology < ApplicationRecord
   # keep the default scope first (if any)
@@ -5,7 +15,7 @@ class Technology < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :project_technology
+  has_many :project_technology, :dependent => :destroy
 
   has_many :project, through: :project_technology
 

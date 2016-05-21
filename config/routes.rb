@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   scope '/api' do
     resources :cities
     resources :countries
@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     resources :user_organizations
     resources :organizations
     resources :tags
+
+    resources :users
+    get 'users/:id/all_projects', to: 'users#all_projects'
+
+
     resources :technologies
     resources :categories
   end
