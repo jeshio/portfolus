@@ -11,6 +11,6 @@
 # This will guess the User class
 FactoryGirl.define do
   factory :category do
-    name { Faker::Lorem.words(rand(1..2)) }
+    name { Faker::Lorem.words(rand(1..2)).join(' ').capitalize }
   end
 end

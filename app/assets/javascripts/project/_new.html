@@ -4,55 +4,160 @@
   <h1 class="md-headline">Добавить проект</h1>
 
   <form ng-submit="create()" name="Project" novalidate="">
+    <h2 class="md-title">Основная информация</h2>
     <md-input-container class="md-block" flex-gt-sm>
       <label>Название</label>
       <input ng-model="project.name" name="name" required type="text">
 
-      <div ng-messages="project.name.$error" role="alert" md-auto-hide="false">
-        <div ng-message="serverMessage">{{project.name.$error.serverMessage}}</div>
-        <span ng-show="!project.$submitted && project.name.$touched">
-          <div ng-messages-include="errorMessages.html" ></div>
-        </span>
-      </div>
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Текущая версия</label>
-      <input ng-model="project.version" name="version" required type="text">
-
-      <div ng-messages="project.version.$error" role="alert" md-auto-hide="false">
-        <div ng-message="serverMessage">{{project.version.$error.serverMessage}}</div>
-        <span ng-show="!project.$submitted && project.version.$touched">
-          <div ng-messages-include="errorMessages.html" ></div>
-        </span>
-      </div>
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Описание</label>
-      <textarea ng-model="project.description" name="description" rows="5" required></textarea>
-
-      <div ng-messages="project.description.$error" role="alert" md-auto-hide="false">
-        <div ng-message="serverMessage">{{project.description.$error.serverMessage}}</div>
-        <span ng-show="!project.$submitted && project.description.$touched">
+      <div ng-messages="Project.name.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{Project.name.$error.serverMessage}}</div>
+        <span ng-show="!Project.$submitted && Project.name.$touched">
           <div ng-messages-include="errorMessages.html" ></div>
         </span>
       </div>
     </md-input-container>
 
     <div layout-gt-sm="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Текущая версия</label>
+        <input ng-model="project.version" name="version" required type="text">
+
+        <div ng-messages="Project.version.$error" role="alert" md-auto-hide="false">
+          <div ng-message="serverMessage">{{Project.version.$error.serverMessage}}</div>
+          <span ng-show="!Project.$submitted && Project.version.$touched">
+            <div ng-messages-include="errorMessages.html" ></div>
+          </span>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Категория</label>
+        <md-select name="category_id" ng-model="project.category_id">
+          <md-option ng-repeat="category in categories" ng-value="{{category.id}}">
+            {{category.name}}
+          </md-option>
+        </md-select>
+
+        <div ng-messages="Project.category_id.$error" role="alert" md-auto-hide="false">
+          <div ng-message="serverMessage">{{Project.category_id.$error.serverMessage}}</div>
+          <span ng-show="!Project.$submitted && Project.category_id.$touched">
+            <div ng-messages-include="errorMessages.html" ></div>
+          </span>
+        </div>
+      </md-input-container>
+    </div>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Описание</label>
+      <textarea ng-model="project.description" name="description" rows="5" required></textarea>
+
+      <div ng-messages="Project.description.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{Project.description.$error.serverMessage}}</div>
+        <span ng-show="!Project.$submitted && Project.description.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </md-input-container>
+
+    <h2 class="md-title">Даты проекта</h2>
+
+    <div layout-gt-sm="row">
       <md-datepicker ng-model="project.start_date" md-placeholder="Введите дату начала разработки проекта" flex="50">
       </md-datepicker>
+
+      <br />
 
       <md-datepicker ng-model="project.dev_finish_date" md-placeholder="Введите дату окончания разработки проекта" flex="50">
       </md-datepicker>
     </div>
 
-    <md-datepicker ng-model="project.finish_date" md-placeholder="Введите дату завершения проекта">
-    </md-datepicker>
+    <div layout-gt-sm="row">
+      <md-datepicker ng-model="project.finish_date" md-placeholder="Введите дату завершения проекта">
+      </md-datepicker>
+    </div>
+
+    <h2 class="md-title">Краткая информация</h2>
+
+    <h4 class="md-subhead">Технологии</h4>
+    <div layout-gt-sm="row" layout-fill>
+      <div flex>
+        <div ng-form="Technology" isolate-form>
+          <md-input-container class="md-block reset-margin" flex-gt-sm>
+            <label>Название</label>
+            <input ng-model="technology.name" name="technology" required type="text">
+
+            <div ng-messages="Technology.technology.$error" role="alert" md-auto-hide="false">
+              <span ng-show="!Technology.$submitted && Technology.technology.$touched">
+                <div ng-messages-include="errorMessages.html" ></div>
+              </span>
+            </div>
+          </md-input-container>
+
+          <div layout>
+            <div flex="40" layout layout-align="center center">
+              <span class="md-body-1">Степень использования</span>
+            </div>
+            <md-slider flex md-discrete ng-model="technology.power" name="power" required step="1" min="1" max="10" aria-label="Степень использования">
+            </md-slider>
+          </div>
+
+          <div class="text-center">
+            <md-button class="md-raised" ng-disabled="Technology.technology.$invalid || Technology.power.$invalid" ng-click="addTehnology()">Добавить технологию</md-button>
+          </div>
+        </div>
+      </div>
+
+      <div flex>
+        <md-list>
+          <md-list-item class="md-2-line veggie-option" layout="row" ng-hide="project.technologies.length"
+              layout-wrap>
+              <div class="md-item-text md-whiteframe-z1" flex>
+                <p>Технологий не добавлено</p>
+              </div>
+          </md-list-item>
+          <md-list-item class="md-2-line veggie-option" ng-repeat="technology in project.technologies" layout="row"
+              layout-wrap>
+            <div class="md-item-text md-whiteframe-z1" flex>
+              <div layout="row">
+                <div flex>
+                  <h3>
+                    {{technology.name}}
+                  </h3>
+                  <p>Степень использования {{technology.power}}/10</p>
+                </div>
+
+                <md-button class="md-icon-button vegetablechip" ng-click="deleteTech(technology)">
+                  <md-icon>delete</md-icon>
+                </md-button>
+              </div>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+
+    <h4 class="md-subhead">Теги</h4>
+    <div flex>
+      <md-chips ng-model="project.tags" name="tags" md-max-chips="10" placeholder="Добавить тег (Enter)">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+        </md-chip-template>
+        <button md-chip-remove class="md-primary vegetablechip">
+          <md-icon>delete</md-icon>
+        </button>
+      </md-chips>
+      <div ng-messages="Project.tags.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{Project.tags.$error.serverMessage}}</div>
+        <span ng-show="!Project.$submitted && Project.tags.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </div>
+
+    <br />
 
     <div class="text-center">
-      <md-button class="btn" ng-click="nextTab()" ng-disabled="!User.$submitted && (User.email.$invalid || User.password.$invalid)">Далее</md-button>
+      <md-button type="submit" ng-disabled="Project.$invalid" class="btn">Создать</md-button>
     </div>
   </md-content>
 

@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   end
 
   def all_projects
-    render json: @user.created_projects + @user.project_executer
+    @data = @user.all_projects
+    render json: @data.to_json(:include => { :technologies => { :only => [:technology_id, :name] }, :tags => { :only => :name } })
   end
 
   private

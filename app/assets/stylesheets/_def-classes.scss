@@ -29,14 +29,116 @@
   font-size: 12px;
 }
 
+.reset-margin {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  padding: 0 !important;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak,.ng-hide {
   display: none !important;
 }
 
-.md-datepicker-input-container{
-  display:block;
+.veggie-option {
+  box-sizing: border-box;
+  padding: 0 8px; }
+.veggie-option .md-item-text {
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 3px; }
+.veggie-option .md-item-text h3,
+.veggie-option .md-item-text p {
+  padding: 0;
+  margin: 0; }
 
-  .md-datepicker-input {
-    width: 100%;
+md-datepicker {
+  padding-right: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .md-button.md-icon-button {
+    float: left;
+  }
+
+  .md-datepicker-input-container {
+    display:block;
+    margin-left: 50px;
+    margin-top: 10px;
+
+    .md-datepicker-input {
+      width: 100%;
+    }
+  }
+
+  .md-datepicker-open .md-datepicker-input-container {
+    margin-left: 0;
+    border: medium none;
+
+    .md-datepicker-input {
+      height: auto;
+      margin-left: 0;
+    }
+  }
+}
+
+.md-datepicker-input-mask {
+  height: auto;
+}
+
+.md-chips {
+  .md-chip {
+    position: relative;
+   .md-chip-remove-container {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      margin-right: 0;
+      height: 24px;
+      button {
+        &.vegetablechip {
+          position: relative;
+          height: 24px;
+          width: 24px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 50%;
+          border: none;
+          box-shadow: none;
+          padding: 0;
+          margin: 0;
+          transition: background 0.15s linear;
+          display: block;
+
+          &.vegetablechip md-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0) scale(0.7);
+          }
+        }
+      }
+    }
+
+    &:not(.md-readonly) md-chip-template {
+      padding-right: 5px;
+    }
+  }
+}
+
+button {
+  &.vegetablechip {
+    background: rgba(0, 0, 0, 0.3);
+
+    md-icon {
+      color: white;
+      fill: white;
+      border-radius: 0;
+    }
+    &:hover, &:focus {
+      background: rgba(255, 0, 0, 0.8) !important;
+    }
   }
 }

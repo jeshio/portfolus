@@ -9,5 +9,6 @@
 = require angular-material
 = require angular-rails-templates
 = require angularjs/rails/resource
+= require angular-isolate-form
 = require_tree .
 */

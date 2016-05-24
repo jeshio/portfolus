@@ -15,12 +15,12 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.new(project_params)
+    @project = Project.save_project_and_dependences(project_params, project_tags, project_technologies)
 
-    if @project.save
+    if defined? @project.errors
       render json: @project, status: :created, location: @project
     else
-      render json: @project.errors, status: :unprocessable_entity
+      render json: { errors: @project[:errors] }.to_json#, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +46,17 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name, :description, :start_date, :dev_finish_date, :finish_date, :views, :version, :category_id, :clieint_id, :creater_id, :organization_id)
+      params.require(:project).permit(:name, :description, :start_date, :dev_finish_date,
+        :finish_date, :views, :version, :category_id, :clieint_id, :organization_id).merge(creater_id: current_user.id)
+    end
+
+    def project_technologies
+      params[:project][:technologies] ||= []
+      params.require(:project).permit(technologies: [:name, :power]).to_h[:technologies]#.to_a.map { |e| e.to_a }
+    end
+
+    def project_tags
+      params[:project][:tags] ||= []
+      params.require(:project).permit(:tags =>[])[:tags]
     end
 end

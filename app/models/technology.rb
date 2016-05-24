@@ -15,9 +15,9 @@ class Technology < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :project_technology, :dependent => :destroy
+  has_many :project_technologies, :dependent => :destroy, foreign_key: "technology_id"
 
-  has_many :project, through: :project_technology
+  has_many :projects, through: :project_technology
 
   # followed by association macros
 

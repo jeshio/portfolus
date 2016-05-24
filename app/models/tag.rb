@@ -14,13 +14,15 @@ class Tag < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :project_tag, :dependent => :destroy
+  has_many :project_tags, :dependent => :destroy
 
-  has_many :project, through: :project_tag
+  has_many :projects, through: :project_tag
+
 
   # followed by association macros
 
   # and validation macros
+  validates :name, uniqueness: true
 
   # next we have callbacks
 

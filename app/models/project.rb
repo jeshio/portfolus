@@ -25,21 +25,88 @@ class Project < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  belongs_to :category
+  belongs_to :category, optional: true
 
-  belongs_to :client, class_name: "User"
+  belongs_to :client, class_name: "User", optional: true
 
-  belongs_to :creater, class_name: "User"
+  belongs_to :creater, class_name: "User", optional: true
 
-  belongs_to :organization
+  belongs_to :organization, optional: true
 
-  has_many :project_tag, dependent: :destroy
+  has_many :project_tags, dependent: :destroy
 
-  has_many :project_technology, dependent: :destroy
+  has_many :project_technologies, dependent: :destroy
 
-  has_many :tag, through: :project_tag
+  has_many :tags, through: :project_tags
 
-  has_many :project, through: :project_technology
+  has_many :technologies, through: :project_technologies
+
+  def self.save_project_and_dependences(project, tags, technologies)
+    @errors = {}
+    @project = Project.new(project)
+
+    if @project.errors.messages.size > 0
+      @errors[:project] = @project.errors.messages
+    end
+
+    if technologies.size > 0
+      technology_names = technologies.map { |e| e[:name] }.uniq
+      exist_techs = Technology.where({name: technology_names}).pluck(:name)
+      tech_list = (technology_names - exist_techs).map { |e| Technology.new ({ name: e }) }
+    end
+
+    if tags.size > 0
+      exist_tag = Tag.where({name: tags})
+      tag_list = (tags - exist_tag.pluck(:name)).map { |e| Tag.new ({ name: e }) }.uniq
+    end
+
+    # создаём проект и все зависимости в одной транзакции
+    ActiveRecord::Base.transaction do
+      # TODO Multilevel с помощью гема Bulk imports
+      # проект
+      @project.save
+
+      # технологии и теги
+      if technologies.size > 0
+        created_tech = Technology.import(tech_list, validate: true)
+        if created_tech.failed_instances.size > 0
+          @errors[:tech_names] = created_tech.failed_instances.first.errors.messages
+        end
+      end
+
+      if tags.size > 0
+        created_tag = Tag.import(tag_list, validate: true)
+        if created_tag.failed_instances.size > 0
+          @errors[:tag] = created_tag.failed_instances.first.errors.messages
+        end
+      end
+
+
+      # посредники
+      # теги
+      if tags.size > 0
+        project_tags = (created_tag.ids + exist_tag.pluck(:id)).map { |e| @project.project_tags.new ({tag_id: e})  }
+        ProjectTag.import(project_tags, validate: false)
+      end
+
+      # технологии
+      if technologies.size > 0
+        project_techs = Technology.where({id: (created_tech.ids + exist_techs)}).
+          map { |e| ProjectTechnology.new ({project_id: @project.id, technology_id: e.id,
+            power: (technologies.detect {|t| t[:name] == e.name })[:power] }) }
+        tech_imported = ProjectTechnology.import(project_techs, validate: true)
+        if tech_imported.failed_instances.size > 0
+          @errors[:technologies] = tech_imported.failed_instances.first.errors.messages
+        end
+      end
+
+      if @errors.size > 0
+        return { project: @project, errors: @errors}
+      end
+    end
+
+    return @project
+  end
 
   # followed by association macros
 

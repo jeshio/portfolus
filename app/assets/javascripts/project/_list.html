@@ -1,2 +1,117 @@
-<md-button href="/projects/new" class="md-raised md-primary">Добавить</md-button>
-{{projects}}
+<!-- {{projects}} -->
+
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+  <md-button href="/projects/new" class="md-raised md-primary">Добавить</md-button>
+</section>
+
+<div layout-sm="column" layout="row">
+
+  <div flex-xs flex-gt-sm="50" layout="column">
+    <md-card ng-repeat="project in projects" ng-if="$even">
+
+      <md-card-header>
+        <md-card-header-text>
+          <span class="md-title">{{project.name}}</span>
+          <span class="md-subhead" ng-hide="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - настоящее время</span>
+          <span class="md-subhead" ng-show="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - {{project.finish_date * 1000 | date:'dd/MM/yy'}}</span>
+        </md-card-header-text>
+      </md-card-header>
+
+      <!-- <img ng-src="{{project.imagePath}}" class="md-card-image" alt="Project Image"> -->
+
+      <md-card-content layout-padding>
+        {{project.description | limitTo:300}}{{project.description.length > 300 ? '...' : ''}}
+      </md-card-content>
+
+      <md-card-footer ng-show="project.tags || project.technologies">
+        <div ng-show="project.tags">
+          <b>Теги:</b>
+          <span ng-repeat="tag in project.tags">
+            <span class="tag">{{tag.name}}</span>
+          </span>
+        </div>
+
+        <div ng-show="project.technologies">
+          <b>Технологии:</b>
+          <span ng-repeat="tech in project.technologies">
+            <span class="tag">{{tech.name}}</span>
+          </span>
+        </div>
+
+        <div layout="row">
+          <span flex></span>
+          <md-button layout-align="start end" class="md-primary md-raised right" ng-click="showDetail($event, project)"   >
+            Подробнее
+          </md-button>
+        </div>
+      </md-card-footer>
+
+      <!-- <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon>thumb_up</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon>settings</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Share">
+          <md-icon>message</md-icon>
+        </md-button>
+      </md-card-actions> -->
+    </md-card>
+  </div>
+
+  <div flex-xs flex-gt-sm="50" layout="column">
+    <md-card ng-repeat="project in projects" ng-if="$odd">
+
+      <md-card-header>
+        <md-card-header-text>
+          <span class="md-title">{{project.name}}</span>
+          <span class="md-subhead" ng-hide="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - настоящее время</span>
+          <span class="md-subhead" ng-show="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - {{project.finish_date | date:'dd/MM/yy'}}</span>
+        </md-card-header-text>
+      </md-card-header>
+
+      <!-- <img ng-src="{{project.imagePath}}" class="md-card-image" alt="Project Image"> -->
+
+      <md-card-content layout-padding>
+        {{project.description | limitTo:300}}{{project.description.length > 300 ? '...' : ''}}
+      </md-card-content>
+
+      <md-card-footer ng-show="project.tags || project.technologies">
+        <div ng-show="project.tags">
+          <b>Теги:</b>
+          <span ng-repeat="tag in project.tags">
+            <span class="tag">{{tag.name}}</span>
+          </span>
+        </div>
+
+        <div ng-show="project.technologies">
+          <b>Технологии:</b>
+          <span ng-repeat="tech in project.technologies">
+            <span class="tag">{{tech.name}}</span>
+          </span>
+        </div>
+
+        <div layout="row">
+          <span flex></span>
+          <md-button layout-align="start end" class="md-primary md-raised right" ng-click="showDetail($event, project)"   >
+            Подробнее
+          </md-button>
+        </div>
+      </md-card-footer>
+
+      <!-- <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon>thumb_up</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon>settings</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Share">
+          <md-icon>message</md-icon>
+        </md-button>
+      </md-card-actions> -->
+    </md-card>
+  </div>
+
+</div>

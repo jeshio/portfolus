@@ -1,0 +1,15 @@
+{
+  "name": "angular-isolate-form",
+  "homepage": "https://github.com/nmutalik/isolate-form",
+  "version": "1.0.6",
+  "_release": "1.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.6",
+    "commit": "cfdda745583dff32b891b253123c930dcc04072a"
+  },
+  "_source": "https://github.com/nmutalik/isolate-form.git",
+  "_target": "^1.0.6",
+  "_originalSource": "angular-isolate-form",
+  "_direct": true
+}

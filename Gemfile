@@ -31,6 +31,8 @@ gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
 gem 'ng-rails-csrf'
 gem 'angularjs-rails-resource', '~> 2.0.0'
 
+gem 'activerecord-import'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -16,7 +16,7 @@ class City < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  belongs_to :country
+  belongs_to :country, optional: true
   has_many :user, :dependent => :nullify
 
   # followed by association macros

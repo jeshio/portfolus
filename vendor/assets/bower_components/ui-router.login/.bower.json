@@ -1,0 +1,38 @@
+{
+  "name": "ui-router.login",
+  "version": "0.3.3",
+  "homepage": "https://github.com/riggerthegeek/ui-router.login",
+  "authors": [
+    "Simon Emms <simon@simonemms.com>"
+  ],
+  "description": "A module which simplifies the login process to an Angular project that uses ui-router",
+  "main": "./dist/ui-router.login.min.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "page",
+    "title"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-cookie": "~4.0.9"
+  },
+  "_release": "0.3.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.3",
+    "commit": "e8866aeddd7183c0bb7b780ae1e27a6ee0812329"
+  },
+  "_source": "https://github.com/riggerthegeek/ui-router.login.git",
+  "_target": "^0.3.3",
+  "_originalSource": "ui-router.login"
+}
