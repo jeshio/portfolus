@@ -1,5 +1,5 @@
 angular.module('portfolus')
-.config(
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
   $locationProvider.html5Mode(true);
   $stateProvider
@@ -84,10 +84,10 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     });
 
   $urlRouterProvider.otherwise('home');
-})
-.run(function($rootScope, $state, Auth) {
+}])
+.run(['$rootScope', '$state', 'Auth', function($rootScope, $state, Auth) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
       $rootScope.sideNav = !!toState.sideNav;
       $rootScope.title = toState.title ? ' - ' + toState.title : '';
     });
-});
+}]);

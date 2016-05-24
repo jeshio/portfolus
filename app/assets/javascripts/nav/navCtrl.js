@@ -1,4 +1,4 @@
 angular.module('portfolus')
-.controller('NavCtrl',
+.controller('NavCtrl',['$scope', '$state',
 function($scope, $state){
-});
+}]);

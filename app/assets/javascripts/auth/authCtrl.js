@@ -1,5 +1,5 @@
 angular.module('portfolus')
-.controller('AuthCtrl',
+.controller('AuthCtrl', ['$scope', '$state', '$parse', 'Auth', 'City',
 function($scope, $state, $parse, Auth, City){
 
   // пошаговая регистрация
@@ -49,4 +49,4 @@ function($scope, $state, $parse, Auth, City){
     });
 
   };
-});
+}]);

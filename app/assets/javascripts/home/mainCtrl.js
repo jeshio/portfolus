@@ -1,5 +1,5 @@
 angular.module('portfolus')
-.controller('MainCtrl',
+.controller('MainCtrl',['$scope', '$mdSidenav', '$mdUtil', '$location', 'Auth', '$state', '$rootScope',
 function($scope, $mdSidenav, $mdUtil, $location, Auth, $state, $rootScope) {
   $scope.test = 'Hello world!';
   $scope.openLeftMenu = buildToggler('left');
@@ -31,4 +31,4 @@ function($scope, $mdSidenav, $mdUtil, $location, Auth, $state, $rootScope) {
     $rootScope.signedIn = false;
     $state.go('home');
   });
-});
+}]);

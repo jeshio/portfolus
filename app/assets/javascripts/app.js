@@ -1,5 +1,5 @@
 angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate', 'ngMessages', 'Devise', 'ng-rails-csrf', 'rails', 'isolateForm' ])
-.config(function($mdThemingProvider) {
+.config(['$mdThemingProvider', function($mdThemingProvider) {
   // расширение стандартной палитры
   var colorMap = $mdThemingProvider.extendPalette('blue', {
     '500': '01579b'
@@ -9,18 +9,18 @@ angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate'
 
   $mdThemingProvider.theme('default')
     .primaryPalette('myColors');
-})
-.config(function($mdIconProvider) {
+}])
+.config(['$mdIconProvider', function($mdIconProvider) {
   $mdIconProvider.fontSet('md', 'material-icons');
-})
-.run(function ($templateCache, $http) {
+}])
+.run(['$templateCache', '$http', function ($templateCache, $http) {
   $http.get('helpers/_errorMessages.html')
   .then(function(response) {
     $templateCache.put('error-messages', response.data);
   })
-})
-.run(function ($rootScope, Auth, $state) {
+}])
+.run(['$rootScope', 'Auth', '$state', function ($rootScope, Auth, $state) {
   $rootScope.$on('$stateChangeStart', function(event, toState) {
 
   })
-});
+}]);

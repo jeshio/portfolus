@@ -1,5 +1,5 @@
 angular.module('portfolus')
-.controller('UserCtrl',
+.controller('UserCtrl',['$scope',
 function($scope){
 
-});
+}]);

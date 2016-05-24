@@ -1,5 +1,5 @@
 angular.module('portfolus')
-.controller('ProjectCtrl',
+.controller('ProjectCtrl',['$scope', 'Project', 'User', 'Category', '$mdConstant', '$mdMedia', '$mdDialog', '$state',
 function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $state){
   $scope.project = {};
   $scope.technology = {};
@@ -56,4 +56,4 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
       $scope.customFullscreen = (wantsFullScreen === true);
     });
   };
-});
+}]);
