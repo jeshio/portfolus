@@ -12,10 +12,6 @@ function($scope, $mdSidenav, $mdUtil, $location, Auth, $state, $rootScope) {
     return debounceFn;
   }
 
-  $scope.getClass = function (path) {
-    return ($location.path().substr(0, path.length) === path) ? 'active' : '';
-  }
-
   $scope.$on('devise:new-registration', function (e, user){
     $rootScope.authUser = user;
     $rootScope.signedIn = true;

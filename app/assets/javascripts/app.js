@@ -19,8 +19,21 @@ angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate'
     $templateCache.put('error-messages', response.data);
   })
 }])
-.run(['$rootScope', 'Auth', '$state', function ($rootScope, Auth, $state) {
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
-
-  })
+.directive('activeLink', ['$location', function (location) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs, controller) {
+      var clazz = attrs.activeLink;
+      var path = attrs.href||attrs.ngHref;
+      scope.location = location;
+      scope.$watch('location.path()', function () {
+        console.log(location.path() + " " + path);
+        if (path === location.url()) {
+          element.addClass(clazz);
+        } else {
+          element.removeClass(clazz);
+        }
+      });
+    }
+  };
 }]);

@@ -6,10 +6,8 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     .state('getuser', {
       abstract: true,
       resolve: {
-        authUser: function (Auth, $rootScope) {
+        authUser: function (Auth) {
           return Auth.currentUser().then(function (user) {
-            $rootScope.signedIn = Auth.isAuthenticated();
-            $rootScope.logout = Auth.logout;
             return user;
           }, function () {
             return;
@@ -89,5 +87,9 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
       $rootScope.sideNav = !!toState.sideNav;
       $rootScope.title = toState.title ? ' - ' + toState.title : '';
+    });
+    $rootScope.$on('devise:login', function(event, currentUser) {
+      $rootScope.signedIn = Auth.isAuthenticated();
+      $rootScope.logout = Auth.logout;
     });
 }]);
