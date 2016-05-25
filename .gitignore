@@ -52,3 +52,17 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+# Deploy
+/shared/
+/config/deploy/
+/config/deploy.rb
+/releases/
+/current/
+/config/database.yml
+/config/puma.yml
+Capfile
+Procfile
+
+# Ignore logs
+*.log
