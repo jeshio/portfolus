@@ -31,8 +31,6 @@ gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
 gem 'ng-rails-csrf'
 gem 'angularjs-rails-resource', '~> 2.0.0'
 
-gem 'activerecord-import'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -58,6 +56,11 @@ group :development do
   gem 'guard-rspec'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :test do
