@@ -27,7 +27,6 @@ angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate'
       var path = attrs.href||attrs.ngHref;
       scope.location = location;
       scope.$watch('location.path()', function () {
-        console.log(location.path() + " " + path);
         if (path === location.url()) {
           element.addClass(clazz);
         } else {

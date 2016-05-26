@@ -78,16 +78,35 @@
 
     <h2 class="md-title">Краткая информация</h2>
 
+    <h4 class="md-subhead">Теги</h4>
+    <div flex>
+      <md-chips ng-model="project.tags" name="tags" md-max-chips="10" placeholder="Добавить тег (Enter)">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+        </md-chip-template>
+        <button md-chip-remove class="md-primary vegetablechip">
+          <md-icon>delete</md-icon>
+        </button>
+      </md-chips>
+      <div ng-messages="Project.tags.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{Project.tags.$error.serverMessage}}</div>
+        <span ng-show="!Project.$submitted && Project.tags.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </div>
+
     <h4 class="md-subhead">Технологии</h4>
     <div layout-gt-sm="row" layout-fill>
       <div flex>
         <div ng-form="Technology" isolate-form>
           <md-input-container class="md-block reset-margin" flex-gt-sm>
             <label>Название</label>
-            <input ng-model="technology.name" name="technology" required type="text">
+            <input ng-model="technology.name" name="name" required type="text">
 
-            <div ng-messages="Technology.technology.$error" role="alert" md-auto-hide="false">
-              <span ng-show="!Technology.$submitted && Technology.technology.$touched">
+            <div ng-messages="Technology.name.$error" role="alert" md-auto-hide="false">
+              <div ng-message="serverMessage">{{Technology.name.$error.serverMessage}}</div>
+              <span ng-show="!Project.$submitted && Technology.name.$touched">
                 <div ng-messages-include="errorMessages.html" ></div>
               </span>
             </div>
@@ -136,28 +155,10 @@
       </div>
     </div>
 
-    <h4 class="md-subhead">Теги</h4>
-    <div flex>
-      <md-chips ng-model="project.tags" name="tags" md-max-chips="10" placeholder="Добавить тег (Enter)">
-        <md-chip-template>
-          <strong>{{$chip}}</strong>
-        </md-chip-template>
-        <button md-chip-remove class="md-primary vegetablechip">
-          <md-icon>delete</md-icon>
-        </button>
-      </md-chips>
-      <div ng-messages="Project.tags.$error" role="alert" md-auto-hide="false">
-        <div ng-message="serverMessage">{{Project.tags.$error.serverMessage}}</div>
-        <span ng-show="!Project.$submitted && Project.tags.$touched">
-          <div ng-messages-include="errorMessages.html" ></div>
-        </span>
-      </div>
-    </div>
-
     <br />
 
     <div class="text-center">
-      <md-button type="submit" ng-disabled="Project.$invalid" class="btn">Создать</md-button>
+      <md-button type="submit" ng-click="create()" ng-disabled="Project.$invalid && !Project.$submitted" class="btn">Создать</md-button>
     </div>
   </md-content>
 

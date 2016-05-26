@@ -17,10 +17,10 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.save_project_and_dependences(project_params, project_tags, project_technologies)
 
-    if defined? @project.errors
+    if !@project[:errors]
       render json: @project, status: :created, location: @project
     else
-      render json: { errors: @project[:errors] }.to_json#, status: :unprocessable_entity
+      render json: { errors: @project[:errors] }.to_json, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       render json: @project
     else
-      render json: @project.errors, status: :unprocessable_entity
+      render json: @project, status: :unprocessable_entity
     end
   end
 

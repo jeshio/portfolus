@@ -47,7 +47,7 @@ class User < ApplicationRecord
   # followed by association macros
 
   def all_projects
-    self.created_projects.includes(project_technologies: :technology).order('created_at desc') + self.executed_projects
+    self.created_projects.includes(project_technologies: :technology).includes(:tags).order('created_at desc') + self.executed_projects
     #@result.all.each { |e|  e.project_technologies.map { |t| e.technologies.map { |tt| e.project_technologies.  } }  }
   end
 

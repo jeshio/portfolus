@@ -1,6 +1,6 @@
 angular.module('portfolus')
-.controller('ProjectCtrl',['$scope', 'Project', 'User', 'Category', '$mdConstant', '$mdMedia', '$mdDialog', '$state',
-function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $state){
+.controller('ProjectCtrl',['$scope', 'Project', 'User', 'Category', '$mdConstant', '$mdMedia', '$mdDialog', '$state', '$parse',
+function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $state, $parse){
   $scope.project = {};
   $scope.technology = {};
   $scope.project.tags = [];
@@ -17,13 +17,20 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
   $scope.create = function () {
     new Project($scope.project).create().then(function (data) {
       $state.go('projects');
-    }, function (error) {
-      // TODO errors
-      console.log(error);
+    }, function (errors) {
+      angular.forEach(errors.data.errors, function (model, modelName) {
+        angular.forEach(model, function (error, field) {
+          modelNameUp = modelName.charAt(0).toUpperCase() + modelName.substr(1).toLowerCase();
+          $scope[modelNameUp].$setValidity(field, false, $scope.project);
+          var serverMessage = $parse(modelNameUp+'.'+field+'.$error.serverMessage');
+          serverMessage.assign($scope, error.join(', '));
+        });
+      });
     });
-  }
+  };
 
   $scope.addTehnology = function () {
+    resetValidation('Technology');
     $scope.project.technologies.push(angular.copy($scope.technology));
     $scope.technology = {};
   }
@@ -56,4 +63,11 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
       $scope.customFullscreen = (wantsFullScreen === true);
     });
   };
+
+  function resetValidation(form) {
+    $scope[form].$setPristine();
+    $scope[form].$setValidity();
+    $scope[form].$setUntouched();
+    $scope[form].$error = {};
+  }
 }]);

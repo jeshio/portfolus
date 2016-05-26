@@ -41,9 +41,12 @@ class Project < ApplicationRecord
 
   has_many :technologies, through: :project_technologies
 
+  validates :name, length: { minimum: 2 }
+
   def self.save_project_and_dependences(project, tags, technologies)
     @errors = {}
     @project = Project.new(project)
+    @project.valid?
 
     if @project.errors.messages.size > 0
       @errors[:project] = @project.errors.messages
@@ -57,7 +60,8 @@ class Project < ApplicationRecord
 
     if tags.size > 0
       exist_tag = Tag.where({name: tags})
-      tag_list = (tags - exist_tag.pluck(:name)).map { |e| Tag.new ({ name: e }) }.uniq
+      tag_list = (tags.uniq - exist_tag.pluck(:name)).map { |e| Tag.new ({ name: e }) }
+      exist_tag_ids = exist_tag.pluck(:id)
     end
 
     # создаём проект и все зависимости в одной транзакции
@@ -70,7 +74,7 @@ class Project < ApplicationRecord
       if technologies.size > 0
         created_tech = Technology.import(tech_list, validate: true)
         if created_tech.failed_instances.size > 0
-          @errors[:tech_names] = created_tech.failed_instances.first.errors.messages
+          @errors[:technology] = created_tech.failed_instances.first.errors.messages
         end
       end
 
@@ -85,7 +89,7 @@ class Project < ApplicationRecord
       # посредники
       # теги
       if tags.size > 0
-        project_tags = (created_tag.ids + exist_tag.pluck(:id)).map { |e| @project.project_tags.new ({tag_id: e})  }
+        project_tags = (created_tag.ids + exist_tag_ids).map { |e| @project.project_tags.new ({tag_id: e})  }
         ProjectTag.import(project_tags, validate: false)
       end
 
@@ -96,12 +100,14 @@ class Project < ApplicationRecord
             power: (technologies.detect {|t| t[:name] == e.name })[:power] }) }
         tech_imported = ProjectTechnology.import(project_techs, validate: true)
         if tech_imported.failed_instances.size > 0
-          @errors[:technologies] = tech_imported.failed_instances.first.errors.messages
+          msg = tech_imported.failed_instances.first.errors.messages
+          @errors[:technology] = @errors[:technology] ?
+            @errors[:technology] + msg : msg
         end
       end
 
       if @errors.size > 0
-        return { project: @project, errors: @errors}
+        return { errors: @errors }
       end
     end
 

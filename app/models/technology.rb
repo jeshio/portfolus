@@ -19,6 +19,8 @@ class Technology < ApplicationRecord
 
   has_many :projects, through: :project_technology
 
+  validates :name, length: { minimum: 2 }
+
   # followed by association macros
 
   # and validation macros
