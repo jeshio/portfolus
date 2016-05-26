@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     render 'layouts/application'
   end
 
+  def get_commits
+    require 'open-uri'
+    render json: JSON.load(open("https://api.github.com/repos/jeshio/portfolus/commits")).
+      map { |e| { message: e["commit"]["message"], date: e["commit"]["committer"]["date"], link: e["html_url"] }  }
+  end
+
   protected
 
   # Проверка что текущий пользователь тот же, что в params[:id]

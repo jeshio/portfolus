@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
     resources :technologies
     resources :categories
+
+    get 'get_commits', to: 'application#get_commits'
   end
 
   match "api", to: proc { [404, {}, ['Invalid API endpoint']] }, via: :all
