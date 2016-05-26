@@ -1,7 +1,6 @@
-# This will guess the User class
 FactoryGirl.define do
   factory :country do
-    sequence(:name) { |n| "Страна №#{n}" }
+    sequence(:name) { |n| Faker::Address.country + " #{n}" }
 
     factory :country_with_cities do
 

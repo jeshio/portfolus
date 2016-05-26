@@ -9,4 +9,12 @@ require 'factory_girl_rails'
 require 'faker'
 
 FactoryGirl.create_list(:country_with_cities, 5)
+FactoryGirl.create_list(:user, 65, max_city_id: 25)
 FactoryGirl.create_list(:category, 7)
+
+FactoryGirl.create_list(:tag, 30)
+FactoryGirl.create_list(:technology, 30)
+
+FactoryGirl.create_list(:project_with_additions, 90, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
+FactoryGirl.create_list(:project_with_additions, 90, :dev_finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
+FactoryGirl.create_list(:project_with_additions, 90, :finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)

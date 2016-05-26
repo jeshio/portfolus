@@ -8,9 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-# This will guess the User class
 FactoryGirl.define do
   factory :category do
-    name { Faker::Lorem.words(rand(1..2)).join(' ').capitalize }
+    name { Faker::Lorem.words(rand(1..3)).join(' ').capitalize }
   end
 end
