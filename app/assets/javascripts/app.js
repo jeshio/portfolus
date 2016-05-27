@@ -13,12 +13,6 @@ angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate'
 .config(['$mdIconProvider', function($mdIconProvider) {
   $mdIconProvider.fontSet('md', 'material-icons');
 }])
-.run(['$templateCache', '$http', function ($templateCache, $http) {
-  $http.get('helpers/_errorMessages.html')
-  .then(function(response) {
-    $templateCache.put('error-messages', response.data);
-  })
-}])
 .directive('activeLink', ['$location', function (location) {
   return {
     restrict: 'A',

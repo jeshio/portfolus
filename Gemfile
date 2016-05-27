@@ -31,8 +31,7 @@ gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
 gem 'ng-rails-csrf'
 gem 'angularjs-rails-resource', '~> 2.0.0'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'has_scope'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', :require => 'rack/cors'

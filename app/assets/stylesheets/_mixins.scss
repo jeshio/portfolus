@@ -12,7 +12,7 @@
 }
 
 @mixin animate-hover($duration) {
-  transition-property: box-shadow, background-color;
+  transition-property: box-shadow, background-color, color, fill;
   transition-duration: $duration, $duration;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1), cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-delay: 0s, 0s;

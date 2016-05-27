@@ -25,6 +25,10 @@
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .font-12 {
   font-size: 12px;
 }
@@ -128,17 +132,15 @@ md-datepicker {
   }
 }
 
-button {
-  &.vegetablechip {
-    background: rgba(0, 0, 0, 0.3);
+button.vegetablechip {
+  background: rgba(0, 0, 0, 0.3);
 
-    md-icon {
-      color: white;
-      fill: white;
-      border-radius: 0;
-    }
-    &:hover, &:focus {
-      background: rgba(255, 0, 0, 0.8) !important;
-    }
+  md-icon {
+    color: white;
+    fill: white;
+    border-radius: 0;
+  }
+  &:hover, &:focus {
+    background: rgba(255, 0, 0, 0.8) !important;
   }
 }

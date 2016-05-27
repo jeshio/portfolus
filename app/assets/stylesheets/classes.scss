@@ -2,6 +2,10 @@
 @import 'mixins';
 @import 'def-classes';
 
+table {
+  width: 100%;
+}
+
 a {
   color: #0074c4;
   &:not(:hover) {
@@ -20,6 +24,34 @@ a {
     }
 
     @include animate-hover(0.6s)
+  }
+}
+
+.search-board {
+
+  button {
+    md-icon {
+      @include animate-hover(0.3s);
+    }
+
+    &:not(.active) {
+
+      &:hover {
+        md-icon {
+          color: $primary-color;
+          fill: $primary-color;
+        }
+      }
+    }
+    &.active {
+      background: white;
+      box-shadow: none;
+
+      md-icon {
+        color: $primary-color;
+        fill: $primary-color;
+      }
+    }
   }
 }
 

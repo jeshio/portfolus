@@ -1,0 +1,108 @@
+<h2 class="md-headline">Исполнители</h2>
+
+<div layout-sm="column" layout="row">
+  <div flex-xs flex-gt-sm="30" layout="column">
+    <md-card ng-repeat="user in searches" ng-if="$index % 3 == 0">
+
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-title">{{user.name}} {{user.family}} {{user.middlename}}</span>
+            <span class="md-subhead" ng-bind="user.email"></span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <table>
+            <tr>
+              <td>Город</td>
+              <td ng-bind="cities[user.cityId].name" class="text-right"></td>
+            </tr>
+            <tr>
+              <td>Созданных проектов</td>
+              <td ng-bind="user.createdProjectsCount" class="text-right"></td>
+            </tr>
+            <tr>
+              <td>Участник проектов</td>
+              <td ng-bind="user.executedProjectsCount" class="text-right"></td>
+            </tr>
+          </table>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center" layout-padding>
+          <a ng-href="/{{user.id}}">Посмотреть</a>
+        </md-card-actions>
+
+    </md-card>
+  </div>
+
+  <div flex-xs flex-gt-sm="30" layout="column">
+    <md-card ng-repeat="user in searches" ng-if="$index % 3 == 1">
+
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-title">{{user.name}} {{user.family}} {{user.middlename}}</span>
+            <span class="md-subhead" ng-bind="user.email"></span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <table>
+            <tr>
+              <td>Город</td>
+              <td ng-bind="cities[user.cityId].name" class="text-right"></td>
+            </tr>
+            <tr>
+              <td>Созданных проектов</td>
+              <td ng-bind="user.createdProjectsCount" class="text-right"></td>
+            </tr>
+            <tr>
+              <td>Участник проектов</td>
+              <td ng-bind="user.executedProjectsCount" class="text-right"></td>
+            </tr>
+          </table>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center" layout-padding>
+          <a ng-href="/{{user.id}}">Посмотреть</a>
+        </md-card-actions>
+
+    </md-card>
+  </div>
+
+  <div flex-xs flex-gt-sm="30" layout="column">
+    <md-card ng-repeat="user in searches" ng-if="$index % 3 == 2">
+
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-title">{{user.name}} {{user.family}} {{user.middlename}}</span>
+            <span class="md-subhead" ng-bind="user.email"></span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <table>
+            <tr>
+              <td>Город</td>
+              <td ng-bind="cities[user.cityId].name" class="text-right"></td>
+            </tr>
+            <tr>
+              <td>Созданных проектов</td>
+              <td ng-bind="user.createdProjectsCount" class="text-right"></td>
+            </tr>
+            <tr>
+              <td>Участник проектов</td>
+              <td ng-bind="user.executedProjectsCount" class="text-right"></td>
+            </tr>
+          </table>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center" layout-padding>
+          <a ng-href="/{{user.id}}">Посмотреть</a>
+        </md-card-actions>
+
+    </md-card>
+  </div>
+</div>

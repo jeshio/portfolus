@@ -38,7 +38,6 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     })
     .state('home', {
       title: 'электроное портфолио',
-      sideNav: true,
       url: '/home',
       templateUrl: 'home/_home.html',
       controller: 'HomeCtrl',
@@ -46,7 +45,6 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     })
     .state('user', {
       title: 'пользователь',
-      sideNav: true,
       url: '/{id:int}',
       templateUrl: 'user/_user.html',
       controller: 'UserCtrl',
@@ -79,6 +77,24 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       templateUrl: 'project/_new.html',
       controller: 'ProjectCtrl',
       parent: 'onlyusers'
+    })
+    .state('search', {
+      parent: 'getuser',
+      title: 'поиск портфолио',
+      sideNav: true,
+      url: '/search',
+      reloadOnSearch : false,
+      resolve: {
+        cities: function (City) {
+          return City.query().then(function (result) {
+            return result;
+          });
+        }
+      },
+      views: {
+        '@': { templateUrl: 'search/_list.html', controller: 'SearchCtrl' },
+        'sideNav@': { templateUrl: 'search/_filters.html', controller: 'SearchFilterCtrl' },
+      }
     });
 
   $urlRouterProvider.otherwise('home');
@@ -87,6 +103,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
       $rootScope.sideNav = !!toState.sideNav;
       $rootScope.title = toState.title ? ' - ' + toState.title : '';
+      $rootScope.leftColumnTemplate = toState.leftColumnTemplate;
     });
     $rootScope.$on('devise:login', function(event, currentUser) {
       $rootScope.signedIn = Auth.isAuthenticated();

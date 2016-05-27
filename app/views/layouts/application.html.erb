@@ -30,15 +30,8 @@
     <!-- Боковое меню -->
     <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="$mdMedia('gt-md')" ng-show="sideNav">
       <md-content layout="column" flex>
-        <md-list>
-            <md-list-item>
-
-                <md-item-content md-ink-ripple>
-                    <div class="inset">Item 1</div>
-                </md-item-content>
-
-            </md-list-item>
-        </md-list>
+        <div ui-view="sideNav">
+        </div>
       </md-content>
     </md-sidenav>
 
