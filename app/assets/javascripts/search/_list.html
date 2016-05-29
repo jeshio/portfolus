@@ -1,1 +1,4 @@
-<ng-include src="listSrc" flex></ng-include>
+<p ng-hide="listSrc" class="text gray" layout-padding>
+  Настройки фильтров не применены.
+</p>
+<ng-include src="listSrc" flex ng-if="listSrc"></ng-include>

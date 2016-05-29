@@ -84,6 +84,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       sideNav: true,
       url: '/search',
       reloadOnSearch : false,
+      disablePadding: true,
       resolve: {
         cities: function (City) {
           return City.query().then(function (result) {
@@ -101,9 +102,9 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 }])
 .run(['$rootScope', '$state', 'Auth', function($rootScope, $state, Auth) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-      $rootScope.sideNav = !!toState.sideNav;
-      $rootScope.title = toState.title ? ' - ' + toState.title : '';
-      $rootScope.leftColumnTemplate = toState.leftColumnTemplate;
+      $rootScope.sideNav = !!toState.sideNav; // показать сайд бар справа
+      $rootScope.title = toState.title ? ' - ' + toState.title : ''; // title страницы
+      $rootScope.disablePadding = !!toState.disablePadding; // отключить паддинг в мейне
     });
     $rootScope.$on('devise:login', function(event, currentUser) {
       $rootScope.signedIn = Auth.isAuthenticated();

@@ -1,4 +1,4 @@
-angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate', 'ngMessages', 'Devise', 'ng-rails-csrf', 'rails', 'isolateForm' ])
+angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate', 'ngMessages', 'Devise', 'ng-rails-csrf', 'rails', 'isolateForm', 'angular-loading-bar'])
 .config(['$mdThemingProvider', function($mdThemingProvider) {
   // расширение стандартной палитры
   var colorMap = $mdThemingProvider.extendPalette('blue', {
@@ -21,7 +21,7 @@ angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate'
       var path = attrs.href||attrs.ngHref;
       scope.location = location;
       scope.$watch('location.path()', function () {
-        if (path === location.url()) {
+        if (path === location.path()) {
           element.addClass(clazz);
         } else {
           element.removeClass(clazz);

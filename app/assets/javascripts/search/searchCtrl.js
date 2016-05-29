@@ -1,15 +1,14 @@
 angular.module('portfolus')
-.controller('SearchCtrl',['$scope', 'Search', '$location', 'cities',
-function($scope, Search, $location, cities){
+.controller('SearchCtrl',['$scope', 'Search', '$location', 'cities', '$rootScope', '$window',
+function($scope, Search, $location, cities, $rootScope, $window){
   $scope.searches = [];
   $scope.cities = [];
   cities.forEach(function (element, index) {
-    $scope.cities[index] = element;
+    $scope.cities[element.id] = element;
   });
 
-  update();
-
-  $scope.$watch(function(){ return $location.search() }, function(params){
+  // получение события обновления фильтров
+  $rootScope.$on('appleFilters', function(event, args){
     update();
   });
 
@@ -18,7 +17,12 @@ function($scope, Search, $location, cities){
 
     // запрашивает данные с применением фильтров
     Search.query(search).then(function (data) {
-      $scope.searches = data;
+      // разделение данных на партии по 3 штуки для колонок
+      var parts = [], chunk = 3;
+      for (var i = 0, j = data.length; i < j; i += chunk) {
+          parts.push(data.slice(i, i + chunk));
+      }
+      $scope.searches = parts;
     }, function () {
       $scope.searches = [];
     });

@@ -10,5 +10,6 @@
 = require angular-rails-templates
 = require angularjs/rails/resource
 = require angular-isolate-form
+= require angular-loading-bar
 = require_tree .
 */

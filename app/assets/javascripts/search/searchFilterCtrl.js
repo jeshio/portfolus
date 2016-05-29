@@ -1,6 +1,6 @@
 angular.module('portfolus')
-.controller('SearchFilterCtrl',['$scope', 'Search', '$location', 'City', 'cities',
-function($scope, Search, $location, City, cities){
+.controller('SearchFilterCtrl',['$scope', 'Search', '$location', 'City', 'cities', '$rootScope',
+function($scope, Search, $location, City, cities, $rootScope){
   $scope.filterBlock = "";
   getSearch();
 
@@ -19,6 +19,7 @@ function($scope, Search, $location, City, cities){
 
   $scope.update = function () {
     updateSearch();
+    $rootScope.$broadcast('appleFilters', []);
   }
 
   // применить изменения запроса для типа поиска

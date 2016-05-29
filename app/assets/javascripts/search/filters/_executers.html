@@ -4,7 +4,7 @@
 
 <md-input-container class="md-block" flex-gt-sm>
   <label>Город</label>
-  <md-select ng-model="filters.city_id" ng-change="update()">
+  <md-select ng-model="filters.city_id">
     <md-option ng-value="">Любой</md-option>
     <md-option ng-repeat="city in cities" ng-value="{{city.id}}">
       {{city.name}}
@@ -14,7 +14,7 @@
 
 <md-input-container class="md-block" flex-gt-sm>
   <label>Минимальное количество проектов</label>
-  <input type="number" ng-model="filters.min_projects" ng-change="update()">
+  <input type="number" ng-model="filters.min_projects">
 </md-input-container>
 
 <!-- <div layout>

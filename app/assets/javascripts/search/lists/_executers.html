@@ -1,108 +1,113 @@
-<h2 class="md-headline">Исполнители</h2>
 
-<div layout-sm="column" layout="row">
-  <div flex-xs flex-gt-sm="30" layout="column">
-    <md-card ng-repeat="user in searches" ng-if="$index % 3 == 0">
+<p ng-hide="searches.length" class="text gray" layout-padding>
+  Список исполнителей по заданным фильтрам пуст.
+</p>
 
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-title">{{user.name}} {{user.family}} {{user.middlename}}</span>
-            <span class="md-subhead" ng-bind="user.email"></span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-content>
-          <table>
-            <tr>
-              <td>Город</td>
-              <td ng-bind="cities[user.cityId].name" class="text-right"></td>
-            </tr>
-            <tr>
-              <td>Созданных проектов</td>
-              <td ng-bind="user.createdProjectsCount" class="text-right"></td>
-            </tr>
-            <tr>
-              <td>Участник проектов</td>
-              <td ng-bind="user.executedProjectsCount" class="text-right"></td>
-            </tr>
-          </table>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center" layout-padding>
-          <a ng-href="/{{user.id}}">Посмотреть</a>
-        </md-card-actions>
+<md-virtual-repeat-container id="vertical-container" ng-style="listStyle" layout-fill>
+  <div layout-sm="column" layout="row" md-virtual-repeat="user in searches" md-item-size="300">
+    <div flex-xs flex-gt-sm="33" layout="column">
+        <md-card>
 
-    </md-card>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-title">{{user[0].name}} {{user[0].family}} {{user[0].middlename}}</span>
+                <span class="md-subhead" ng-bind="user[0].email"></span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <div class="md-media-sm card-media"></div>
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-content>
+              <table>
+                <tr>
+                  <td>Город</td>
+                  <td ng-bind="cities[user[0].cityId].name" class="text-right"></td>
+                </tr>
+                <tr>
+                  <td>Созданных проектов</td>
+                  <td ng-bind="user[0].createdProjectsCount" class="text-right"></td>
+                </tr>
+                <tr>
+                  <td>Участник проектов</td>
+                  <td ng-bind="user[0].executedProjectsCount" class="text-right"></td>
+                </tr>
+              </table>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center" layout-padding>
+              <a ng-href="/{{user[0].id}}">Посмотреть</a>
+            </md-card-actions>
+
+        </md-card>
+    </div>
+
+    <div flex-xs flex-gt-sm="33" layout="column">
+      <md-card>
+
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">{{user[1].name}} {{user[1].family}} {{user[1].middlename}}</span>
+              <span class="md-subhead" ng-bind="user[1].email"></span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-sm card-media"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-content>
+            <table>
+              <tr>
+                <td>Город</td>
+                <td ng-bind="cities[user[1].cityId].name" class="text-right"></td>
+              </tr>
+              <tr>
+                <td>Созданных проектов</td>
+                <td ng-bind="user[1].createdProjectsCount" class="text-right"></td>
+              </tr>
+              <tr>
+                <td>Участник проектов</td>
+                <td ng-bind="user[1].executedProjectsCount" class="text-right"></td>
+              </tr>
+            </table>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center" layout-padding>
+            <a ng-href="/{{user[1].id}}">Посмотреть</a>
+          </md-card-actions>
+
+      </md-card>
+    </div>
+
+    <div flex-xs flex-gt-sm="33" layout="column">
+      <md-card>
+
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">{{user[2].name}} {{user[2].family}} {{user[2].middlename}}</span>
+              <span class="md-subhead" ng-bind="user[2].email"></span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-sm card-media"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-content>
+            <table>
+              <tr>
+                <td>Город</td>
+                <td ng-bind="cities[user[2].cityId].name" class="text-right"></td>
+              </tr>
+              <tr>
+                <td>Созданных проектов</td>
+                <td ng-bind="user[2].createdProjectsCount" class="text-right"></td>
+              </tr>
+              <tr>
+                <td>Участник проектов</td>
+                <td ng-bind="user[2].executedProjectsCount" class="text-right"></td>
+              </tr>
+            </table>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center" layout-padding>
+            <a ng-href="/{{user[2].id}}">Посмотреть</a>
+          </md-card-actions>
+
+      </md-card>
+    </div>
   </div>
-
-  <div flex-xs flex-gt-sm="30" layout="column">
-    <md-card ng-repeat="user in searches" ng-if="$index % 3 == 1">
-
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-title">{{user.name}} {{user.family}} {{user.middlename}}</span>
-            <span class="md-subhead" ng-bind="user.email"></span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-content>
-          <table>
-            <tr>
-              <td>Город</td>
-              <td ng-bind="cities[user.cityId].name" class="text-right"></td>
-            </tr>
-            <tr>
-              <td>Созданных проектов</td>
-              <td ng-bind="user.createdProjectsCount" class="text-right"></td>
-            </tr>
-            <tr>
-              <td>Участник проектов</td>
-              <td ng-bind="user.executedProjectsCount" class="text-right"></td>
-            </tr>
-          </table>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center" layout-padding>
-          <a ng-href="/{{user.id}}">Посмотреть</a>
-        </md-card-actions>
-
-    </md-card>
-  </div>
-
-  <div flex-xs flex-gt-sm="30" layout="column">
-    <md-card ng-repeat="user in searches" ng-if="$index % 3 == 2">
-
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-title">{{user.name}} {{user.family}} {{user.middlename}}</span>
-            <span class="md-subhead" ng-bind="user.email"></span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-content>
-          <table>
-            <tr>
-              <td>Город</td>
-              <td ng-bind="cities[user.cityId].name" class="text-right"></td>
-            </tr>
-            <tr>
-              <td>Созданных проектов</td>
-              <td ng-bind="user.createdProjectsCount" class="text-right"></td>
-            </tr>
-            <tr>
-              <td>Участник проектов</td>
-              <td ng-bind="user.executedProjectsCount" class="text-right"></td>
-            </tr>
-          </table>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center" layout-padding>
-          <a ng-href="/{{user.id}}">Посмотреть</a>
-        </md-card-actions>
-
-    </md-card>
-  </div>
-</div>
+</md-virtual-repeat-container>
