@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <title ng-bind="'Portfolus' + title">Portfolus</title>
+  <title ng-bind="'Portfolus' + (title.length > 0 ? ' - ' + title : '')">Portfolus</title>
 
   <base href="/" target="_blank" />
   <meta name="viewport" content="initial-scale=1" />
@@ -20,6 +20,10 @@
       <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()" hide-gt-md ng-show="sideNav">
         <md-icon>menu</md-icon>
       </md-button>
+
+      <h2 hide-gt-md>
+        <span>{{title}}</span>
+      </h2>
 
       <!-- Список меню -->
       <div layout="row" class="md-toolbar-tools no-paddings" layout-align-gt-md="center center" layout-align="end center" flex id="top-menu-list" layout-fill ng-controller="NavCtrl" ng-include="'nav/_nav.html'"></div>

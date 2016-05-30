@@ -37,42 +37,42 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       }
     })
     .state('home', {
-      title: 'электроное портфолио',
+      title: 'Электроное портфолио',
       url: '/home',
       templateUrl: 'home/_home.html',
       controller: 'HomeCtrl',
       parent: 'getuser'
     })
     .state('user', {
-      title: 'пользователь',
+      title: 'Пользователь',
       url: '/{id:int}',
       templateUrl: 'user/_user.html',
       controller: 'UserCtrl',
       parent: 'onlyusers'
     })
     .state('auth', {
-      title: 'авторизация',
+      title: 'Авторизация',
       url: '/auth',
       templateUrl: 'auth/_auth.html',
       controller: 'AuthCtrl',
       parent: 'onlyguest'
     })
     .state('register', {
-      title: 'присоединиться и создать электроное портфолио',
+      title: 'Создать электроное портфолио',
       url: '/register',
       templateUrl: 'auth/_register.html',
       controller: 'AuthCtrl',
       parent: 'onlyguest'
     })
     .state('projects', {
-      title: 'портфолио пользователя',
+      title: 'Портфолио пользователя',
       url: '/projects',
       templateUrl: 'project/_list.html',
       controller: 'ProjectCtrl',
       parent: 'onlyusers'
     })
     .state('project_new', {
-      title: 'портфолио пользователя',
+      title: 'Добавить проект',
       url: '/projects/new',
       templateUrl: 'project/_new.html',
       controller: 'ProjectCtrl',
@@ -80,7 +80,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     })
     .state('search', {
       parent: 'getuser',
-      title: 'поиск портфолио',
+      title: 'Поиск портфолио',
       sideNav: true,
       url: '/search',
       reloadOnSearch : false,
@@ -103,7 +103,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 .run(['$rootScope', '$state', 'Auth', function($rootScope, $state, Auth) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
       $rootScope.sideNav = !!toState.sideNav; // показать сайд бар справа
-      $rootScope.title = toState.title ? ' - ' + toState.title : ''; // title страницы
+      $rootScope.title = toState.title ? toState.title : ''; // title страницы
       $rootScope.disablePadding = !!toState.disablePadding; // отключить паддинг в мейне
     });
     $rootScope.$on('devise:login', function(event, currentUser) {

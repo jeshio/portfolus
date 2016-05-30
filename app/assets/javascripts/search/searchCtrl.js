@@ -12,6 +12,18 @@ function($scope, Search, $location, cities, $rootScope, $window){
     update();
   });
 
+  $scope.listStyle = {
+      height: (self.parent.innerHeight - 66) + 'px'
+    };
+  $window.addEventListener('resize', function () {
+    $scope.listStyle = {
+      height: (self.parent.innerHeight - 66) + 'px'
+    };
+    $scope.$digest();
+  });
+
+  console.log(document.querySelectorAll('#top-menu-list')[0].parentNode.offsetHeight);
+
   function update() {
     var search = $location.search();
 
