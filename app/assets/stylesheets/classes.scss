@@ -27,6 +27,21 @@ a {
   }
 }
 
+md-menu-content {
+  display: inline;
+
+  md-menu-item {
+    background-color: $primary-color;
+    text-align: center;
+
+    a {
+      color: white;
+      margin: 0;
+      padding: 5px 35px;
+    }
+  }
+}
+
 .search-board {
 
   button {

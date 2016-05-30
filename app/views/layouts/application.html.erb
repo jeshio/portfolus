@@ -6,6 +6,7 @@
   <title ng-bind="'Portfolus' + title">Portfolus</title>
 
   <base href="/" target="_blank" />
+  <meta name="viewport" content="initial-scale=1" />
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -13,15 +14,15 @@
 </head>
 <body ng-cloak layout-fill layout="column">
   <!-- Меню вверху  -->
-  <md-toolbar>
-    <div class="md-toolbar-tools">
+  <md-toolbar class="md-whiteframe-2dp">
+    <div class="md-toolbar-tools" layout="row">
       <!-- Иконка бокового меню -->
       <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()" hide-gt-md ng-show="sideNav">
         <md-icon>menu</md-icon>
       </md-button>
 
       <!-- Список меню -->
-      <div layout="row" layout-align="center center" id="top-menu-list" layout-fill ng-controller="NavCtrl" ng-include="'nav/_nav.html'"></div>
+      <div layout="row" class="md-toolbar-tools no-paddings" layout-align-gt-md="center center" layout-align="end center" flex id="top-menu-list" layout-fill ng-controller="NavCtrl" ng-include="'nav/_nav.html'"></div>
 
     </div>
   </md-toolbar>
@@ -39,7 +40,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <md-content ui-view flex ng-class="disablePadding ? '' : 'layout-padding'" layout="row"></md-content>
+    <md-content ui-view flex ng-class="disablePadding ? '' : 'layout-padding'" layout="column"></md-content>
   </section>
 </body>
 </html>

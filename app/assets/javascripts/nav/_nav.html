@@ -1,8 +1,41 @@
-<a href="/home" active-link="active">Главная</a>
+<div layout="row" show-gt-md="" hide-gt-xs hide-xs>
+  <a href="/home" active-link="active">Главная</a>
 
-<a href="/search" active-link="active">Поиск</a>
-<a ng-hide="signedIn" href="/auth" active-link="active">Войти</a></li>
-<a ng-hide="signedIn" href="/register" active-link="active">Присоединиться</a>
-<a ng-show="signedIn" href="/projects" active-link="active">Проекты</a>
-<a ng-show="signedIn" ng-href="/{{authUser.id}}" active-link="active">{{authUser.email }}</a>
-<a ng-show="signedIn" href="#" ng-click="logout()">Выйти</a>
+  <a href="/search" active-link="active">Поиск</a>
+  <a ng-hide="signedIn" href="/auth" active-link="active">Войти</a>
+  <a ng-hide="signedIn" href="/register" active-link="active">Присоединиться</a>
+  <a ng-show="signedIn" href="/projects" active-link="active">Проекты</a>
+  <a ng-show="signedIn" ng-href="/{{authUser.id}}" active-link="active">{{authUser.email }}</a>
+  <a ng-show="signedIn" href="#" ng-click="logout()">Выйти</a>
+</div>
+
+<md-menu-bar hide-gt-md class="no-paddings">
+  <md-menu>
+    <button class="md-icon-button md-button md-ink-ripple" aria-label="Список меню" ng-click="$mdOpenMenu()">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu-content>
+      <md-menu-item>
+        <a href="/home" active-link="active">Главная</a>
+      </md-menu-item>
+      <md-menu-item>
+        <a href="/search" active-link="active">Поиск</a>
+      </md-menu-item>
+      <md-menu-item ng-hide="signedIn">
+        <a ng-hide="signedIn" href="/auth" active-link="active">Войти</a>
+      </md-menu-item>
+      <md-menu-item ng-hide="signedIn">
+        <a href="/register" active-link="active">Присоединиться</a>
+      </md-menu-item>
+      <md-menu-item ng-show="signedIn">
+        <a href="/projects" active-link="active">Проекты</a>
+      </md-menu-item>
+      <md-menu-item ng-show="signedIn">
+        <a ng-href="/{{authUser.id}}" active-link="active">{{authUser.email }}</a>
+      </md-menu-item>
+      <md-menu-item ng-show="signedIn">
+        <a href="#" active-link="active" ng-click="logout()">Выйти</a>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</md-menu-bar>

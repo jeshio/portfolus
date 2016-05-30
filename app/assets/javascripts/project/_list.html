@@ -4,9 +4,9 @@
   <md-button href="/projects/new" class="md-raised md-primary">Добавить</md-button>
 </section>
 
-<div layout-sm="column" layout="row">
+<div layout-md="column" layout="row">
 
-  <div flex-xs flex-gt-sm="50" layout="column">
+  <div flex flex-gt-md="50" layout="column">
     <md-card ng-repeat="project in projects" ng-if="$even">
 
       <md-card-header>
@@ -60,7 +60,7 @@
     </md-card>
   </div>
 
-  <div flex-xs flex-gt-sm="50" layout="column">
+  <div flex flex-gt-md="50" layout="column">
     <md-card ng-repeat="project in projects" ng-if="$odd">
 
       <md-card-header>
