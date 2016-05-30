@@ -49,6 +49,31 @@ md-menu-content {
   }
 }
 
+// для страницы портфолио пользователей
+#portfolio {
+
+  .activity {
+
+    md-list-item {
+      color: gray;
+      font-size: 12px;
+      min-height: 25px;
+    }
+  }
+
+  .projects {
+    height: 270px;
+
+    .project {
+      display: inline-block;
+      width: 400px;
+      height: 240px;
+      overflow: hidden;
+      white-space: normal;
+    }
+  }
+}
+
 .search-board {
 
   button {

@@ -43,12 +43,21 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'HomeCtrl',
       parent: 'getuser'
     })
+    // настройки
+    .state('settings', {
+      title: 'Настройки',
+      url: '/settings',
+      templateUrl: 'user/_settings.html',
+      controller: 'PortfolioCtrl',
+      parent: 'onlyusers'
+    })
+    // просмотр порфтолио
     .state('user', {
       title: 'Пользователь',
       url: '/{id:int}',
-      templateUrl: 'user/_user.html',
-      controller: 'UserCtrl',
-      parent: 'onlyusers'
+      templateUrl: 'user/_portfolio.html',
+      controller: 'PortfolioCtrl',
+      parent: 'getuser'
     })
     .state('auth', {
       title: 'Авторизация',

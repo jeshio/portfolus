@@ -1,0 +1,72 @@
+<div layout="column" id="portfolio" flex>
+  <h2>Активность</h2>
+  <div layout="column" class="activity" layout-gt-md="row" flex>
+    <md-list flex>
+      <md-list-item>
+       <div class="md-list-item-text" layout="row">
+         2016, 19 мая в 07:15 | Добавлен проект в портфолио. <a href="#">Ссылка на проект</a>
+       </div>
+      </md-list-item>
+      <md-divider ></md-divider>
+      <md-list-item>
+       <div class="md-list-item-text" layout="row">
+         2016, 19 мая в 09:42 | Написан отзыв заказчику. <a href="#">Прочитать отзыв</a>
+       </div>
+      </md-list-item>
+      <md-divider ></md-divider>
+      <md-list-item>
+       <div class="md-list-item-text" layout="row">
+         2016, 20 мая в 15:39 | Приоединён к организации
+       </div>
+      </md-list-item>
+      <md-divider ></md-divider>
+    </md-list>
+  </div>
+
+
+  <h2>Проекты</h2>
+  <md-virtual-repeat-container class="projects" md-orient-horizontal>
+    <md-card md-virtual-repeat="project in projects" class="project">
+      <md-card-header>
+        <md-card-header-text>
+          <span class="md-title">{{project.name}}</span>
+          <span class="md-subhead" ng-hide="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - настоящее время</span>
+          <span class="md-subhead" ng-show="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - {{project.finish_date * 1000 | date:'dd/MM/yy'}}</span>
+        </md-card-header-text>
+      </md-card-header>
+
+      <!-- <img ng-src="{{project.imagePath}}" class="md-card-image" alt="Project Image"> -->
+
+      <md-card-content layout-padding>
+        {{project.description | limitTo:150}}{{project.description.length > 150 ? '...' : ''}}
+      </md-card-content>
+
+      <md-card-footer ng-show="project.tags || project.technologies">
+        <div ng-show="project.tags">
+          <b>Теги:</b>
+          <span ng-repeat="tag in project.tags">
+            <span class="tag">{{tag.name}}</span>
+          </span>
+        </div>
+
+        <div ng-show="project.technologies">
+          <b>Технологии:</b>
+          <span ng-repeat="tech in project.technologies">
+            <span class="tag">{{tech.name}}</span>
+          </span>
+        </div>
+      </md-card-footer>
+  </md-virtual-repeat-container>
+
+  <div layout="column" layout-gt-md="row" flex>
+    <div flex flex-gt-md="50">
+      <h2>Статистика</h2>
+    </div>
+
+    <div flex flex-gt-md="50">
+      <h2>Отзывы</h2>
+    </div>
+
+  </div>
+
+</div>

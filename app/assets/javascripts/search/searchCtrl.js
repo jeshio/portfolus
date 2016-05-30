@@ -22,8 +22,6 @@ function($scope, Search, $location, cities, $rootScope, $window){
     $scope.$digest();
   });
 
-  console.log(document.querySelectorAll('#top-menu-list')[0].parentNode.offsetHeight);
-
   function update() {
     var search = $location.search();
 

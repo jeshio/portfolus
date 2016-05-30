@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :current_user?, only: [:show, :update, :all_projects]
+  before_action :current_user?, only: [:show, :update]
   before_action :set_user
 
   # GET /users/1

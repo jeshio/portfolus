@@ -5,7 +5,7 @@
   <a ng-hide="signedIn" href="/auth" active-link="active">Войти</a>
   <a ng-hide="signedIn" href="/register" active-link="active">Присоединиться</a>
   <a ng-show="signedIn" href="/projects" active-link="active">Проекты</a>
-  <a ng-show="signedIn" ng-href="/{{authUser.id}}" active-link="active">{{authUser.email }}</a>
+  <a ng-show="signedIn" href="/settings" active-link="active">{{authUser.email }}</a>
   <a ng-show="signedIn" href="#" ng-click="logout()">Выйти</a>
 </div>
 
@@ -31,7 +31,7 @@
         <a href="/projects" active-link="active">Проекты</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a ng-href="/{{authUser.id}}" active-link="active">{{authUser.email }}</a>
+        <a href="/settings" active-link="active">{{authUser.email }}</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
         <a href="#" active-link="active" ng-click="logout()">Выйти</a>
