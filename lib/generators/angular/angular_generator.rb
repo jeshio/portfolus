@@ -13,6 +13,10 @@ class AngularGenerator < Rails::Generators::Base
 
   private
   def file_name
+    class_name.camelize(:lower)
+  end
+
+  def file_name_u
     class_name.underscore
   end
 end

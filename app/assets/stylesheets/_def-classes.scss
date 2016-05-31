@@ -28,6 +28,17 @@
   }
 }
 
+.md-button {
+  &.success {
+    background-color: #4CAF50;
+    color: white;
+
+    &:hover {
+      background-color: #388E3C !important;
+    }
+  }
+}
+
 .text-center {
   text-align: center;
 }

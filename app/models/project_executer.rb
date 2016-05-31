@@ -25,7 +25,7 @@ class ProjectExecuter < ApplicationRecord
 
   belongs_to :executer, class_name: "User"
 
-  has_many :project_confirm, :dependent => :destroy
+  has_many :project_confirms, :dependent => :destroy
 
   # followed by association macros
 

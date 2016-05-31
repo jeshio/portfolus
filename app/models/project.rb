@@ -33,6 +33,8 @@ class Project < ApplicationRecord
 
   belongs_to :organization, optional: true
 
+  has_many :project_executers, dependent: :destroy
+
   has_many :project_tags, dependent: :destroy
 
   has_many :project_technologies, dependent: :destroy
@@ -69,6 +71,9 @@ class Project < ApplicationRecord
       # TODO Multilevel с помощью гема Bulk imports
       # проект
       @project.save
+
+      # исполнитель проекта
+      @project.project_executers.create ({ executer_confirmed: true, creater_confirmed: true, executer_id: @project.creater_id })
 
       # технологии и теги
       if technologies.size > 0
