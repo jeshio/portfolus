@@ -53,7 +53,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     })
     // просмотр порфтолио
     .state('user', {
-      title: 'Пользователь',
+      title: 'Портфолио пользователя',
       url: '/{id:int}',
       templateUrl: 'user/_portfolio.html',
       controller: 'PortfolioCtrl',
@@ -74,7 +74,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       parent: 'onlyguest'
     })
     .state('projects', {
-      title: 'Портфолио пользователя',
+      title: 'Ваши проекты',
       url: '/projects',
       templateUrl: 'project/_list.html',
       controller: 'ProjectCtrl',
@@ -87,9 +87,16 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'ProjectCtrl',
       parent: 'onlyusers'
     })
+    .state('project_detail', {
+      title: 'Информация о проекте',
+      url: '/projects/{id:int}',
+      templateUrl: 'project/_detail.html',
+      controller: 'ProjectDetailCtrl',
+      parent: 'onlyusers'
+    })
     .state('search', {
       parent: 'getuser',
-      title: 'Поиск портфолио',
+      title: 'Поиск',
       sideNav: true,
       url: '/search',
       reloadOnSearch : false,

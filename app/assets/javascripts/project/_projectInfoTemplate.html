@@ -1,0 +1,37 @@
+<div class="md-dialog-content">
+  <div ng-show="project.creater">
+    <b>Добавил:</b> {{project.creater.family }} {{project.creater.name }} {{project.creater.middlename }}
+  </div>
+  <div ng-show="project.category">
+    <b>Категория:</b> {{project.category.name }}
+  </div>
+  <div ng-show="project.startDate">
+    <b>Дата начала разработки:</b> {{project.startDate | date }}
+  </div>
+  <div ng-show="project.devFinishDate">
+    <b>Дата окончания разработки:</b> {{project.devFinishDate | date }}
+  </div>
+  <div ng-show="project.finishDate">
+    <b>Дата завершения проекта:</b> {{project.finishDate | date }}
+  </div>
+  <div ng-show="project.version">
+    <b>Версия:</b> {{project.version }}
+  </div>
+  <p>
+    {{project.description}}
+  </p>
+
+  <div ng-show="project.tags">
+    <b>Теги:</b>
+    <span ng-repeat="tag in project.tags">
+      <span class="tag">{{tag.name}}</span>
+    </span>
+  </div>
+
+  <div ng-show="project.technologies">
+    <b>Технологии:</b>
+    <span ng-repeat="tech in project.technologies">
+      <span class="tag">{{tech.name}}</span>
+    </span>
+  </div>
+</div>

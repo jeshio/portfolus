@@ -42,7 +42,7 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
   $scope.showDetail = function(ev, project) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
     $mdDialog.show({
-      templateUrl: 'project/_detail.html',
+      templateUrl: 'project/_dialog.html',
       controller: function ProjectDialogController($scope, $mdDialog, project) {
         $scope.project = project;
         $scope.hide = function() {

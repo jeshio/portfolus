@@ -6,7 +6,7 @@ angular.module('rails').factory('User', ['railsResourceFactory', '$http', functi
     resource.getAllProjects = function (user_id) {
       return resource.$get(resource.$url(user_id + '/all_projects')).then(function (projects) {
          return projects;
-      });;
+      });
     };
 
     return resource;

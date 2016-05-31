@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    render json: @project
+    @project = Project.includes(project_technologies: :technology).includes(:tags).order('created_at desc').find(params[:id])
+    render json: @project.to_json(:include => { :technologies => { :only => [:technology_id, :name] }, :tags => { :only => :name } })
   end
 
   # POST /projects
