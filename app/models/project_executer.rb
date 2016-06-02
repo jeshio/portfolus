@@ -23,7 +23,7 @@ class ProjectExecuter < ApplicationRecord
   # afterwards we put attr related macros
   belongs_to :project
 
-  belongs_to :executer, class_name: "User"
+  belongs_to :executer, class_name: "User", counter_cache: :executed_projects_count
 
   has_many :project_confirms, :dependent => :destroy
 

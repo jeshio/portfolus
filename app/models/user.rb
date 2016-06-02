@@ -30,7 +30,7 @@
 class User < ApplicationRecord
 
   # keep the default scope first (if any)
-  scope :min_projects, -> min { where('"users"."created_projects_count" + "users"."executed_projects_count" >= ?', min) }
+  scope :min_projects, -> min { where('"users"."executed_projects_count" >= ?', min) }
   scope :city_id, -> city_id { where(city_id: city_id) }
 
   # constants come up next
@@ -40,9 +40,9 @@ class User < ApplicationRecord
   has_many :organization, through: :user_organization
   has_many :created_organization, :foreign_key => "creater_id", :class_name => "Organization", :dependent => :nullify
   has_many :confirms, :foreign_key => "confirmer_id", :class_name => "ProjectConfirm", :dependent => :destroy
-  has_many :project_executers, :foreign_key => "executer_id", :dependent => :destroy, :counter_cache => true
+  has_many :project_executers, :foreign_key => "executer_id", :dependent => :destroy
   has_many :executed_projects, through: :project_executers, source: :project
-  has_many :created_projects, :foreign_key => "creater_id", :class_name => "Project", :dependent => :nullify, :counter_cache => true
+  has_many :created_projects, foreign_key: :creater, class_name: :project, :dependent => :nullify
   has_many :ordered_projects, :foreign_key => "client_id", :class_name => "Project", :dependent => :nullify
 
   belongs_to :city, optional: true
@@ -50,7 +50,7 @@ class User < ApplicationRecord
   # followed by association macros
 
   def all_projects
-    (self.created_projects.includes(project_technologies: :technology).includes(:tags).order('created_at desc') + self.executed_projects).uniq
+    self.executed_projects.includes(project_technologies: :technology).includes(:tags).order('created_at desc')
     #@result.all.each { |e|  e.project_technologies.map { |t| e.technologies.map { |tt| e.project_technologies.  } }  }
   end
 

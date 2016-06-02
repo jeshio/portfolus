@@ -24,12 +24,8 @@
                   <td ng-bind="cities[user[0].cityId].name" class="text-right"></td>
                 </tr>
                 <tr>
-                  <td>Созданных проектов</td>
-                  <td ng-bind="user[0].createdProjectsCount" class="text-right"></td>
-                </tr>
-                <tr>
                   <td>Участник проектов</td>
-                  <td ng-bind="user[0].executedProjectsCount" class="text-right"></td>
+                  <td class="text-right">{{user[0].executedProjectsCount}} ({{user[0].createdProjectsCount}} добавил)</td>
                 </tr>
               </table>
             </md-card-content>
@@ -59,12 +55,8 @@
                 <td ng-bind="cities[user[1].cityId].name" class="text-right"></td>
               </tr>
               <tr>
-                <td>Созданных проектов</td>
-                <td ng-bind="user[1].createdProjectsCount" class="text-right"></td>
-              </tr>
-              <tr>
                 <td>Участник проектов</td>
-                <td ng-bind="user[1].executedProjectsCount" class="text-right"></td>
+                <td class="text-right">{{user[1].executedProjectsCount}} ({{user[1].createdProjectsCount}} добавил)</td>
               </tr>
             </table>
           </md-card-content>
@@ -94,12 +86,8 @@
                 <td ng-bind="cities[user[2].cityId].name" class="text-right"></td>
               </tr>
               <tr>
-                <td>Созданных проектов</td>
-                <td ng-bind="user[2].createdProjectsCount" class="text-right"></td>
-              </tr>
-              <tr>
                 <td>Участник проектов</td>
-                <td ng-bind="user[2].executedProjectsCount" class="text-right"></td>
+                <td class="text-right">{{user[1].executedProjectsCount}} ({{user[1].createdProjectsCount}} добавил)</td>
               </tr>
             </table>
           </md-card-content>

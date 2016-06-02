@@ -29,7 +29,7 @@ class Project < ApplicationRecord
 
   belongs_to :client, class_name: "User", optional: true
 
-  belongs_to :creater, class_name: "User", optional: true
+  belongs_to :creater, class_name: "User", counter_cache: :created_projects_count
 
   belongs_to :organization, optional: true
 
@@ -45,6 +45,14 @@ class Project < ApplicationRecord
 
   validates :name, length: { minimum: 2 }
 
+  # followed by association macros
+
+  # and validation macros
+
+  # next we have callbacks
+  after_create_commit :check_project_executer
+
+  # other macros (like devise's) should be placed after the callbacks
   def self.save_project_and_dependences(project, tags, technologies)
     @errors = {}
     @project = Project.new(project)
@@ -72,9 +80,6 @@ class Project < ApplicationRecord
       # проект
       @project.save
 
-      # исполнитель проекта
-      @project.project_executers.create ({ executer_confirmed: true, creater_confirmed: true, executer_id: @project.creater_id })
-
       # технологии и теги
       if technologies.size > 0
         created_tech = Technology.import(tech_list, validate: true)
@@ -89,7 +94,6 @@ class Project < ApplicationRecord
           @errors[:tag] = created_tag.failed_instances.first.errors.messages
         end
       end
-
 
       # посредники
       # теги
@@ -119,13 +123,11 @@ class Project < ApplicationRecord
     return @project
   end
 
-  # followed by association macros
-
-  # and validation macros
-
-  # next we have callbacks
-
-  # other macros (like devise's) should be placed after the callbacks
+  protected
+  # проверка, что добавивший пользователь записан в исполнители
+  def check_project_executer
+    self.project_executers.first_or_create({ executer_confirmed: true, creater_confirmed: true, executer_id: self.creater_id })
+  end
 
    # finally, scopes
 end
