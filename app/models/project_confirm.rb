@@ -24,6 +24,7 @@ class ProjectConfirm < ApplicationRecord
   # followed by association macros
 
   # and validation macros
+  validates :comment, length: { minimum: 2 }
 
   # next we have callbacks
 

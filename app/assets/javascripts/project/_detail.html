@@ -1,3 +1,10 @@
 <h1 ng-bind="project.name"></h1>
 <div ng-include="'project/_projectInfoTemplate.html'">
 </div>
+
+<md-divider ng-hide="!authUser"></md-divider>
+
+<div layout="row" layout-padding="" ng-hide="!authUser">
+  <!-- Блок для авторизованных пользователей  -->
+  <md-button class="md-raised success" ng-show="authUser.id !== executerId" ng-click="confirm()">Подтвердить участие</md-button>
+</div>

@@ -39,7 +39,7 @@
 
       <md-card-content layout-padding>
         {{project.description | limitTo:150}}{{project.description.length > 150 ? '...' : ''}}
-        <a ng-href="/projects/{{project.id}}">Подробнее</a>
+        <a ng-href="/{{project.createrId}}/projects/{{project.id}}">Подробнее</a>
       </md-card-content>
 
       <md-card-footer ng-show="project.tags || project.technologies">

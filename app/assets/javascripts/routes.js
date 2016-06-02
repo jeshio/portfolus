@@ -80,16 +80,16 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'ProjectCtrl',
       parent: 'onlyusers'
     })
-    .state('project_new', {
+    .state('projectNew', {
       title: 'Добавить проект',
       url: '/projects/new',
       templateUrl: 'project/_new.html',
       controller: 'ProjectCtrl',
       parent: 'onlyusers'
     })
-    .state('project_detail', {
+    .state('projectDetail', {
       title: 'Информация о проекте',
-      url: '/projects/{id:int}',
+      url: '/{executerId:int}/projects/{projectId:int}',
       templateUrl: 'project/_detail.html',
       controller: 'ProjectDetailCtrl',
       parent: 'onlyusers'

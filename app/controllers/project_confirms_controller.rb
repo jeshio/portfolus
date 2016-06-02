@@ -24,6 +24,24 @@ class ProjectConfirmsController < ApplicationController
     end
   end
 
+
+  def create_with_project_and_user
+
+    executer = ProjectExecuter.where(for_executer_search).first
+
+    # вставляем найденую связь в запрос
+    save_params = project_confirm_params.merge({project_executer_id: executer.id})
+
+    # создаём, если не существует
+    @project_confirm = ProjectConfirm.first_or_create(save_params)
+
+    if @project_confirm.errors.size == 0
+      render json: @project_confirm, status: :created, location: @project_confirm
+    else
+      render json: @project_confirm.errors, status: :unprocessable_entity
+    end
+  end
+
   # PATCH/PUT /project_confirms/1
   def update
     if @project_confirm.update(project_confirm_params)
@@ -47,5 +65,9 @@ class ProjectConfirmsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def project_confirm_params
       params.require(:project_confirm).permit(:confirmer_id, :project_executer_id, :comment)
+    end
+
+    def for_executer_search
+      params.require(:project_confirm).permit(:project_id, :executer_id)
     end
 end
