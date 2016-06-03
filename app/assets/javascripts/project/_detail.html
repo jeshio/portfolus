@@ -6,5 +6,10 @@
 
 <div layout="row" layout-padding="" ng-hide="!authUser">
   <!-- Блок для авторизованных пользователей  -->
-  <md-button class="md-raised success" ng-show="authUser.id !== executerId" ng-click="confirm()">Подтвердить участие</md-button>
+  <div ng-show="authUser.id !== executerId">
+    <!-- Не для владельца -->
+    <md-button class="md-raised success" ng-show="!confirm" ng-click="setConfirm()">Подтвердить участие</md-button>
+    <md-button class="md-raised md-warn" ng-show="confirm" ng-click="unconfirm()">Отменить подтверждение</md-button>
+  </div>
+
 </div>

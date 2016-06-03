@@ -13,6 +13,20 @@ class ProjectConfirmsController < ApplicationController
     render json: @project_confirm
   end
 
+  def search_with_project_and_user
+    executer = ProjectExecuter.where(for_executer_search).first
+
+    return render json: {} unless executer
+
+    # вставляем найденую связь в запрос
+    confirm_params = project_confirm_params.merge({project_executer_id: executer.id})
+
+    # ищим подтверждение
+    @project_confirm = ProjectConfirm.where(confirm_params).first
+
+    render json: @project_confirm
+  end
+
   # POST /project_confirms
   def create
     @project_confirm = ProjectConfirm.new(project_confirm_params)

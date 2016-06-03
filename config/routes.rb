@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :cities
     resources :countries
+
     resources :project_confirms
     post 'project_confirms/create_with_project_and_user', to: 'project_confirms#create_with_project_and_user'
+    post 'project_confirms/search_with_project_and_user', to: 'project_confirms#search_with_project_and_user'
 
     resources :project_executers
     resources :project_tags

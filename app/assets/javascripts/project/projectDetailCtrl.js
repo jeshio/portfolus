@@ -3,13 +3,21 @@ angular.module('portfolus')
 function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, ProjectConfirm, $mdToast){
   $scope.project = {};
   $scope.executerId = $stateParams.executerId;
+  $scope.confirm = {};
 
   // TODO нужна защита от просмотра чужих проектов через id пользователя
   Project.get($stateParams.projectId).then(function (result) {
     $scope.project = result;
+    // загружаем подтверждение
+    if ($scope.authUser)
+      ProjectConfirm.searchWithProjectAndUser($scope.project.id, $scope.executerId,
+        $scope.authUser.id).then(function (data) {
+          $scope.confirm = data;
+      });
   });
 
-  $scope.confirm = function(ev) {
+  // диалог подтверждения проекта
+  $scope.setConfirm = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.prompt()
           .title('Хотите подтвердить участие пользователя в проекте?')
@@ -25,6 +33,7 @@ function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, Pr
       ProjectConfirm.createWithProjectAndUser($scope.project.id, $scope.executerId,
         $scope.authUser.id, result).then(function (result) {
           $mdToast.show($mdToast.simple().textContent('Подтверждено!'));
+          $scope.confirm = result;
       }, function (error) {
         var listError = "";
         angular.forEach(error.data, function (val, key) {
@@ -35,36 +44,24 @@ function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, Pr
 
     });
   };
-  // function(ev, project, userId) {
-  //   var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
-  //   $mdDialog.show({
-  //     templateUrl: 'projectExecuter/tmpl/_dialog.html',
-  //     controller: function ProjectExecuterDialogController($scope, $mdDialog, project, userId, ProjectExecuter, User) {
-  //       $scope.project = project;
-  //       $scope.executer = {};
-  //
-  //       User.get(userId).then(function (result) {
-  //         $scope.executer = result;
-  //       }, function (error) {
-  //         console.log(error);
-  //       });
-  //
-  //       $scope.hide = function() {
-  //         $mdDialog.hide();
-  //       };
-  //     },
-  //     parent: angular.element(document.body),
-  //     targetEvent: ev,
-  //     locals: {project: project},
-  //     clickOutsideToClose:true,
-  //     fullscreen: useFullScreen
-  //   }).then(function() {
-  //  });
-  //
-  //   $scope.$watch(function() {
-  //     return $mdMedia('xs') || $mdMedia('sm');
-  //   }, function(wantsFullScreen) {
-  //     $scope.customFullscreen = (wantsFullScreen === true);
-  //   });
-  // };
+
+  // диалог отмены подтверждения
+  $scope.unconfirm = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+          .title('Отменить подтверждение?')
+          .textContent('Положительный ответ отменит ваше подтверждение участия пользователя в проекте.')
+          .ariaLabel('Отмена подтверждения')
+          .targetEvent(ev)
+          .ok('Да')
+          .cancel('Нет');
+    $mdDialog.show(confirm).then(function() {
+      var confirmId = $scope.confirm.id;
+      $scope.confirm = undefined;
+      new ProjectConfirm({id: confirmId}).delete().then(function (result) {
+        $mdToast.show($mdToast.simple().textContent('Подтверждение отменено!'));
+      });
+
+    });
+  };
 }]);
