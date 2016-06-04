@@ -53,6 +53,19 @@ class Project < ApplicationRecord
   after_create_commit :check_project_executer
 
   # other macros (like devise's) should be placed after the callbacks
+  cattr_accessor :param_user_id
+
+  def confirms_for_user(user_id=nil)
+    user_id ||= param_user_id
+
+    executer = self.project_executers.where({executer_id: user_id}).first if user_id
+    if executer
+      executer.project_confirms.includes(:confirmer)
+    else
+      nil
+    end
+  end
+
   def self.save_project_and_dependences(project, tags, technologies)
     @errors = {}
     @project = Project.new(project)
@@ -126,7 +139,8 @@ class Project < ApplicationRecord
   protected
   # проверка, что добавивший пользователь записан в исполнители
   def check_project_executer
-    self.project_executers.first_or_create({ executer_confirmed: true, creater_confirmed: true, executer_id: self.creater_id })
+    params = { executer_confirmed: true, creater_confirmed: true, executer_id: self.creater_id }
+    self.project_executers.where(params).first_or_create(params)
   end
 
    # finally, scopes

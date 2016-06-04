@@ -28,10 +28,24 @@
     </span>
   </div>
 
-  <div ng-show="project.technologies">
+  <div ng-show="project.projectTechnologies">
     <b>Технологии:</b>
-    <span ng-repeat="tech in project.technologies">
-      <span class="tag">{{tech.name}}</span>
+    <span ng-repeat="tech in project.projectTechnologies">
+      <span class="tag">{{tech.technology.name}} ({{tech.power}}/10)</span>
     </span>
   </div>
+
+  <md-list flex>
+    <md-subheader class="md-no-sticky">Список подтвердивших</md-subheader>
+    <p ng-hide="project.confirmsForUser.length > 0">
+      Ещё никто не подтверждал участие пользователя в проекте
+    </p>
+    <md-list-item class="md-3-line" ng-show="project.confirmsForUser" ng-repeat="confirmer in project.confirmsForUser" ng-click="null">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ confirmer.confirmer.email }}</h3>
+        <p>{{ confirmer.comment }}</p>
+      </div>
+      <md-divider ng-if="!$last"></md-divider>
+    </md-list-item>
+  </md-list>
 </div>

@@ -13,6 +13,11 @@ class ProjectExecutersController < ApplicationController
     render json: @project_executer
   end
 
+  def get_with_confirms
+    @executer = ProjectExecuter.includes(project_confirms: :confirmer).where(project_executer_params).first
+    render json: @executer.as_json(include: { project_confirms: { include: :confirmer } })
+  end
+
   # POST /project_executers
   def create
     @project_executer = ProjectExecuter.new(project_executer_params)

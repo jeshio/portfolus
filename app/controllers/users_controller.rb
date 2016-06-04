@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:all_projects]
   before_action :current_user?, only: [:show, :update]
   before_action :set_user
 
@@ -23,8 +23,9 @@ class UsersController < ApplicationController
   end
 
   def all_projects
-    @data = @user.all_projects
-    render json: @data.to_json(:include => { :technologies => { :only => [:technology_id, :name] }, :tags => { :only => :name } })
+    @data = @user.executed_projects
+
+    render json: @data.as_json(include: { project_technologies: { include: :technology }, tags: {}, project_executers: { include: :project_confirms } })
   end
 
   private

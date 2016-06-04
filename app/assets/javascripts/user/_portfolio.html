@@ -42,7 +42,7 @@
         <a ng-href="/{{project.createrId}}/projects/{{project.id}}">Подробнее</a>
       </md-card-content>
 
-      <md-card-footer ng-show="project.tags || project.technologies">
+      <md-card-footer ng-show="project.tags || project.projectTechnologies">
         <div ng-show="project.tags">
           <b>Теги:</b>
           <span ng-repeat="tag in project.tags">
@@ -50,10 +50,10 @@
           </span>
         </div>
 
-        <div ng-show="project.technologies">
+        <div ng-show="project.projectTechnologies">
           <b>Технологии:</b>
-          <span ng-repeat="tech in project.technologies">
-            <span class="tag">{{tech.name}}</span>
+          <span ng-repeat="tech in project.projectTechnologies">
+            <span class="tag">{{tech.technology.name}} ({{tech.power}}/10)</span>
           </span>
         </div>
       </md-card-footer>

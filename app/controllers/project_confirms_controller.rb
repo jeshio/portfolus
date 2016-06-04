@@ -14,6 +14,7 @@ class ProjectConfirmsController < ApplicationController
   end
 
   def search_with_project_and_user
+    # TODO передлать в GET
     executer = ProjectExecuter.where(for_executer_search).first
 
     return render json: {} unless executer
@@ -47,8 +48,9 @@ class ProjectConfirmsController < ApplicationController
     save_params = project_confirm_params.merge({project_executer_id: executer.id})
 
     # создаём, если не существует
-    @project_confirm = ProjectConfirm.first_or_create(save_params)
+    @project_confirm = ProjectConfirm.where(save_params).first_or_create(save_params)
 
+    return render json: @project_confirm
     if @project_confirm.errors.size == 0
       render json: @project_confirm, status: :created, location: @project_confirm
     else

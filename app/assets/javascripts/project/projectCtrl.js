@@ -5,6 +5,7 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
   $scope.technology = {};
   $scope.project.tags = [];
   $scope.project.technologies = [];
+  $scope.confirmers = []; // список подтвердивших
 
   User.getAllProjects($scope.authUser.id).then(function (result) {
     $scope.projects = result;

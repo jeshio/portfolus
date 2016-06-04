@@ -49,11 +49,6 @@ class User < ApplicationRecord
 
   # followed by association macros
 
-  def all_projects
-    self.executed_projects.includes(project_technologies: :technology).includes(:tags).order('created_at desc')
-    #@result.all.each { |e|  e.project_technologies.map { |t| e.technologies.map { |tt| e.project_technologies.  } }  }
-  end
-
   # and validation macros
 
   # other macros (like devise's) should be placed after the callbacks

@@ -15,6 +15,11 @@ FactoryGirl.create_list(:category, 7)
 FactoryGirl.create_list(:tag, 30)
 FactoryGirl.create_list(:technology, 30)
 
-FactoryGirl.create_list(:project_with_additions, 90, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
-FactoryGirl.create_list(:project_with_additions, 90, :dev_finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
-FactoryGirl.create_list(:project_with_additions, 90, :finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
+FactoryGirl.create_list(:project_with_additions, 30, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
+FactoryGirl.create_list(:project_with_additions, 30, :dev_finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
+FactoryGirl.create_list(:project_with_additions, 30, :finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
+
+
+FactoryGirl.create_list(:project_with_confirms, 70, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30, max_confirm_count: 10, max_confirmer_id: 65)
+FactoryGirl.create_list(:project_with_confirms, 70, :dev_finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30, max_confirm_count: 10, max_confirmer_id: 65)
+FactoryGirl.create_list(:project_with_confirms, 70, :finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30, max_confirm_count: 10, max_confirmer_id: 65)

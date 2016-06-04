@@ -34,6 +34,7 @@ FactoryGirl.define do
     category_id { rand(1..max_category_id) }
 
     factory :project_with_additions do
+      # с технологиями и тегами
       transient do
         max_tags_count 5
         max_tag_id 5
@@ -55,6 +56,25 @@ FactoryGirl.define do
         techs = rand_n(tech_count, evaluator.max_tech_id)
         tech_count.times do |x|
             create(:project_technology, project_id: project.id, technology_id: techs[x])
+        end
+      end
+
+      factory :project_with_confirms do
+        # с подтверждениями
+        transient do
+          max_confirm_count 5
+          max_confirmer_id 5
+        end
+
+        after(:create) do |project, evaluator|
+          executer = project.project_executers.first
+
+          confirms_count = rand(1..evaluator.max_confirm_count)
+          confirms = rand_n(confirms_count, evaluator.max_confirmer_id)
+          confirms_count.times do |x|
+            create(:project_confirm, project_executer_id: executer.id, confirmer_id:confirms[x])
+          end
+
         end
       end
     end

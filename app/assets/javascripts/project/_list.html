@@ -31,10 +31,10 @@
           </span>
         </div>
 
-        <div ng-show="project.technologies">
+        <div ng-show="project.projectTechnologies">
           <b>Технологии:</b>
-          <span ng-repeat="tech in project.technologies">
-            <span class="tag">{{tech.name}}</span>
+          <span ng-repeat="tech in project.projectTechnologies">
+            <span class="tag">{{tech.technology.name}} ({{tech.power}}/10)</span>
           </span>
         </div>
 
@@ -85,10 +85,10 @@
           </span>
         </div>
 
-        <div ng-show="project.technologies">
+        <div ng-show="project.projectTechnologies">
           <b>Технологии:</b>
-          <span ng-repeat="tech in project.technologies">
-            <span class="tag">{{tech.name}}</span>
+          <span ng-repeat="tech in project.projectTechnologies">
+            <span class="tag">{{tech.technology.name}} ({{tech.power}}/10)</span>
           </span>
         </div>
 

@@ -9,16 +9,21 @@ Rails.application.routes.draw do
     post 'project_confirms/create_with_project_and_user', to: 'project_confirms#create_with_project_and_user'
     post 'project_confirms/search_with_project_and_user', to: 'project_confirms#search_with_project_and_user'
 
+    get 'project_executers/get_with_confirms', to: 'project_executers#get_with_confirms'
     resources :project_executers
+
     resources :project_tags
     resources :project_technologies
+
+    get 'projects/get_detail', to: 'projects#get_detail'
     resources :projects
+
     resources :user_organizations
     resources :organizations
     resources :tags
 
-    resources :users
     get 'users/:id/all_projects', to: 'users#all_projects'
+    resources :users
 
 
     resources :technologies

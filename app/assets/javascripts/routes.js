@@ -48,7 +48,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       title: 'Настройки',
       url: '/settings',
       templateUrl: 'user/_settings.html',
-      controller: 'PortfolioCtrl',
+      controller: 'UserCtrl',
       parent: 'onlyusers'
     })
     // просмотр порфтолио
@@ -92,7 +92,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       url: '/{executerId:int}/projects/{projectId:int}',
       templateUrl: 'project/_detail.html',
       controller: 'ProjectDetailCtrl',
-      parent: 'onlyusers'
+      parent: 'getuser'
     })
     .state('search', {
       parent: 'getuser',

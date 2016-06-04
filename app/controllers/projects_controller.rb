@@ -14,6 +14,13 @@ class ProjectsController < ApplicationController
     render json: @project.to_json(:include => { :technologies => { :only => [:technology_id, :name] }, :tags => { :only => :name } })
   end
 
+  # один проект с подтверждениями
+  def get_detail
+    Project.param_user_id = detail_params[:executer_id]
+    @project = Project.includes(project_technologies: :technology).includes(:tags).order('created_at desc').find(detail_params[:id])
+    render json: @project.as_json(include: { project_technologies: { include: :technology }, tags: {}, :confirms_for_user => { include: :confirmer } })
+  end
+
   # POST /projects
   def create
     @project = Project.save_project_and_dependences(project_params, project_tags, project_technologies)
@@ -46,6 +53,10 @@ class ProjectsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
+    def detail_params
+      params.require(:project).permit(:id, :executer_id)
+    end
+
     def project_params
       params.require(:project).permit(:name, :description, :start_date, :dev_finish_date,
         :finish_date, :views, :version, :category_id, :clieint_id, :organization_id).merge(creater_id: current_user.id)
