@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #
 
+
 FactoryGirl.define do
   factory :category do
     name { Faker::Lorem.words(rand(1..3)).join(' ').capitalize }

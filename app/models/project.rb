@@ -19,6 +19,7 @@
 #
 
 
+
 class Project < ApplicationRecord
   # keep the default scope first (if any)
 

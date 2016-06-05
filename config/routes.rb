@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :emails
   devise_for :users
 
   scope '/api' do
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
 
     resources :technologies
     resources :categories
+    resources :emails
 
     get 'get_commits', to: 'application#get_commits'
     get 'search', to: 'search#query'

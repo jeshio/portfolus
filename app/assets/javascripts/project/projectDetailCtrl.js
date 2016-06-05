@@ -50,7 +50,6 @@ function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, Pr
             .cancel('Нет');
       $mdDialog.show(confirm).then(function() {
         var confirmId = $scope.confirm.id;
-        console.log("delete");
         $scope.confirm = undefined;
         new ProjectConfirm({id: confirmId}).delete().then(function (result) {
           $mdToast.show($mdToast.simple().textContent('Подтверждение отменено!'));

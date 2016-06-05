@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527121907) do
+ActiveRecord::Schema.define(version: 20160605080755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 20160527121907) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.string   "email"
+    t.string   "confirm_hash"
+    t.boolean  "confirmed",    default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "user_id"
+    t.index ["confirm_hash"], name: "index_emails_on_confirm_hash", unique: true, using: :btree
+    t.index ["email"], name: "index_emails_on_email", unique: true, using: :btree
+    t.index ["user_id"], name: "index_emails_on_user_id", using: :btree
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -175,7 +187,8 @@ ActiveRecord::Schema.define(version: 20160527121907) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  add_foreign_key "cities", "countries"
+  add_foreign_key "cities", "countries", on_delete: :nullify
+  add_foreign_key "emails", "users"
   add_foreign_key "organizations", "users", column: "creater_id"
   add_foreign_key "project_confirms", "project_executers"
   add_foreign_key "project_confirms", "users", column: "confirmer_id"

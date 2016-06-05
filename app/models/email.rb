@@ -1,30 +1,29 @@
 # == Schema Information
 #
-# Table name: technologies
+# Table name: emails
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  email      :string
+#  confirm_hash       :string
+#  confirmed  :boolean          default("false")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 
-
-class Technology < ApplicationRecord
+class Email < ApplicationRecord
   # keep the default scope first (if any)
 
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :project_technologies, :dependent => :destroy, foreign_key: "technology_id"
-
-  has_many :projects, through: :project_technology
-
-  validates :name, length: { minimum: 2 }
 
   # followed by association macros
 
+
   # and validation macros
+  validates :email, uniqueness: true
 
   # next we have callbacks
 
