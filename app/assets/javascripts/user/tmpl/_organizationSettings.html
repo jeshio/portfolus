@@ -1,0 +1,80 @@
+<div layout="column" layout-gt-md="row">
+
+  <div flex layout="column" ng-controller="UserOrganizationCtrl">
+    <h2 class="md-title">Список организаций в которых вы состоите</h2>
+
+    <md-list flex>
+      <md-list-item class="md-3-line" ng-repeat="userOrganization in userOrganizations" ng-click="null">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ userOrganization.organization.name }}</h3>
+          <h4>{{ userOrganization.organization.url }}</h4>
+          <p>
+            Участник с {{userOrganization.startDate | date}} по
+            <span ng-hide="userOrganization.finishDate">настоящее время</span>
+            <span ng-hide="!userOrganization.finishDate" ng-bind="userOrganization.finishDate | date"></span>
+          </p>
+          <p>{{ userOrganization.organization.description }}</p>
+        </div>
+        <md-button class="md-secondary md-icon-button" ng-click="delete(userOrganization)" aria-label="Убрать из списка">
+          <md-icon>delete</md-icon>
+        </md-button>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+
+      <md-list-item class="md-3-line" ng-hide="userOrganizations.length > 0">
+        <div class="md-list-item-text" layout="column">
+          <p>Список пуст.</p>
+        </div>
+      </md-list-item>
+
+      <h2 class="md-title">Список организаций в которые вы можете вступить</h2>
+      <md-list-item class="md-3-line" ng-repeat="organization in availableOrganizations">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ organization.name }}</h3>
+          <h4>{{ organization.url }}</h4>
+          <p>{{ organization.description }}</p>
+        </div>
+        <md-button class="md-secondary md-icon-button" ng-href="/settings/organizations/add/{{organization.id}}" aria-label="Присоединиться">
+          <md-icon>add_circle</md-icon>
+        </md-button>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+
+      <md-list-item class="md-3-line" ng-hide="availableOrganizations.length > 0">
+        <div class="md-list-item-text" layout="column">
+          <p>Список пуст. Чтобы состоять в организации, добавьте и подтвердите вашу электронную почту в домене организации.</p>
+        </div>
+      </md-list-item>
+
+
+    </md-list>
+  </div>
+
+  <div flex layout="column">
+    <h2 class="md-title">Администрируемые организации</h2>
+
+    <md-list flex>
+      <md-list-item class="md-3-line" ng-repeat="organization in adminOrganizations" ng-click="null">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ organization.name }}</h3>
+          <h4>{{ organization.url }}</h4>
+          <p>{{ organization.description }}</p>
+        </div>
+        <!-- Передать права <md-button class="md-secondary md-icon-button" ng-click="delete(organization)" aria-label="Убрать из списка">
+          <md-icon>delete</md-icon>
+        </md-button> -->
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+
+      <md-list-item class="md-3-line" ng-hide="adminOrganizations.length > 0">
+        <div class="md-list-item-text" layout="column">
+          <p>Список пуст. Чтобы добавить организацию вы должны добавить и подтвердить вашу электронную почту в домене организации.</p>
+        </div>
+      </md-list-item>
+    </md-list>
+    <div class="text-center">
+      <md-button class="btn" type="submit" href="/settings/organizations/new" name="enter-button">Добавить организацию</md-button>
+    </div>
+  </div>
+
+</div>

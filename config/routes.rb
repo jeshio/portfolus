@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :cities
     resources :countries
+    resources :emails
 
     resources :project_confirms
     post 'project_confirms/create_with_project_and_user', to: 'project_confirms#create_with_project_and_user'
@@ -19,17 +20,23 @@ Rails.application.routes.draw do
     get 'projects/get_detail', to: 'projects#get_detail'
     resources :projects
 
-    resources :user_organizations
+    get 'organizations/available', to: 'organizations#available'
+    get 'organizations/where_you_admin', to: 'organizations#where_you_admin'
     resources :organizations
+
     resources :tags
 
+    resources :user_organizations
+
     get 'users/:id/all_projects', to: 'users#all_projects'
-    resources :users
+    resources :users do
+      resources :emails
+      resources :user_organizations
+    end
 
 
     resources :technologies
     resources :categories
-    resources :emails
 
     get 'get_commits', to: 'application#get_commits'
     get 'search', to: 'search#query'

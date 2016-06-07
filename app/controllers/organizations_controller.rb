@@ -17,11 +17,23 @@ class OrganizationsController < ApplicationController
   def create
     @organization = Organization.new(organization_params)
 
+    @organization.creater = current_user
+
     if @organization.save
       render json: @organization, status: :created, location: @organization
     else
       render json: @organization.errors, status: :unprocessable_entity
     end
+  end
+
+  # все организации, в которых юзер админ
+  def where_you_admin
+    render json: Organization.where_admin(current_user.emails.pluck(:email))
+  end
+
+  # организации, в которые пользователь может вступить, но ещё не вступил
+  def available
+    render json: Organization.available(current_user.emails.pluck(:email), current_user.user_organizations.pluck(:organization_id))
   end
 
   # PATCH/PUT /organizations/1

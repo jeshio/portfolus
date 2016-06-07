@@ -44,12 +44,55 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       parent: 'getuser'
     })
     // настройки
-    .state('settings', {
-      title: 'Настройки',
+    .state('mainSettings', {
+      title: 'Основные настройки',
       url: '/settings',
-      templateUrl: 'user/_settings.html',
-      controller: 'UserCtrl',
-      parent: 'onlyusers'
+      sideNav: true,
+      parent: 'onlyusers',
+      views: {
+        '@': { templateUrl: 'user/tmpl/_settings.html', controller: 'UserCtrl' },
+        'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
+      }
+    })
+    .state('emailSettings', {
+      title: 'Список электронных почт',
+      url: '/settings/emails',
+      sideNav: true,
+      parent: 'onlyusers',
+      views: {
+        '@': { templateUrl: 'user/tmpl/_emailSettings.html', controller: 'EmailCtrl' },
+        'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
+      }
+    })
+    .state('organizationSettings', {
+      title: 'Организации',
+      url: '/settings/organizations',
+      sideNav: true,
+      parent: 'onlyusers',
+      views: {
+        '@': { templateUrl: 'user/tmpl/_organizationSettings.html', controller: 'OrganizationCtrl' },
+        'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
+      }
+    })
+    .state('organizationCreateSettings', {
+      title: 'Добавить организацию',
+      url: '/settings/organizations/new',
+      sideNav: true,
+      parent: 'onlyusers',
+      views: {
+        '@': { templateUrl: 'organization/tmpl/_new.html', controller: 'OrganizationCtrl' },
+        'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
+      }
+    })
+    .state('userOrganizationAddSettings', {
+      title: 'Присоединиться к организации',
+      url: '/settings/organizations/add/{id:int}',
+      sideNav: true,
+      parent: 'onlyusers',
+      views: {
+        '@': { templateUrl: 'userOrganization/tmpl/_new.html', controller: 'AddUserOrganizationCtrl' },
+        'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
+      }
     })
     // просмотр порфтолио
     .state('user', {
@@ -124,6 +167,16 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     });
     $rootScope.$on('devise:login', function(event, currentUser) {
       $rootScope.signedIn = Auth.isAuthenticated();
+      $rootScope.authUser = currentUser;
       $rootScope.logout = Auth.logout;
+    });
+    $rootScope.$on('devise:new-registration', function (e, currentUser){
+      $rootScope.authUser = currentUser;
+      $rootScope.signedIn = true;
+    });
+    $rootScope.$on('devise:logout', function (e, currentUser){
+      $rootScope.authUser = {};
+      $rootScope.signedIn = false;
+      $state.go('home');
     });
 }]);

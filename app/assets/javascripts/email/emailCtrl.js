@@ -1,6 +1,6 @@
 angular.module('portfolus')
-.controller('EmailCtrl',['$scope', 'Email', '$parse', '$mdDialog', '$mdMedia', '$mdToast',
-function($scope, Email, $parse, $mdDialog, $mdMedia, $mdToast){
+.controller('EmailCtrl',['$scope', 'Email', '$parse', '$mdDialog', '$mdMedia', '$mdToast', 'User',
+function($scope, Email, $parse, $mdDialog, $mdMedia, $mdToast, User){
   $scope.emails = [];
   $scope.email = {};
 
@@ -9,7 +9,7 @@ function($scope, Email, $parse, $mdDialog, $mdMedia, $mdToast){
   $scope.addEmail = function () {
     new Email({email: { email: $scope.email.email}}).create().then(function (data) {
       $mdToast.show($mdToast.simple().textContent('Email добавлен!'));
-      $scope.emails.push(data);
+      loadEmails();
       $scope.email = {};
     }, function (errors) {
       var errors = errors.data;
@@ -39,8 +39,10 @@ function($scope, Email, $parse, $mdDialog, $mdMedia, $mdToast){
   }
 
   function loadEmails() {
-    Email.query({user_id: $scope.authUser.id}).then(function (result) {
-      $scope.emails = result;
+    User.get($scope.authUser.id).then(function (result) {
+      result.emails().then(function (emails) {
+        $scope.emails = emails;
+      });
     });
   }
 }]);

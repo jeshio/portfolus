@@ -3,7 +3,7 @@ class EmailsController < ApplicationController
 
   # GET /emails
   def index
-    @emails = Email.all
+    @emails = Email.where({user_id: params[:user_id]}).all
 
     render json: @emails
   end

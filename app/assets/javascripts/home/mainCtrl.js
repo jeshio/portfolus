@@ -12,19 +12,5 @@ function($scope, $mdSidenav, $mdUtil, $location, Auth, $state, $rootScope) {
     return debounceFn;
   }
 
-  $scope.$on('devise:new-registration', function (e, user){
-    $rootScope.authUser = user;
-    $rootScope.signedIn = true;
-  });
-
-  $scope.$on('devise:login', function (e, user){
-    $rootScope.authUser = user;
-    $rootScope.signedIn = true;
-  });
-
-  $scope.$on('devise:logout', function (e, user){
-    $rootScope.authUser = {};
-    $rootScope.signedIn = false;
-    $state.go('home');
-  });
+  
 }]);

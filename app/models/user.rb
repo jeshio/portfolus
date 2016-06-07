@@ -39,7 +39,7 @@ class User < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :user_organization, :dependent => :destroy
+  has_many :user_organizations, :dependent => :destroy
   has_many :organization, through: :user_organization
   has_many :created_organization, :foreign_key => "creater_id", :class_name => "Organization", :dependent => :nullify
   has_many :confirms, :foreign_key => "confirmer_id", :class_name => "ProjectConfirm", :dependent => :destroy
@@ -47,6 +47,7 @@ class User < ApplicationRecord
   has_many :executed_projects, through: :project_executers, source: :project
   has_many :created_projects, foreign_key: :creater, class_name: :project, :dependent => :nullify
   has_many :ordered_projects, :foreign_key => "client_id", :class_name => "Project", :dependent => :nullify
+  has_many :emails, :dependent => :destroy
 
   belongs_to :city, optional: true
 

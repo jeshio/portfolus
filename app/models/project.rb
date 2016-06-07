@@ -91,6 +91,7 @@ class Project < ApplicationRecord
     # создаём проект и все зависимости в одной транзакции
     ActiveRecord::Base.transaction do
       # TODO Multilevel с помощью гема Bulk imports
+      # TODO validates_associated
       # проект
       @project.save
 

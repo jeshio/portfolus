@@ -3,9 +3,9 @@ class UserOrganizationsController < ApplicationController
 
   # GET /user_organizations
   def index
-    @user_organizations = UserOrganization.all
+    @user_organizations = UserOrganization.where({user_id: params[:user_id]}).all
 
-    render json: @user_organizations
+    render json: @user_organizations.as_json(include: { organization: {} })
   end
 
   # GET /user_organizations/1
@@ -16,6 +16,8 @@ class UserOrganizationsController < ApplicationController
   # POST /user_organizations
   def create
     @user_organization = UserOrganization.new(user_organization_params)
+
+    @user_organization.user = current_user
 
     if @user_organization.save
       render json: @user_organization, status: :created, location: @user_organization
