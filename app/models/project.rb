@@ -67,7 +67,7 @@ class Project < ApplicationRecord
     end
   end
 
-  def self.save_project_and_dependences(project, tags, technologies)
+  def self.save_project_and_dependences(project, tags, technologies, partners)
     @errors = {}
     @project = Project.new(project)
     @project.valid?
@@ -128,6 +128,19 @@ class Project < ApplicationRecord
           @errors[:technology] = @errors[:technology] ?
             @errors[:technology] + msg : msg
         end
+      end
+
+      # участники
+      if partners.size > 0
+        partners_list = []
+
+        # по основным и дополнительным почтам
+        partners_list =
+          User.select("users.id").distinct.joins(:emails).
+            where("emails.email IN (:emails) OR users.email IN (:emails) AND users.id != :id", { emails: partners, id: @project.creater_id }).all
+
+        project_executers = partners_list.map { |e| ProjectExecuter.new({executer_id: e.id, project_id: @project.id, creater_confirmed: true}) }
+        executers = ProjectExecuter.import(project_executers, validate: false) if project_executers.size > 0
       end
 
       if @errors.size > 0

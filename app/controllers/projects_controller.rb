@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.save_project_and_dependences(project_params, project_tags, project_technologies)
+    @project = Project.save_project_and_dependences(project_params, project_tags, project_technologies, project_partners)
 
     if !@project[:errors]
       render json: @project, status: :created, location: @project
@@ -65,6 +65,11 @@ class ProjectsController < ApplicationController
     def project_technologies
       params[:project][:technologies] ||= []
       params.require(:project).permit(technologies: [:name, :power]).to_h[:technologies]#.to_a.map { |e| e.to_a }
+    end
+
+    def project_partners
+      params[:project][:partners] ||= []
+      params.require(:project).permit(:partners =>[])[:partners]
     end
 
     def project_tags

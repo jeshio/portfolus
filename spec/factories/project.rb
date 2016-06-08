@@ -82,13 +82,26 @@ FactoryGirl.define do
     views { rand(0..10000) }
     version { Faker::App.version }
 
-    created_at Time.parse(Faker::Date.between(24.days.ago, 5.days.ago).to_s)
-    updated_at Time.parse(Faker::Date.between(4.days.ago, 1.days.ago).to_s)
-
-
     #  category_id     :integer
     #  organization_id :integer
     #  client_id       :integer
     creater_id { rand(1..max_creater_id) }
+
+    transient do
+      max_excuters_count 0
+      max_excuter_id 0
+    end
+
+    after(:create) do |project, evaluator|
+      executers = rand_n(evaluator.max_excuters_count, evaluator.max_excuter_id) - [project.creater.id]
+      rand(0..evaluator.max_excuters_count).times do |x|
+        finished = [true, false].sample
+        executer_confirms = [true, false].sample
+        creater_confirms = [true, false].sample
+        create(:project_executer, project_id: project.id, executer_id: executers[x],
+          finished: finished, executer_confirmed: executer_confirms, creater_confirmed: creater_confirms)
+      end
+    end
+
   end
 end

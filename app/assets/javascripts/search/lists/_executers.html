@@ -25,7 +25,9 @@
                 </tr>
                 <tr>
                   <td>Участник проектов</td>
-                  <td class="text-right">{{user[0].executedProjectsCount}} ({{user[0].createdProjectsCount}} добавил)</td>
+                  <td class="text-right">{{user[0].executedProjectsCount}}
+                    <span ng-show="user[0].createdProjectsCount">(из них {{user[0].createdProjectsCount}} добавил)</span>
+                    </td>
                 </tr>
               </table>
             </md-card-content>
@@ -56,7 +58,9 @@
               </tr>
               <tr>
                 <td>Участник проектов</td>
-                <td class="text-right">{{user[1].executedProjectsCount}} ({{user[1].createdProjectsCount}} добавил)</td>
+                <td class="text-right">{{user[1].executedProjectsCount}}
+                  <span ng-show="user[1].createdProjectsCount">(из них {{user[1].createdProjectsCount}} добавил)</span>
+                  </td>
               </tr>
             </table>
           </md-card-content>
@@ -87,7 +91,9 @@
               </tr>
               <tr>
                 <td>Участник проектов</td>
-                <td class="text-right">{{user[1].executedProjectsCount}} ({{user[1].createdProjectsCount}} добавил)</td>
+                <td class="text-right">{{user[1].executedProjectsCount}}
+                  <span ng-show="user[2].createdProjectsCount">(из них {{user[2].createdProjectsCount}} добавил)</span>
+                  </td>
               </tr>
             </table>
           </md-card-content>

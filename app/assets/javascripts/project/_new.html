@@ -155,6 +155,29 @@
       </div>
     </div>
 
+    <h2 class="md-title">Участники</h2>
+    <p>
+      Если участником проекта являетесь только вы, оставьте поле пустым. Позже к вам смогут присоединиться остальные участники, при их подтверждении.
+    </p>
+
+    <div flex>
+      <md-chips ng-model="project.partners" name="partners" md-max-chips="10">
+        <input type="email" placeholder="Введите email'ы участников">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+        </md-chip-template>
+        <button md-chip-remove class="md-primary vegetablechip">
+          <md-icon>delete</md-icon>
+        </button>
+      </md-chips>
+      <div ng-messages="Project.partners.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{Project.partners.$error.serverMessage}}</div>
+        <span ng-show="!Project.$submitted && Project.partners.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </div>
+
     <br />
 
     <div class="text-center">
