@@ -8,18 +8,40 @@
 require 'factory_girl_rails'
 require 'faker'
 
+# страны с городами
 FactoryGirl.create_list(:country_with_cities, 5)
-FactoryGirl.create_list(:user, 65, max_city_id: 25)
+
+# пользователи
+FactoryGirl.create_list(:user, 20, max_city_id: 25)
+
+# с дополнительными email'ами
+FactoryGirl.create_list(:user_with_emails, 15, max_city_id: 25, domen: "test.ru")
+FactoryGirl.create_list(:user_with_emails, 15, max_city_id: 25, domen: "mail.ru")
+FactoryGirl.create_list(:user_with_emails, 15, max_city_id: 25, domen: "samsung.com")
+
+# категории
 FactoryGirl.create_list(:category, 7)
 
+# теги и технологии
 FactoryGirl.create_list(:tag, 30)
 FactoryGirl.create_list(:technology, 30)
 
+# проекты
 FactoryGirl.create_list(:project_with_additions, 30, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
 FactoryGirl.create_list(:project_with_additions, 30, :dev_finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
 FactoryGirl.create_list(:project_with_additions, 30, :finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30)
 
-
+# с подтверждениями
 FactoryGirl.create_list(:project_with_confirms, 70, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30, max_confirm_count: 10, max_confirmer_id: 65)
 FactoryGirl.create_list(:project_with_confirms, 70, :dev_finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30, max_confirm_count: 10, max_confirmer_id: 65)
 FactoryGirl.create_list(:project_with_confirms, 70, :finished, max_creater_id: 65, max_category_id: 7, max_tag_id: 30, max_tech_id: 30, max_confirm_count: 10, max_confirmer_id: 65)
+
+# организации
+testAdmin = User.find(rand(21..35));
+FactoryGirl.create(:organization, creater_id: testAdmin.id, admin_email: testAdmin.email, domen_name: "test.ru")
+
+mailAdmin = User.find(rand(36..50));
+FactoryGirl.create(:organization, creater_id: mailAdmin.id, admin_email: mailAdmin.email, domen_name: "mail.ru")
+
+samsungAdmin = User.find(rand(51..65));
+FactoryGirl.create(:organization, creater_id: samsungAdmin.id, admin_email: samsungAdmin.email, domen_name: "samsung.com")

@@ -37,14 +37,19 @@ class Organization < ApplicationRecord
 
   # проверка, что у пользователя добавлен e-mail в домене добавляемой организации
   def user_has_email
-    if creater.emails.where("email LIKE ?", "%@#{domen}").first.nil?
+    if creater.email.split('@')[1] != domen && creater.emails.where("email LIKE ?", "%@#{domen}").first.nil?
       errors.add(:domen, "вы должны добавить e-mail в домене организации")
     end
   end
 
   # next we have callbacks
   before_create do
-    self.admin_email = creater.emails.where("email LIKE ?", "%@#{domen}").first.email
+    if creater.email.split('@')[1] == domen
+      self.admin_email = creater.email
+    else
+      in_domen_email = creater.emails.where("email LIKE ?", "%@#{domen}").first
+      self.admin_email = in_domen_email.email
+    end
   end
 
 

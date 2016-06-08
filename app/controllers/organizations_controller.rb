@@ -28,12 +28,12 @@ class OrganizationsController < ApplicationController
 
   # все организации, в которых юзер админ
   def where_you_admin
-    render json: Organization.where_admin(current_user.emails.pluck(:email))
+    render json: Organization.where_admin(current_user.emails.pluck(:email).push(current_user.email))
   end
 
   # организации, в которые пользователь может вступить, но ещё не вступил
   def available
-    render json: Organization.available(current_user.emails.pluck(:email), current_user.user_organizations.pluck(:organization_id))
+    render json: Organization.available(current_user.emails.pluck(:email).push(current_user.email), current_user.user_organizations.pluck(:organization_id))
   end
 
   # PATCH/PUT /organizations/1

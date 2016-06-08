@@ -19,6 +19,7 @@ function($scope, Organization, domenFromUrlFilter, $parse, $state){
     organization.create().then(function (result) {
       $state.go('organizationSettings');
     }, function (errors) {
+      console.log(errors);
       var errors = errors.data;
 
       angular.forEach(errors, function (error, field) {
