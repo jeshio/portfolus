@@ -21,6 +21,16 @@ class ProjectExecutersController < ApplicationController
   # POST /project_executers
   def create
     @project_executer = ProjectExecuter.new(project_executer_params)
+    @project_executer.executer_id = current_user.id
+
+    # если участника добавляет создатель проекта
+    if @project_executer.project.creater_id == current_user.id
+      # установить, что он подтвердил
+      @project_executer.creater_confirmed = true
+    else
+      # подтвердил исполнитель, сообщающий об участии
+      @project_executer.executer_confirmed = true
+    end
 
     if @project_executer.save
       render json: @project_executer, status: :created, location: @project_executer

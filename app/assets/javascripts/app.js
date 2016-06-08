@@ -29,4 +29,17 @@ angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate'
       });
     }
   };
-}]);
+}])
+.directive('activeChip', function(){
+    return {
+        restrict: 'EA',
+        link: function(scope, elem, attrs) {
+          scope.$watch(attrs.activeChip, function(value){
+            if (value) {
+              var myChip = elem.parent().parent();
+              myChip.addClass('_active');
+            }
+          });
+        }
+    }
+});

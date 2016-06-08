@@ -116,6 +116,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'AuthCtrl',
       parent: 'onlyguest'
     })
+    // Проекты
     .state('projects', {
       title: 'Ваши проекты',
       url: '/projects',
@@ -137,6 +138,15 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'ProjectDetailCtrl',
       parent: 'getuser'
     })
+    // Участие в проектах
+    .state('projectExecuterNew', {
+      title: 'Сообщить об участии',
+      url: '/project-executer/{projectId:int}/new',
+      templateUrl: 'projectExecuter/tmpl/_new.html',
+      controller: 'CreateProjectExecuterCtrl',
+      parent: 'onlyusers'
+    })
+    // Поиск
     .state('search', {
       parent: 'getuser',
       title: 'Поиск',
@@ -164,6 +174,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       $rootScope.sideNav = !!toState.sideNav; // показать сайд бар справа
       $rootScope.title = toState.title ? toState.title : ''; // title страницы
       $rootScope.disablePadding = !!toState.disablePadding; // отключить паддинг в мейне
+      $rootScope.from = fromState; // предыдущее состояние
     });
     $rootScope.$on('devise:login', function(event, currentUser) {
       $rootScope.signedIn = Auth.isAuthenticated();

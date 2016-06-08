@@ -1,10 +1,12 @@
 angular.module('portfolus')
-.controller('ProjectDetailCtrl',['$scope', 'Project', '$stateParams', '$mdDialog', '$mdMedia', 'ProjectExecuter', 'ProjectConfirm', '$mdToast',
-function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, ProjectConfirm, $mdToast){
+.controller('ProjectDetailCtrl',['$scope', 'Project', '$stateParams', '$mdDialog', '$mdMedia', 'ProjectExecuter', 'ProjectConfirm', '$mdToast', '$filter', '$stateParams',
+function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, ProjectConfirm, $mdToast, $filter, $stateParams){
   $scope.project = {};
   $scope.executerId = $stateParams.executerId;
   $scope.confirm = {}; // подтверждение текущия пользователем
   $scope.confirmers = []; // список подтвердивших
+  $scope.userExecuter = {}; // текущий пользователь, исполнитель текущего проекта
+  $scope.userId = $stateParams.executerId;
 
   loadProject();
 
@@ -58,6 +60,24 @@ function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, Pr
 
       });
     };
+
+    // диалог - убрать из участников
+    $scope.removeExecuter = function (ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+            .title('Убрать вас из списка участников?')
+            .textContent('Вы будете исключены из списка участников')
+            .ariaLabel('Убрать вас из списка участников')
+            .targetEvent(ev)
+            .ok('Да')
+            .cancel('Нет');
+      $mdDialog.show(confirm).then(function() {
+        new ProjectExecuter({id: $scope.userExecuter.id}).delete().then(function (result) {
+          $mdToast.show($mdToast.simple().textContent('Вы убраны из списка участников!'));
+          loadProject();
+        });
+      });
+    }
   }
 
   function loadProject() {
@@ -66,12 +86,15 @@ function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, Pr
     Project.getDetail({id: $stateParams.projectId, executer_id: $scope.executerId}).then(function (result) {
       $scope.project = result;
 
-      if ($scope.signedIn)
+      if ($scope.signedIn) {
         // загружаем подтверждение
         ProjectConfirm.searchWithProjectAndUser($scope.project.id, $scope.executerId,
           $scope.authUser.id).then(function (data) {
             $scope.confirm = data;
         });
+
+        $scope.userExecuter = $filter('filter')($scope.project.projectExecuters, {executerId: $scope.authUser.id}, true)[0];
+      }
     });
   }
 }]);

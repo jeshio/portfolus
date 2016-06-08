@@ -8,8 +8,14 @@
   <!-- Блок для авторизованных пользователей  -->
   <div ng-show="authUser.id !== executerId">
     <!-- Не для владельца -->
-    <md-button class="md-raised success" ng-show="!confirm" ng-click="setConfirm()">Подтвердить участие</md-button>
+    <md-button class="md-raised success" ng-hide="confirm" ng-click="setConfirm()">Подтвердить участие</md-button>
     <md-button class="md-raised md-warn" ng-show="confirm" ng-click="unconfirm()">Отменить подтверждение</md-button>
+  </div>
+
+  <div>
+    <!-- Для неучавствующих -->
+    <md-button class="md-raised md-primary" ng-hide="userExecuter" ng-href="/project-executer/{{project.id}}/new">Сообщить об участии</md-button>
+    <md-button class="md-raised md-warn" ng-show="userExecuter" ng-click="removeExecuter()">Убрать из участников</md-button>
   </div>
 
 </div>

@@ -28,6 +28,8 @@ class ProjectExecuter < ApplicationRecord
 
   has_many :project_confirms, :dependent => :destroy
 
+  validates :project_id, uniqueness: { scope: [:executer_id] }
+
   # followed by association macros
 
   # and validation macros

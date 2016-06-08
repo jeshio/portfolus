@@ -20,7 +20,7 @@
   <div ng-show="project.projectExecuters">
     <b>Участники:</b>
     <md-chips ng-model="project.projectExecuters" readonly="true">
-      <md-chip-template>
+      <md-chip-template active-chip="$chip.executer.id == userId">
         <a ng-href="/{{$chip.executer.id}}" ng-click="hide()">{{$chip.executer.email}}</a>
         <span ng-show="$chip.role" class="text gray">({{$chip.role}})</span>
       </md-chip-template>

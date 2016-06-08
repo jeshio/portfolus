@@ -1,0 +1,36 @@
+<div layout-gt-md="row">
+  <div flex-gt-md="30"></div>
+  <div flex-gt-md="40">
+    <h2 class="md-title">Сообщить об участии</h2>
+    <h3 class="md-subhead">Проект "{{project.name}}"</h3>
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Ваша роль</label>
+      <input ng-model="projectExecuter.role" name="role" required type="text">
+
+      <div ng-messages="ProjectExecuter.role.$error" role="alert" md-auto-hide="false">
+        <div ng-message="serverMessage">{{ProjectExecuter.role.$error.serverMessage}}</div>
+        <span ng-show="!ProjectExecuter.$submitted && ProjectExecuter.role.$touched">
+          <div ng-messages-include="errorMessages.html" ></div>
+        </span>
+      </div>
+    </md-input-container>
+
+    <md-datepicker ng-model="projectExecuter.start_date" required md-placeholder="Дата, когда вы стали частью организации">
+    </md-datepicker>
+
+    <div layout-padding="">
+      <md-checkbox ng-model="nowTime" aria-label="По настоящее время">
+        По настоящее время
+      </md-checkbox>
+    </div>
+
+    <md-datepicker ng-model="projectExecuter.finish_date" ng-hide="nowTime" md-placeholder="Дата, когда вы покинули организацию">
+    </md-datepicker>
+
+    <br />
+
+    <div class="text-center">
+      <md-button type="submit" ng-disabled="ProjectExecuter.$invalid && !ProjectExecuter.$submitted" class="btn">Создать</md-button>
+    </div>
+  </div>
+</div>
