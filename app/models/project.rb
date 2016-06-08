@@ -36,11 +36,13 @@ class Project < ApplicationRecord
 
   has_many :project_executers, dependent: :destroy
 
+  has_many :executers, through: :project_executers
+
   has_many :project_tags, dependent: :destroy
 
-  has_many :project_technologies, dependent: :destroy
-
   has_many :tags, through: :project_tags
+
+  has_many :project_technologies, dependent: :destroy
 
   has_many :technologies, through: :project_technologies
 

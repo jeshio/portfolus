@@ -25,7 +25,8 @@ class UsersController < ApplicationController
   def all_projects
     @data = @user.executed_projects
 
-    render json: @data.as_json(include: { project_technologies: { include: :technology }, tags: {}, project_executers: { include: :project_confirms } })
+    render json: @data.as_json(include: { project_technologies: { include: :technology }, tags: {},
+      project_executers: { include: :project_confirms }, :project_executers => { include: :executer } })
   end
 
   private

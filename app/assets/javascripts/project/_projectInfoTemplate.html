@@ -17,6 +17,15 @@
   <div ng-show="project.version">
     <b>Версия:</b> {{project.version }}
   </div>
+  <div ng-show="project.projectExecuters">
+    <b>Участники:</b>
+    <md-chips ng-model="project.projectExecuters" readonly="true">
+      <md-chip-template>
+        <a ng-href="/{{$chip.executer.id}}" ng-click="hide()">{{$chip.executer.email}}</a>
+        <span ng-show="$chip.role" class="text gray">({{$chip.role}})</span>
+      </md-chip-template>
+    </md-chips>
+  </div>
   <p>
     {{project.description}}
   </p>

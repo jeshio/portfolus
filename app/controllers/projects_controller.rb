@@ -10,15 +10,16 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    @project = Project.includes(project_technologies: :technology).includes(:tags).order('created_at desc').find(params[:id])
-    render json: @project.to_json(:include => { :technologies => { :only => [:technology_id, :name] }, :tags => { :only => :name } })
+    @project = Project.find(params[:id])
+    render json: @project
   end
 
-  # один проект с подтверждениями
+  # один проект с подтверждениями и другими зависимостями
   def get_detail
     Project.param_user_id = detail_params[:executer_id]
     @project = Project.includes(project_technologies: :technology).includes(:tags).order('created_at desc').find(detail_params[:id])
-    render json: @project.as_json(include: { project_technologies: { include: :technology }, tags: {}, :confirms_for_user => { include: :confirmer } })
+    render json: @project.as_json(include: { project_technologies: { include: :technology }, tags: {},
+      :confirms_for_user => { include: :confirmer }, :project_executers => { include: :executer } })
   end
 
   # POST /projects

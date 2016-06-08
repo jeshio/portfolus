@@ -18,7 +18,7 @@
               </md-card-title-media>
             </md-card-title>
             <md-card-content>
-              <table>
+              <table class="table">
                 <tr>
                   <td>Город</td>
                   <td ng-bind="cities[user[0].cityId].name" class="text-right"></td>
@@ -27,7 +27,7 @@
                   <td>Участник проектов</td>
                   <td class="text-right">{{user[0].executedProjectsCount}}
                     <span ng-show="user[0].createdProjectsCount">(из них {{user[0].createdProjectsCount}} добавил)</span>
-                    </td>
+                  </td>
                 </tr>
               </table>
             </md-card-content>
@@ -51,7 +51,7 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <table>
+            <table class="table">
               <tr>
                 <td>Город</td>
                 <td ng-bind="cities[user[1].cityId].name" class="text-right"></td>
@@ -84,7 +84,7 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <table>
+            <table class="table">
               <tr>
                 <td>Город</td>
                 <td ng-bind="cities[user[2].cityId].name" class="text-right"></td>
