@@ -15,5 +15,9 @@ angular.module('rails').factory('User', ['railsResourceFactory', '$http', functi
       return resource.$get(resource.$url(this.id + '/emails'));
     };
 
+    resource.prototype.executerRequests = function () {
+      return resource.$get(resource.$url(this.id + '/executer_requests'));
+    }
+
     return resource;
 }]);

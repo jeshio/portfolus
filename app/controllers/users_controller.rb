@@ -29,6 +29,13 @@ class UsersController < ApplicationController
       project_executers: { include: :project_confirms }, :project_executers => { include: :executer } })
   end
 
+  # запросы других пользователей об участии в проектах текущего пользвоателя
+  def executer_requests
+    # не подтверждённые создателем записи об участии
+    @requested_projects = current_user.created_projects.includes(:project_executers).where({project_executers: { creater_confirmed: FALSE }}).all
+    render json: @requested_projects.as_json(include: { :project_executers => { include: :executer } })
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

@@ -43,9 +43,9 @@ class User < ApplicationRecord
   has_many :organization, through: :user_organization
   has_many :created_organization, :foreign_key => "creater_id", :class_name => "Organization", :dependent => :nullify
   has_many :confirms, :foreign_key => "confirmer_id", :class_name => "ProjectConfirm", :dependent => :destroy
-  has_many :project_executers, :foreign_key => "executer_id", :dependent => :destroy
+  has_many :project_executers, -> { where creater_confirmed: true, executer_confirmed: true }, :foreign_key => "executer_id", :dependent => :destroy
   has_many :executed_projects, through: :project_executers, source: :project
-  has_many :created_projects, foreign_key: :creater, class_name: :project, :dependent => :nullify
+  has_many :created_projects, foreign_key: "creater_id", class_name: "Project", :dependent => :nullify
   has_many :ordered_projects, :foreign_key => "client_id", :class_name => "Project", :dependent => :nullify
   has_many :emails, :dependent => :destroy
 
