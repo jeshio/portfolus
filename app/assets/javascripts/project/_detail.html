@@ -4,18 +4,21 @@
 
 <md-divider ng-hide="!authUser"></md-divider>
 
+<div ng-show="userExecuter && (!userExecuter.executerConfirmed || !userExecuter.createrConfirmed)" layout-padding="">
+  <!-- Для записанного, но не подтверждённого с обоих сторон, участника -->
+  Ваше участие в проекте зарегистрировано, но не подтвержденно
+  <span ng-show="!userExecuter.executerConfirmed">вами (<a ng-href="/project-executer/{{userExecuter.id}}/update">Подтвердить</a>)</span>
+  <span ng-show="!userExecuter.createrConfirmed">пользователем, добавившим проект (свяжитесь с ним для более скорого принятия решения)</span>
+</div>
+
 <div layout="row" layout-padding="" ng-hide="!authUser">
   <!-- Блок для авторизованных пользователей  -->
-  <div ng-show="authUser.id !== executerId">
-    <!-- Не для владельца -->
+  <div ng-show="authUser.id !== executerId && authUser.id !== project.createrId" layout="row">
+    <!-- Не для просматриваемого учавствующего и не для владельца -->
     <md-button class="md-raised success" ng-hide="confirm" ng-click="setConfirm()">Подтвердить участие</md-button>
     <md-button class="md-raised md-warn" ng-show="confirm" ng-click="unconfirm()">Отменить подтверждение</md-button>
-  </div>
-
-  <div>
-    <!-- Для неучавствующих -->
     <md-button class="md-raised md-primary" ng-hide="userExecuter" ng-href="/project-executer/{{project.id}}/new">Сообщить об участии</md-button>
-    <md-button class="md-raised md-warn" ng-show="userExecuter" ng-click="removeExecuter()">Убрать из участников</md-button>
+    <md-button class="md-raised md-warn" ng-show="userExecuter && userExecuter.executerConfirmed && userExecuter.createrConfirmed" ng-click="removeExecuter()">Убрать из участников</md-button>
   </div>
 
 </div>

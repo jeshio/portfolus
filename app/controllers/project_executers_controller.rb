@@ -3,14 +3,14 @@ class ProjectExecutersController < ApplicationController
 
   # GET /project_executers
   def index
-    @project_executers = ProjectExecuter.all
+    @project_executers = ProjectExecuter.where(index_params).all
 
     render json: @project_executers
   end
 
   # GET /project_executers/1
   def show
-    render json: @project_executer
+    render json: @project_executer.as_json(include: :project)
   end
 
   def get_with_confirms
@@ -59,5 +59,9 @@ class ProjectExecutersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def project_executer_params
       params.require(:project_executer).permit(:project_id, :executer_id, :role, :start_date, :finish_date, :executer_confirmed, :creater_confirmed)
+    end
+
+    def index_params
+      params.permit(:project_id, :executer_id, :role, :start_date, :finish_date, :executer_confirmed, :creater_confirmed)
     end
 end

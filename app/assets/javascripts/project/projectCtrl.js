@@ -20,6 +20,7 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
     new Project($scope.project).create().then(function (data) {
       $state.go('projects');
     }, function (errors) {
+      console.log(errors);
       angular.forEach(errors.data.errors, function (model, modelName) {
         angular.forEach(model, function (error, field) {
           modelNameUp = modelName.charAt(0).toUpperCase() + modelName.substr(1).toLowerCase();
@@ -72,8 +73,10 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
     $mdDialog.show({
       templateUrl: 'projectExecuter/tmpl/_dialogExecuterRequests.html',
-      controller: function ExecuterRequestsDialogController($scope, $mdDialog, authUser, User, ProjectExecuter) {
+      controller: function ExecuterRequestsDialogController($scope, $mdDialog, authUser) {
         $scope.authUser = authUser;
+        $scope.projectExecuters = [];
+        $scope.executerRequestedProjects = [];
         loadRequests();
 
         $scope.deleteExecuter = function (executer) {
@@ -83,6 +86,7 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
           });
         }
 
+        // создатель проекта подтверждает участие пользователя
         $scope.acceptExecuter = function (executer) {
           executer.creater_confirmed = true;
           new ProjectExecuter(executer).update().then(function () {
@@ -95,7 +99,12 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
           User.get(authUser.id).then(function (result) {
             result.executerRequests().then(function (requests) {
               console.log(requests);
-              $scope.requestedProjects = requests;
+              $scope.projectExecuters = requests;
+            });
+
+            result.toExecuterRequests().then(function (requests) {
+              console.log(requests);
+              $scope.executerRequestedProjects = requests;
             });
           });
         }

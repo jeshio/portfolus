@@ -93,7 +93,9 @@ function($scope, Project, $stateParams, $mdDialog, $mdMedia, ProjectExecuter, Pr
             $scope.confirm = data;
         });
 
-        $scope.userExecuter = $filter('filter')($scope.project.projectExecuters, {executerId: $scope.authUser.id}, true)[0];
+        ProjectExecuter.query({executerId: $scope.authUser.id, projectId: $scope.project.id}).then(function (result) {
+          $scope.userExecuter = result[0];
+        });
       }
     });
   }

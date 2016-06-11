@@ -146,6 +146,13 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'CreateProjectExecuterCtrl',
       parent: 'onlyusers'
     })
+    .state('projectExecuterUpdate', {
+      title: 'Информация об участии',
+      url: '/project-executer/{projectExecuterId:int}/update',
+      templateUrl: 'projectExecuter/tmpl/_update.html',
+      controller: 'ProjectExecuterCtrl',
+      parent: 'onlyusers'
+    })
     // Поиск
     .state('search', {
       parent: 'getuser',

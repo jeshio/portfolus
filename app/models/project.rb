@@ -34,7 +34,7 @@ class Project < ApplicationRecord
 
   belongs_to :organization, optional: true
 
-  has_many :project_executers, dependent: :destroy
+  has_many :project_executers, -> { where creater_confirmed: true, executer_confirmed: true }, dependent: :destroy
 
   has_many :executers, through: :project_executers
 
@@ -138,8 +138,8 @@ class Project < ApplicationRecord
 
         # по основным и дополнительным почтам
         partners_list =
-          User.select("users.id").distinct.joins(:emails).
-            where("emails.email IN (:emails) OR users.email IN (:emails) AND users.id != :id", { emails: partners, id: @project.creater_id }).all
+          User.select("users.id").distinct.left_outer_joins(:emails).
+            where("(emails.email IN (:emails) OR users.email IN (:emails)) AND users.id != :id", { emails: partners, id: @project.creater_id }).all
 
         project_executers = partners_list.map { |e| ProjectExecuter.new({executer_id: e.id, project_id: @project.id, creater_confirmed: true}) }
         executers = ProjectExecuter.import(project_executers, validate: false) if project_executers.size > 0

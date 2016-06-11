@@ -32,8 +32,14 @@ class UsersController < ApplicationController
   # запросы других пользователей об участии в проектах текущего пользвоателя
   def executer_requests
     # не подтверждённые создателем записи об участии
-    @requested_projects = current_user.created_projects.includes(:project_executers).where({project_executers: { creater_confirmed: FALSE }}).all
-    render json: @requested_projects.as_json(include: { :project_executers => { include: :executer } })
+    @requested_projects = ProjectExecuter.where("project_id IN (?) AND creater_confirmed = ?", current_user.created_projects.ids, FALSE).all
+    render json: @requested_projects.as_json(include: { :project => {}, :executer => {} })
+  end
+
+  # запросы создателей проектов об участии текущего пользователя
+  def to_executer_requests
+    @requested_projects = ProjectExecuter.where({executer_id: current_user.id, executer_confirmed: false})
+    render json: @requested_projects.as_json(include: { project: { include: :creater } })
   end
 
   private

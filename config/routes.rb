@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :user_organizations
 
     get 'users/:id/all_projects', to: 'users#all_projects'
+    get 'users/:id/to_executer_requests', to: 'users#to_executer_requests'
     get 'users/:id/executer_requests', to: 'users#executer_requests'
     resources :users do
       resources :emails
