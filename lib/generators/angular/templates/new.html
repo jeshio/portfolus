@@ -1,0 +1,10 @@
+<form name="<%= file_name.camelize %>" ng-submit="create<%= file_name.camelize %>()" novalidate="">
+  <div ng-include="'<%= file_name %>/tmpl/_form.html'">
+  </div>
+
+  <div class="text-center">
+    <md-button type="submit" ng-disabled="<%= file_name.camelize %>.$invalid && !<%= file_name.camelize %>.$submitted" class="btn">
+      Создать
+    </md-button>
+  </div>
+</form>

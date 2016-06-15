@@ -6,9 +6,15 @@ class AngularGenerator < Rails::Generators::Base
 
   def generate
     empty_directory "app/assets/javascripts/#{file_name}"
+    empty_directory "app/assets/javascripts/#{file_name}/tmpl"
     template "factory.js", "app/assets/javascripts/#{file_name}/#{file_name}Factory.js"
     template "controller.js", "app/assets/javascripts/#{file_name}/#{file_name}Ctrl.js"
-    template "list.html", "app/assets/javascripts/#{file_name}/_list.html"
+    template "createController.js", "app/assets/javascripts/#{file_name}/create#{file_name.camelize}Ctrl.js"
+    template "updateController.js", "app/assets/javascripts/#{file_name}/update#{file_name.camelize}Ctrl.js"
+    template "list.html", "app/assets/javascripts/#{file_name}/tmpl/_list.html"
+    template "form.html", "app/assets/javascripts/#{file_name}/tmpl/_form.html"
+    template "new.html", "app/assets/javascripts/#{file_name}/tmpl/_new.html"
+    template "update.html", "app/assets/javascripts/#{file_name}/tmpl/_update.html"
   end
 
   private

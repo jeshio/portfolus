@@ -4,15 +4,16 @@
 
 <md-divider ng-hide="!authUser"></md-divider>
 
-<div ng-show="userExecuter && (!userExecuter.executerConfirmed || !userExecuter.createrConfirmed)" layout-padding="">
-  <!-- Для записанного, но не подтверждённого с обоих сторон, участника -->
-  Ваше участие в проекте зарегистрировано, но не подтвержденно
-  <span ng-show="!userExecuter.executerConfirmed">вами (<a ng-href="/project-executer/{{userExecuter.id}}/update">Подтвердить</a>)</span>
-  <span ng-show="!userExecuter.createrConfirmed">пользователем, добавившим проект (свяжитесь с ним для более скорого принятия решения)</span>
-</div>
-
 <div layout="row" layout-padding="" ng-hide="!authUser">
   <!-- Блок для авторизованных пользователей  -->
+
+  <div ng-show="userExecuter && (!userExecuter.executerConfirmed || !userExecuter.createrConfirmed)" layout-padding="">
+    <!-- Для записанного, но не подтверждённого с одной из сторон, участника -->
+    Ваше участие в проекте зарегистрировано, но не подтвержденно
+    <span ng-show="!userExecuter.executerConfirmed">вами (<a ng-href="/project-executer/{{userExecuter.id}}/update">Подтвердить</a>)</span>
+    <span ng-show="!userExecuter.createrConfirmed">пользователем, добавившим проект (свяжитесь с ним для более скорого принятия решения)</span>
+  </div>
+
   <div ng-show="authUser.id !== executerId && authUser.id !== project.createrId" layout="row">
     <!-- Не для просматриваемого учавствующего и не для владельца -->
     <md-button class="md-raised success" ng-hide="confirm" ng-click="setConfirm()">Подтвердить участие</md-button>

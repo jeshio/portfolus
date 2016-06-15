@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :emails
   devise_for :users
 
   scope '/api' do
@@ -24,8 +23,9 @@ Rails.application.routes.draw do
     get 'organizations/where_you_admin', to: 'organizations#where_you_admin'
     resources :organizations
 
+    # FIXME исключить ненужные роуты, которые используется только с зависимостью от пользователя
+    resources :order_projects
     resources :tags
-
     resources :user_organizations
 
     get 'users/:id/all_projects', to: 'users#all_projects'
@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     get 'users/:id/executer_requests', to: 'users#executer_requests'
     resources :users do
       resources :emails
+      resources :order_projects
       resources :user_organizations
     end
 

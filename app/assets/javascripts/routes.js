@@ -153,6 +153,21 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'ProjectExecuterCtrl',
       parent: 'onlyusers'
     })
+    // заказываемые проекты
+    .state('orderProjects', {
+      title: 'Зказываемые проекты',
+      url: '/order-projects',
+      templateUrl: 'orderProject/tmpl/_list.html',
+      controller: 'OrderProjectCtrl',
+      parent: 'onlyusers'
+    })
+    .state('orderProjectsCreate', {
+      title: 'Заказать проект',
+      url: '/order-projects/new',
+      templateUrl: 'orderProject/tmpl/_new.html',
+      controller: 'CreateOrderProjectCtrl',
+      parent: 'onlyusers'
+    })
     // Поиск
     .state('search', {
       parent: 'getuser',
@@ -188,12 +203,12 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       $rootScope.authUser = currentUser;
       $rootScope.logout = Auth.logout;
     });
-    $rootScope.$on('devise:new-registration', function (e, currentUser){
+    $rootScope.$on('devise:new-registration', function (e, currentUser) {
       $rootScope.authUser = currentUser;
       $rootScope.signedIn = true;
     });
-    $rootScope.$on('devise:logout', function (e, currentUser){
-      $rootScope.authUser = {};
+    $rootScope.$on('devise:logout', function (e, currentUser) {
+      $rootScope.authUser = undefined;
       $rootScope.signedIn = false;
       $state.go('home');
     });

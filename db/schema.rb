@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605080755) do
+ActiveRecord::Schema.define(version: 20160613182151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,26 @@ ActiveRecord::Schema.define(version: 20160605080755) do
     t.index ["confirm_hash"], name: "index_emails_on_confirm_hash", unique: true, using: :btree
     t.index ["email"], name: "index_emails_on_email", unique: true, using: :btree
     t.index ["user_id"], name: "index_emails_on_user_id", using: :btree
+  end
+
+  create_table "order_projects", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "price_min"
+    t.integer  "price_max"
+    t.boolean  "finished"
+    t.integer  "views"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "customer_id"
+    t.integer  "executer_id"
+    t.index ["category_id"], name: "index_order_projects_on_category_id", using: :btree
+    t.index ["customer_id"], name: "index_order_projects_on_customer_id", using: :btree
+    t.index ["executer_id"], name: "index_order_projects_on_executer_id", using: :btree
+    t.index ["finished"], name: "index_order_projects_on_finished", using: :btree
+    t.index ["price_max"], name: "index_order_projects_on_price_max", using: :btree
+    t.index ["price_min"], name: "index_order_projects_on_price_min", using: :btree
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -189,6 +209,9 @@ ActiveRecord::Schema.define(version: 20160605080755) do
 
   add_foreign_key "cities", "countries", on_delete: :nullify
   add_foreign_key "emails", "users"
+  add_foreign_key "order_projects", "categories"
+  add_foreign_key "order_projects", "users", column: "customer_id"
+  add_foreign_key "order_projects", "users", column: "executer_id"
   add_foreign_key "organizations", "users", column: "creater_id"
   add_foreign_key "project_confirms", "project_executers"
   add_foreign_key "project_confirms", "users", column: "confirmer_id"

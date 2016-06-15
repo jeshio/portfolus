@@ -48,6 +48,7 @@ class User < ApplicationRecord
   has_many :created_projects, foreign_key: "creater_id", class_name: "Project", :dependent => :nullify
   has_many :ordered_projects, :foreign_key => "client_id", :class_name => "Project", :dependent => :nullify
   has_many :emails, :dependent => :destroy
+  has_many :order_projects, :foreign_key => "customer_id", :class_name => "OrderProject", :dependent => :destroy
 
   belongs_to :city, optional: true
 

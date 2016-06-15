@@ -1,3 +1,25 @@
-<div ng-repeat="<%= file_name %> in <%= file_name.pluralize(2) %>">
+<section layout="row" layout-sm="column" layout-wrap>
+  <md-button href="/<%= file_name.titleize.downcase.parameterize.pluralize(2) %>/new" class="md-raised md-primary">Создать</md-button>
+</section>
 
-</div>
+<md-list flex>
+  <md-subheader class="md-no-sticky"><%= file_name.camelize.pluralize(2) %></md-subheader>
+  <md-virtual-repeat-container>
+    <md-list-item class="md-3-line" md-virtual-repeat="<%= file_name %> in <%= file_name.pluralize(2) %>" md-item-size="20" ng-click="null">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ <%= file_name %> }}</h3>
+        <h4>{{ <%= file_name %> }}</h4>
+        <p>{{ <%= file_name %> }}</p>
+      </div>
+      <md-button class="md-secondary md-icon-button" ng-click="delete(<%= file_name %>)" aria-label="Удалить">
+        <md-icon>delete</md-icon>
+      </md-button>
+      <md-divider ng-if="!$last"></md-divider>
+    </md-list-item>
+  </md-virtual-repeat-container>
+  <md-list-item class="md-3-line" ng-hide="<%= file_name.pluralize(2) %>.length > 0">
+    <div class="md-list-item-text" layout="column">
+      <p>Список пуст.</p>
+    </div>
+  </md-list-item>
+</md-list>

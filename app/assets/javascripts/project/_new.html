@@ -1,4 +1,4 @@
-<!-- Форма регистрации -->
+<!-- Форма добавления проекта -->
 <div flex-offset-md="20" flex-md="60" flex-offset-gt-md="30" flex-gt-md="40" flex="100">
 
   <h1 class="md-headline">Добавить проект</h1>
@@ -32,7 +32,7 @@
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>Категория</label>
-        <md-select name="category_id" ng-model="project.category_id">
+        <md-select name="category_id" ng-model="project.category_id" required>
           <md-option ng-repeat="category in categories" ng-value="{{category.id}}">
             {{category.name}}
           </md-option>

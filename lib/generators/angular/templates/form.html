@@ -1,0 +1,24 @@
+<h2 class="md-title">New <%= file_name %></h2>
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Название</label>
+  <input ng-model="<%= file_name %>.name" name="name" required type="text">
+
+  <div ng-messages="<%= file_name.camelize %>.name.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{<%= file_name.camelize %>.name.$error.serverMessage}}</div>
+    <span ng-show="!<%= file_name.camelize %>.$submitted && <%= file_name.camelize %>.name.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Краткая информация</label>
+  <textarea ng-model="<%= file_name %>.description" name="description" rows="5" required></textarea>
+
+  <div ng-messages="<%= file_name.camelize %>.description.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{<%= file_name.camelize %>.description.$error.serverMessage}}</div>
+    <span ng-show="!<%= file_name.camelize %>.$submitted && <%= file_name.camelize %>.description.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>

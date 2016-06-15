@@ -26,7 +26,7 @@ class Project < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  belongs_to :category, optional: true
+  belongs_to :category
 
   belongs_to :client, class_name: "User", optional: true
 
