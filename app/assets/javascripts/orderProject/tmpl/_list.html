@@ -4,16 +4,24 @@
 
 <md-list flex>
   <md-subheader class="md-no-sticky">Проекты на заказ</md-subheader>
-  <md-list-item class="md-3-line" ng-repeat="orderProject in orderProjects" md-item-size="20" ng-click="null">
+  <md-list-item class="md-3-line" ng-repeat="orderProject in orderProjects" ng-click="null">
     <div class="md-list-item-text" layout="column">
       <h3>{{ orderProject.name }}</h3>
       <h4>Категория: {{ orderProject.category.name }}</h4>
       <p class="text gray" ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin != orderProject.priceMax">{{ orderProject.priceMin }} - {{ orderProject.priceMax }} рублей</p>
       <p class="text gray" ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin == orderProject.priceMax">{{ orderProject.priceMin }} рублей</p>
       <p class="text gray" ng-show="orderProject.priceMin && !orderProject.priceMax">от {{ orderProject.priceMin }} рублей</p>
-      <p class="text gray" ng-show="!orderProject.priceMin && orderProject.priceMax">до {{ orderProject.priceMin }} рублей</p>
+      <p class="text gray" ng-show="!orderProject.priceMin && orderProject.priceMax">до {{ orderProject.priceMax }} рублей</p>
       <p class="text gray" ng-hide="orderProject.priceMin || orderProject.priceMax">стоимость не указана</p>
       <p>{{ orderProject.description }}</p>
+      <div ng-show="orderProject.tags.length > 0">
+        Теги:
+        <span ng-repeat="tag in orderProject.tags" readonly="true"> {{tag.name}} </span>
+      </div>
+      <div ng-show="orderProject.technologies.length > 0">
+        Технологии:
+        <span ng-repeat="tech in orderProject.technologies" readonly="true"> {{tech.name}} </span>
+      </div>
     </div>
     <md-button class="md-secondary md-icon-button" ng-click="delete(orderProject)" aria-label="Удалить">
       <md-icon>delete</md-icon>

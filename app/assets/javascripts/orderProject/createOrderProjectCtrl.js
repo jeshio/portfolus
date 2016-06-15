@@ -12,8 +12,10 @@ function($scope, OrderProject, $parse, Category, $state){
   $scope.createOrderProject = function () {
     var orderProject = new OrderProject($scope.orderProject);
     orderProject.create().then(function (result) {
+      console.log(result);
       $state.go('orderProjects');
     }, function (errors) {
+      console.log(errors);
       var errors = errors.data;
 
       angular.forEach(errors, function (error, field) {

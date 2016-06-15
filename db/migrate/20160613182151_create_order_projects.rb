@@ -12,9 +12,9 @@ class CreateOrderProjects < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_reference :order_projects, :customer, references: :users, index: true, :on_delete => :destroy
+    add_reference :order_projects, :customer, references: :users, index: true, :on_delete => :cascade
     add_foreign_key :order_projects, :users, column: :customer_id
-    add_reference :order_projects, :executer, references: :users, index: true, :on_delete => :destroy
+    add_reference :order_projects, :executer, references: :users, index: true, :on_delete => :cascade
     add_foreign_key :order_projects, :users, column: :executer_id
 
     add_index :order_projects, :price_min

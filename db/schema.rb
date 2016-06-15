@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613182151) do
+ActiveRecord::Schema.define(version: 20160615193612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,20 @@ ActiveRecord::Schema.define(version: 20160613182151) do
     t.index ["confirm_hash"], name: "index_emails_on_confirm_hash", unique: true, using: :btree
     t.index ["email"], name: "index_emails_on_email", unique: true, using: :btree
     t.index ["user_id"], name: "index_emails_on_user_id", using: :btree
+  end
+
+  create_table "order_project_tags", force: :cascade do |t|
+    t.integer "order_project_id"
+    t.integer "tag_id"
+    t.index ["order_project_id"], name: "index_order_project_tags_on_order_project_id", using: :btree
+    t.index ["tag_id"], name: "index_order_project_tags_on_tag_id", using: :btree
+  end
+
+  create_table "order_project_technologies", force: :cascade do |t|
+    t.integer "order_project_id"
+    t.integer "technology_id"
+    t.index ["order_project_id"], name: "index_order_project_technologies_on_order_project_id", using: :btree
+    t.index ["technology_id"], name: "index_order_project_technologies_on_technology_id", using: :btree
   end
 
   create_table "order_projects", force: :cascade do |t|
@@ -209,6 +223,10 @@ ActiveRecord::Schema.define(version: 20160613182151) do
 
   add_foreign_key "cities", "countries", on_delete: :nullify
   add_foreign_key "emails", "users"
+  add_foreign_key "order_project_tags", "order_projects"
+  add_foreign_key "order_project_tags", "tags"
+  add_foreign_key "order_project_technologies", "order_projects"
+  add_foreign_key "order_project_technologies", "technologies"
   add_foreign_key "order_projects", "categories"
   add_foreign_key "order_projects", "users", column: "customer_id"
   add_foreign_key "order_projects", "users", column: "executer_id"

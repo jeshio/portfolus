@@ -5,7 +5,6 @@ class CreateProjectTechnologies < ActiveRecord::Migration[5.0]
       t.references :project, foreign_key: true, :on_delete => :cascade
       t.integer :power, limit: 2
 
-      t.timestamps
     end
   end
 end

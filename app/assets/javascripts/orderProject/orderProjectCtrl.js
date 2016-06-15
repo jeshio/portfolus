@@ -26,8 +26,8 @@ function($scope, OrderProject, $mdDialog, $mdMedia, $mdToast, User){
   // запрос списка
   function loadOrderProjects() {
     User.get($scope.authUser.id).then(function (result) {
-      result.orderProjects().then(function (result) {
-        $scope.orderProjects = result;
+      result.orderProjects().then(function (projects) {
+        $scope.orderProjects = projects;
       });
     });
   };

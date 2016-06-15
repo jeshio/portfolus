@@ -13,9 +13,6 @@ Rails.application.routes.draw do
     get 'project_executers/get_with_confirms', to: 'project_executers#get_with_confirms'
     resources :project_executers
 
-    resources :project_tags
-    resources :project_technologies
-
     get 'projects/get_detail', to: 'projects#get_detail'
     resources :projects
 
@@ -25,7 +22,6 @@ Rails.application.routes.draw do
 
     # FIXME исключить ненужные роуты, которые используется только с зависимостью от пользователя
     resources :order_projects
-    resources :tags
     resources :user_organizations
 
     get 'users/:id/all_projects', to: 'users#all_projects'
@@ -37,8 +33,6 @@ Rails.application.routes.draw do
       resources :user_organizations
     end
 
-
-    resources :technologies
     resources :categories
 
     get 'get_commits', to: 'application#get_commits'
