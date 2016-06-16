@@ -38,13 +38,13 @@ md-menu-content {
 
   md-menu-item {
     background-color: $primary-color;
-    text-align: center;
     height: auto !important;
 
     a {
       color: white;
       margin: 0;
       padding: 15px 35px;
+      text-decoration: none;
     }
   }
 }

@@ -1,13 +1,13 @@
 <div layout="row" show-gt-md hide>
-  <a href="/home" active-link="active">Главная</a>
+  <a href="/home" active-link="active"><md-icon>bookmark</md-icon> Главная</a>
 
-  <a href="/search" active-link="active">Поиск</a>
-  <a ng-hide="signedIn" href="/auth" active-link="active">Войти</a>
-  <a ng-hide="signedIn" href="/register" active-link="active">Присоединиться</a>
-  <a ng-show="signedIn" href="/projects" active-link="active">Проекты</a>
-  <a ng-show="signedIn" href="/order-projects" active-link="active">Заказ проектов</a>
-  <a ng-show="signedIn" href="/settings" active-link="active">{{authUser.email }}</a>
-  <a ng-show="signedIn" href="#" ng-click="logout()">Выйти</a>
+  <a href="/search" active-link="active"><md-icon>search</md-icon> Поиск</a>
+  <a ng-hide="signedIn" href="/auth" active-link="active"><md-icon>person</md-icon> Войти</a>
+  <a ng-hide="signedIn" href="/register" active-link="active"><md-icon>input</md-icon> Присоединиться</a>
+  <a ng-show="signedIn" href="/projects" active-link="active"><md-icon>work</md-icon> Мои проекты</a>
+  <a ng-show="signedIn" href="/order-projects" active-link="active"><md-icon>gavel</md-icon> Заказ проектов</a>
+  <a ng-show="signedIn" href="/settings" active-link="active"><md-icon>settings</md-icon> {{authUser.email }}</a>
+  <a ng-show="signedIn" href="#" ng-click="logout()"><md-icon>person_outline</md-icon> Выйти</a>
 </div>
 
 <md-menu-bar hide-gt-md class="no-paddings">
@@ -17,28 +17,28 @@
     </button>
     <md-menu-content>
       <md-menu-item>
-        <a href="/home" active-link="active">Главная</a>
+        <a href="/home" active-link="active"><md-icon>bookmark</md-icon> Главная</a>
       </md-menu-item>
       <md-menu-item>
-        <a href="/search" active-link="active">Поиск</a>
+        <a href="/search" active-link="active"><md-icon>search</md-icon> Поиск</a>
       </md-menu-item>
       <md-menu-item ng-hide="signedIn">
-        <a ng-hide="signedIn" href="/auth" active-link="active">Войти</a>
+        <a ng-hide="signedIn" href="/auth" active-link="active"><md-icon>person</md-icon> Войти</a>
       </md-menu-item>
       <md-menu-item ng-hide="signedIn">
-        <a href="/register" active-link="active">Присоединиться</a>
+        <a href="/register" active-link="active"><md-icon>input</md-icon> Присоединиться</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/projects" active-link="active">Проекты</a>
+        <a href="/projects" active-link="active"><md-icon>work</md-icon>Мои проекты</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/order-projects" active-link="active">Заказ проектов</a>
+        <a href="/order-projects" active-link="active"><md-icon>gavel</md-icon> Заказ проектов</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/settings" active-link="active">{{authUser.email }}</a>
+        <a href="/settings" active-link="active"><md-icon>settings</md-icon> {{authUser.email }}</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="#" active-link="active" ng-click="logout()">Выйти</a>
+        <a href="#" active-link="active" ng-click="logout()"><md-icon>person_outline</md-icon> Выйти</a>
       </md-menu-item>
     </md-menu-content>
   </md-menu>

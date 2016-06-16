@@ -1,0 +1,45 @@
+<div layout-padding="">
+  <h3>Заказываемый проект {{ orderProject.name }}</h3>
+
+  <div ng-show="orderProject.customer">
+    <b>Заказчик:</b> {{orderProject.customer.email }}
+  </div>
+  <div ng-show="orderProject.category">
+    <b>Категория:</b> {{orderProject.category.name }}
+  </div>
+
+  <b>Вознаграждение:</b>
+  <span ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin != orderProject.priceMax">{{ orderProject.priceMin }} - {{ orderProject.priceMax }} рублей</span>
+  <span ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin == orderProject.priceMax">{{ orderProject.priceMin }} рублей</span>
+  <span ng-show="orderProject.priceMin && !orderProject.priceMax">от {{ orderProject.priceMin }} рублей</span>
+  <span ng-show="!orderProject.priceMin && orderProject.priceMax">до {{ orderProject.priceMax }} рублей</span>
+  <span ng-hide="orderProject.priceMin || orderProject.priceMax">не указано</span>
+
+  <p>
+    {{orderProject.description}}
+  </p>
+
+  <div ng-show="orderProject.tags.length > 0">
+    <b>Теги:</b>
+    <span ng-repeat="tag in orderProject.tags">
+      <span class="tag">{{tag.name}}</span>
+    </span>
+  </div>
+
+  <div ng-show="orderProject.technologies.length > 0">
+    <b>Технологии:</b>
+    <span ng-repeat="tech in orderProject.technologies">
+      <span class="tag">{{tech.name}}</span>
+    </span>
+  </div>
+
+  <section layout="row" layout-sm="column" layout-wrap>
+    <!-- <md-button class="md-primary" ui-sref="orderProjectUpdate({orderProjectId: orderProject.id})">
+      <md-icon>mode_edit</md-icon> Обновить
+    </md-button> -->
+    <md-button class="md-warn" ng-click="delete($event)">
+      <md-icon>delete</md-icon> Удалить
+    </md-button>
+  </section>
+
+</div>

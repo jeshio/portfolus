@@ -10,7 +10,7 @@ class OrderProjectsController < ApplicationController
 
   # GET /order_projects/1
   def show
-    render json: @order_project.as_json(include: :category)
+    render json: @order_project.as_json(include: { category: {}, technologies: {}, tags: {}, customer: {} })
   end
 
   # POST /order_projects

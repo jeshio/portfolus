@@ -1,0 +1,15 @@
+<div layout-padding="">
+  <h3><%= <%= file_name.titleize %> %> {{ <%= file_name %>.name }}</h3>
+  <p>
+    {{ <%= file_name %>.description }}
+  </p>
+
+  <section layout="row" layout-sm="column" layout-wrap>
+    <md-button class="md-primary" ui-sref="<%= file_name %>Update({<%= file_name %>Id: <%= file_name %>.id})">
+      <md-icon>mode_edit</md-icon> Обновить
+    </md-button>
+    <md-button class="md-warn" ng-click="delete($event)">
+      <md-icon>delete</md-icon> Удалить
+    </md-button>
+  </section>
+</div>

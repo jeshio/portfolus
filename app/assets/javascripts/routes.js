@@ -118,7 +118,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     })
     // Проекты
     .state('projects', {
-      title: 'Ваши проекты',
+      title: 'Мои проекты',
       url: '/projects',
       templateUrl: 'project/_list.html',
       controller: 'ProjectCtrl',
@@ -166,6 +166,20 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       url: '/order-projects/new',
       templateUrl: 'orderProject/tmpl/_new.html',
       controller: 'CreateOrderProjectCtrl',
+      parent: 'onlyusers'
+    })
+    .state('orderProjectDetail', {
+      title: 'Информация о заказываемом проекте',
+      url: '/order-projects/{orderProjectId:int}',
+      templateUrl: 'orderProject/tmpl/_detail.html',
+      controller: 'DetailOrderProjectCtrl',
+      parent: 'onlyusers'
+    })
+    .state('orderProjectUpdate', {
+      title: 'Обновить заказываемый проект',
+      url: '/order-projects/{orderProjectId:int}/update',
+      templateUrl: 'orderProject/tmpl/_update.html',
+      controller: 'DetailOrderProjectCtrl',
       parent: 'onlyusers'
     })
     // Поиск
