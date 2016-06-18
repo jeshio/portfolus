@@ -5,6 +5,7 @@
   <a ng-hide="signedIn" href="/auth" active-link="active"><md-icon>person</md-icon> Войти</a>
   <a ng-hide="signedIn" href="/register" active-link="active"><md-icon>input</md-icon> Присоединиться</a>
   <a ng-show="signedIn" href="/projects" active-link="active"><md-icon>work</md-icon> Мои проекты</a>
+  <a ng-show="signedIn" href="/order-executer-requests" active-link="active"><md-icon>comment</md-icon> Предложения</a>
   <a ng-show="signedIn" href="/order-projects" active-link="active"><md-icon>gavel</md-icon> Заказ проектов</a>
   <a ng-show="signedIn" href="/settings" active-link="active"><md-icon>settings</md-icon> {{authUser.email }}</a>
   <a ng-show="signedIn" href="#" ng-click="logout()"><md-icon>person_outline</md-icon> Выйти</a>
@@ -30,6 +31,9 @@
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
         <a href="/projects" active-link="active"><md-icon>work</md-icon>Мои проекты</a>
+      </md-menu-item>
+      <md-menu-item ng-show="signedIn">
+        <a href="/order-executer-requests" active-link="active"><md-icon>comment</md-icon> Предложения</a>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
         <a href="/order-projects" active-link="active"><md-icon>gavel</md-icon> Заказ проектов</a>

@@ -100,12 +100,10 @@ function($scope, Project, User, Category, $mdConstant, $mdMedia, $mdDialog, $sta
         function loadRequests() {
           User.get(authUser.id).then(function (result) {
             result.executerRequests().then(function (requests) {
-              console.log(requests);
               $scope.projectExecuters = requests;
             });
 
             result.toExecuterRequests().then(function (requests) {
-              console.log(requests);
               $scope.executerRequestedProjects = requests;
             });
           });

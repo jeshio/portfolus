@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
     # FIXME исключить ненужные роуты, которые используется только с зависимостью от пользователя
     resources :order_projects
+    resources :order_executer_requests
     resources :user_organizations
 
     get 'users/:id/all_projects', to: 'users#all_projects'
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
     resources :users do
       resources :emails
       resources :order_projects
+      resources :order_executer_requests
       resources :user_organizations
     end
 

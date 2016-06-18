@@ -2,17 +2,20 @@
   <h3>Заказываемый проект {{ orderProject.name }}</h3>
 
   <div ng-show="orderProject.customer">
-    <b>Заказчик:</b> {{orderProject.customer.email }}
+    <b>Заказчик:</b> <a ng-href="/{{orderProject.customer.id}}">{{orderProject.customer.email }}</a>
   </div>
   <div ng-show="orderProject.category">
     <b>Категория:</b> {{orderProject.category.name }}
   </div>
+  <div ng-show="orderProject.executerId">
+    <b>Исполнитель:</b> <a ng-href="/{{orderProject.executer.id}}">{{orderProject.executer.email }}</a>
+  </div>
 
   <b>Вознаграждение:</b>
-  <span ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin != orderProject.priceMax">{{ orderProject.priceMin }} - {{ orderProject.priceMax }} рублей</span>
-  <span ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin == orderProject.priceMax">{{ orderProject.priceMin }} рублей</span>
-  <span ng-show="orderProject.priceMin && !orderProject.priceMax">от {{ orderProject.priceMin }} рублей</span>
-  <span ng-show="!orderProject.priceMin && orderProject.priceMax">до {{ orderProject.priceMax }} рублей</span>
+  <span ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin != orderProject.priceMax">{{ orderProject.priceMin }} - {{ orderProject.priceMax }} руб.</span>
+  <span ng-show="orderProject.priceMin && orderProject.priceMax && orderProject.priceMin == orderProject.priceMax">{{ orderProject.priceMin }} руб.</span>
+  <span ng-show="orderProject.priceMin && !orderProject.priceMax">от {{ orderProject.priceMin }} руб.</span>
+  <span ng-show="!orderProject.priceMin && orderProject.priceMax">до {{ orderProject.priceMax }} руб.</span>
   <span ng-hide="orderProject.priceMin || orderProject.priceMax">не указано</span>
 
   <p>
@@ -33,13 +36,45 @@
     </span>
   </div>
 
-  <section layout="row" layout-sm="column" layout-wrap>
+  <md-list ng-show="orderProject.orderExecuterRequests.length > 0" ng-hide="orderProject.executerId">
+    <md-subheader class="md-no-sticky">Заявки на исполнение</md-subheader>
+    <md-list-item class="md-3-line" ng-repeat="request in orderProject.orderExecuterRequests">
+      <div class="md-list-item-text" layout="column">
+        <h3><a ng-href="/{{request.executer.id}}">{{ request.executer.email }}</a></h3>
+        <h4 ng-show="request.price">Вознаграждение {{ request.price }} руб.</h4>
+        <p>{{ request.comment }}</p>
+
+        <section layout="row" layout-sm="column" layout-wrap ng-show="authUser.id == orderProject.customer.id">
+          <!-- Для создателя проекта -->
+          <md-button ng-click="chooseExecuter($event, request)" class="md-raised success" aria-label="Выбрать исполнителем">
+            <md-icon>done</md-icon> Выбрать исполнителем
+          </md-button>
+        </section>
+      </div>
+      <md-divider ng-if="!$last"></md-divider>
+    </md-list-item>
+  </md-list>
+
+  <section layout="row" layout-sm="column" layout-wrap ng-show="authUser" ng-hide="orderProject.executerId">
+    <section layout="row" layout-sm="column" layout-wrap ng-hide="authUser.id == orderProject.customer.id">
+      <!-- Не для создателя проекта -->
+      <md-button class="md-raised success" ng-hide="userOrderExecuterRequest" ng-click="createOrderExecuterRequest($event)">
+        <md-icon>done</md-icon> Стать исполнителем
+      </md-button>
+      <md-button class="md-raised md-warn" ng-show="userOrderExecuterRequest" ng-click="deleteOrderExecuterRequest($event)">
+        <md-icon>clear</md-icon> Отменить предложение
+      </md-button>
+    </section>
     <!-- <md-button class="md-primary" ui-sref="orderProjectUpdate({orderProjectId: orderProject.id})">
       <md-icon>mode_edit</md-icon> Обновить
     </md-button> -->
-    <md-button class="md-warn" ng-click="delete($event)">
-      <md-icon>delete</md-icon> Удалить
-    </md-button>
+
+    <section layout="row" layout-sm="column" layout-wrap ng-show="authUser.id == orderProject.customer.id" ng-hide="orderProject.executerId">
+      <!-- Для создателя проекта -->
+      <md-button class="md-warn" ng-click="delete($event)">
+        <md-icon>delete</md-icon> Удалить заказ
+      </md-button>
+    </section>
   </section>
 
 </div>

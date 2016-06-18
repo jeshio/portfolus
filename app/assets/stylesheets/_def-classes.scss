@@ -26,12 +26,30 @@
   &.gray {
     color: gray;
   }
+  &.white {
+    color: white;
+  }
+  &.padding {
+    padding: 5px;
+  }
+}
+
+.bg-success {
+  background-color: #4CAF50;
+}
+
+.bg-disabled {
+  background-color: #e6e6e6;
 }
 
 .md-button {
   &.success {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50 !important;
+    color: white !important;
+
+    md-icon {
+      color: white !important;
+    }
 
     &:hover {
       background-color: #388E3C !important;

@@ -1,0 +1,26 @@
+<h2 class="md-title">Предложить себя исполнителем проекта</h2>
+<h3 class="md-subhead">{{orderProject.name}}</h3>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Комментарий</label>
+  <textarea ng-model="orderExecuterRequest.comment" name="comment" rows="5" required></textarea>
+
+  <div ng-messages="OrderExecuterRequest.comment.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{OrderExecuterRequest.comment.$error.serverMessage}}</div>
+    <span ng-show="!OrderExecuterRequest.$submitted && OrderExecuterRequest.comment.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Вознаграждение (в рублях)</label>
+  <input type="number" ng-model="orderExecuterRequest.price" name="price" required/>
+
+  <div ng-messages="OrderExecuterRequest.price.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{OrderExecuterRequest.price.$error.serverMessage}}</div>
+    <span ng-show="!OrderExecuterRequest.$submitted && OrderExecuterRequest.price.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>

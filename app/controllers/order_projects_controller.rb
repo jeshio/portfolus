@@ -10,7 +10,7 @@ class OrderProjectsController < ApplicationController
 
   # GET /order_projects/1
   def show
-    render json: @order_project.as_json(include: { category: {}, technologies: {}, tags: {}, customer: {} })
+    render json: @order_project.as_json(include: { category: {}, technologies: {}, tags: {}, customer: {}, executer: {}, order_executer_requests: { include: :executer } })
   end
 
   # POST /order_projects
@@ -46,7 +46,7 @@ class OrderProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def order_project_params
-      params.require(:order_project).permit(:name, :description, :price_min, :price_max, :category_id).merge(customer_id: current_user.id)
+      params.require(:order_project).permit(:name, :description, :price_min, :price_max, :category_id, :executer_id).merge(customer_id: current_user.id)
     end
 
     def order_project_technologies

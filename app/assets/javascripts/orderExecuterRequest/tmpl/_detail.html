@@ -1,0 +1,16 @@
+<div layout-padding="">
+  <h3>По проекту {{ orderExecuterRequest.orderProject.name }}</h3>
+  <h4 ng-show="orderExecuterRequest.price">Вознаграждение {{ orderExecuterRequest.price }}</h4>
+  <p ng-show="orderExecuterRequest.comment">
+    {{ orderExecuterRequest.comment }}
+  </p>
+
+  <section layout="row" layout-sm="column" layout-wrap>
+    <!-- <md-button class="md-primary" ui-sref="orderExecuterRequestUpdate({orderExecuterRequestId: orderExecuterRequest.id})">
+      <md-icon>mode_edit</md-icon> Обновить
+    </md-button> -->
+    <md-button class="md-warn" ng-click="delete($event)">
+      <md-icon>delete</md-icon> Удалить
+    </md-button>
+  </section>
+</div>

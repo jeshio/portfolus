@@ -27,6 +27,8 @@ class OrderProject < ApplicationRecord
 
   belongs_to :customer, class_name: "User"
 
+  belongs_to :executer, class_name: "User", optional: true
+
   has_many :order_project_tags, dependent: :destroy
 
   has_many :tags, through: :order_project_tags
@@ -34,6 +36,8 @@ class OrderProject < ApplicationRecord
   has_many :order_project_technologies, dependent: :destroy
 
   has_many :technologies, through: :order_project_technologies
+
+  has_many :order_executer_requests
 
   # followed by association macros
 

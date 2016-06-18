@@ -182,6 +182,21 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'DetailOrderProjectCtrl',
       parent: 'onlyusers'
     })
+    // предложения
+    .state('orderExecuterRequests', {
+      title: 'Предложения на выполнение проектов',
+      url: '/order-executer-requests',
+      templateUrl: 'orderExecuterRequest/tmpl/_list.html',
+      controller: 'OrderExecuterRequestCtrl',
+      parent: 'onlyusers'
+    })
+    .state('orderExecuterRequestCreate', {
+      title: 'Предложение стать исполнителем',
+      url: '/order-projects/{orderProjectId:int}/requests/new',
+      templateUrl: 'orderExecuterRequest/tmpl/_new.html',
+      controller: 'CreateOrderExecuterRequestCtrl',
+      parent: 'onlyusers'
+    })
     // Поиск
     .state('search', {
       parent: 'getuser',

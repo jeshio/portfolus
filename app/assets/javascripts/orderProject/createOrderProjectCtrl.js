@@ -12,8 +12,7 @@ function($scope, OrderProject, $parse, Category, $state){
   $scope.createOrderProject = function () {
     var orderProject = new OrderProject($scope.orderProject);
     orderProject.create().then(function (result) {
-      console.log(result);
-      $state.go('orderProjects');
+      $state.go('orderProjectDetail', {orderProjectId: result.id});
     }, function (errors) {
       console.log(errors);
       var errors = errors.data;

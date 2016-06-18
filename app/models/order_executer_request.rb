@@ -1,24 +1,30 @@
 # == Schema Information
 #
-# Table name: order_project_technologies
+# Table name: executer_requests
 #
 #  id               :integer          not null, primary key
 #  order_project_id :integer
-#  technology_id    :integer
+#  comment          :string
+#  by_customer      :boolean
+#  confirmed        :boolean
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  executer_id      :integer
 #
 
 
-class OrderProjectTechnology < ApplicationRecord
+class OrderExecuterRequest < ApplicationRecord
   # keep the default scope first (if any)
 
   # constants come up next
 
   # afterwards we put attr related macros
-  belongs_to :technology
+
+  # followed by association macros
 
   belongs_to :order_project
 
-  # followed by association macros
+  belongs_to :executer, class_name: "User", optional: true
 
 
   # and validation macros

@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: order_project_tags
+#
+#  id               :integer          not null, primary key
+#  order_project_id :integer
+#  tag_id           :integer
+#
+
 
 class OrderProjectTag < ApplicationRecord
   # keep the default scope first (if any)
