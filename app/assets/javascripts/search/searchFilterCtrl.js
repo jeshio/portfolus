@@ -1,10 +1,15 @@
 angular.module('portfolus')
-.controller('SearchFilterCtrl',['$scope', 'Search', '$location', 'City', 'cities', '$rootScope',
-function($scope, Search, $location, City, cities, $rootScope){
+.controller('SearchFilterCtrl',['$scope', 'Search', '$location', 'categories', 'cities', '$rootScope',
+function($scope, Search, $location, categories, cities, $rootScope){
   $scope.filterBlock = "";
-  getSearch();
 
   $scope.cities = cities;
+  $scope.categories = categories;
+
+  $scope.filters = {};
+  $scope.tags = [];
+  $scope.technologies = [];
+  getSearch();
 
   // устанавка активности для кновок выбора типа
   $scope.getTypeClass = function (type) {
@@ -19,12 +24,13 @@ function($scope, Search, $location, City, cities, $rootScope){
 
   $scope.update = function () {
     updateSearch();
-    $rootScope.$broadcast('appleFilters', []);
+    $rootScope.$broadcast('applyFilters', []);
   }
 
   // применить изменения запроса для типа поиска
   function updateSearch() {
-    $location.search(angular.extend($scope.filters, {type: $scope.type}));
+    // FIXME если в массиве одна строка, после обновления страницы она будет рассмотрена как массив
+    $location.search(angular.extend($scope.filters, {type: $scope.type}, {'tags[]': $scope.tags}, {'technologies[]': $scope.technologies}));
 
     if($scope.type.length > 0)
       $scope.filterBlock = "search/filters/_"+$scope.type+".html";
@@ -39,6 +45,8 @@ function($scope, Search, $location, City, cities, $rootScope){
 
     // фиксы
     filters.min_projects !== undefined && (filters.min_projects = parseInt(filters.min_projects, 0));
+    filters["tags[]"] !== undefined && ($scope.tags = filters["tags[]"]);
+    filters["technologies[]"] !== undefined && ($scope.technologies = filters["technologies[]"]);
     $scope.filters = filters;
     updateSearch();
   }

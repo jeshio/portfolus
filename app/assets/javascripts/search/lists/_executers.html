@@ -1,107 +1,15 @@
-
 <p ng-hide="searches.length" class="text gray" layout-padding>
   Список исполнителей по заданным фильтрам пуст.
 </p>
 
 <md-virtual-repeat-container id="vertical-container" ng-style="listStyle">
   <div layout="column" layout-gt-md="row" md-virtual-repeat="user in searches" md-item-size="260">
-    <div flex flex-gt-md="33" layout="column">
-        <md-card>
-
-            <md-card-title>
-              <md-card-title-text>
-                <span class="md-title">{{user[0].name}} {{user[0].family}} {{user[0].middlename}}</span>
-                <span class="md-subhead" ng-bind="user[0].email"></span>
-              </md-card-title-text>
-              <md-card-title-media>
-                <div class="md-media-sm card-media"></div>
-              </md-card-title-media>
-            </md-card-title>
-            <md-card-content>
-              <table class="table">
-                <tr>
-                  <td>Город</td>
-                  <td ng-bind="cities[user[0].cityId].name" class="text-right"></td>
-                </tr>
-                <tr>
-                  <td>Участник проектов</td>
-                  <td class="text-right">{{user[0].executedProjectsCount}}
-                    <span ng-show="user[0].createdProjectsCount">(из них {{user[0].createdProjectsCount}} добавил)</span>
-                  </td>
-                </tr>
-              </table>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="end center" layout-padding>
-              <a ng-href="/{{user[0].id}}">Посмотреть</a>
-            </md-card-actions>
-
-        </md-card>
+    <div ng-include="'search/lists/cards/_user.html'"
+       ng-repeat="cardUser in user" flex="">
     </div>
-
-    <div flex flex-gt-md="33" layout="column">
-      <md-card>
-
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-title">{{user[1].name}} {{user[1].family}} {{user[1].middlename}}</span>
-              <span class="md-subhead" ng-bind="user[1].email"></span>
-            </md-card-title-text>
-            <md-card-title-media>
-              <div class="md-media-sm card-media"></div>
-            </md-card-title-media>
-          </md-card-title>
-          <md-card-content>
-            <table class="table">
-              <tr>
-                <td>Город</td>
-                <td ng-bind="cities[user[1].cityId].name" class="text-right"></td>
-              </tr>
-              <tr>
-                <td>Участник проектов</td>
-                <td class="text-right">{{user[1].executedProjectsCount}}
-                  <span ng-show="user[1].createdProjectsCount">(из них {{user[1].createdProjectsCount}} добавил)</span>
-                  </td>
-              </tr>
-            </table>
-          </md-card-content>
-          <md-card-actions layout="row" layout-align="end center" layout-padding>
-            <a ng-href="/{{user[1].id}}">Посмотреть</a>
-          </md-card-actions>
-
-      </md-card>
+    <div flex-offset-gt-md="33" ng-hide="user[1]">
     </div>
-
-    <div flex flex-gt-md="33" layout="column">
-      <md-card>
-
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-title">{{user[2].name}} {{user[2].family}} {{user[2].middlename}}</span>
-              <span class="md-subhead" ng-bind="user[2].email"></span>
-            </md-card-title-text>
-            <md-card-title-media>
-              <div class="md-media-sm card-media"></div>
-            </md-card-title-media>
-          </md-card-title>
-          <md-card-content>
-            <table class="table">
-              <tr>
-                <td>Город</td>
-                <td ng-bind="cities[user[2].cityId].name" class="text-right"></td>
-              </tr>
-              <tr>
-                <td>Участник проектов</td>
-                <td class="text-right">{{user[1].executedProjectsCount}}
-                  <span ng-show="user[2].createdProjectsCount">(из них {{user[2].createdProjectsCount}} добавил)</span>
-                  </td>
-              </tr>
-            </table>
-          </md-card-content>
-          <md-card-actions layout="row" layout-align="end center" layout-padding>
-            <a ng-href="/{{user[2].id}}">Посмотреть</a>
-          </md-card-actions>
-
-      </md-card>
+    <div flex-offset-gt-md="33" ng-hide="user[2]">
     </div>
   </div>
 </md-virtual-repeat-container>

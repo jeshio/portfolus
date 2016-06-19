@@ -4,5 +4,17 @@ angular.module('rails').factory('Search', ['railsResourceFactory', function (rai
       name: 'search'
   });
 
+  resource.executers = function (params) {
+    return resource.$get(resource.$url('executers'), params);
+  }
+
+  resource.projects = function (params) {
+    return resource.$get(resource.$url('projects'), params);
+  }
+
+  resource.orders = function (params) {
+    return resource.$get(resource.$url('orders'), params);
+  }
+
   return resource;
 }]);

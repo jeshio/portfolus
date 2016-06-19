@@ -16,9 +16,13 @@ class Technology < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :project_technologies, :dependent => :destroy, foreign_key: "technology_id"
+  has_many :project_technologies, :dependent => :destroy
 
-  has_many :projects, through: :project_technology
+  has_many :projects, through: :project_technologies
+
+  has_many :order_project_technologies, :dependent => :destroy
+
+  has_many :order_projects, through: :order_project_technologies
 
   validates :name, length: { minimum: 2 }
 

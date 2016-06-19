@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @data = @user.executed_projects
 
     render json: @data.as_json(include: { project_technologies: { include: :technology }, tags: {},
-      project_executers: { include: :project_confirms }, :project_executers => { include: :executer } })
+      project_executers: { include: { project_confirms: {}, executer: {} } } })
   end
 
   # запросы других пользователей об участии в проектах текущего пользвоателя

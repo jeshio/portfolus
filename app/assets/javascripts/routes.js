@@ -210,6 +210,11 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
           return City.query().then(function (result) {
             return result;
           });
+        },
+        categories: function (Category) {
+          return Category.query().then(function (result) {
+            return result;
+          });
         }
       },
       views: {

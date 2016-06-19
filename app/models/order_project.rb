@@ -19,6 +19,7 @@
 
 class OrderProject < ApplicationRecord
   # keep the default scope first (if any)
+  scope :category_id, -> category_id { where(category_id: category_id) }
 
   # constants come up next
 

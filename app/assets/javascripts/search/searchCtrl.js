@@ -1,14 +1,11 @@
 angular.module('portfolus')
-.controller('SearchCtrl',['$scope', 'Search', '$location', 'cities', '$rootScope', '$window',
-function($scope, Search, $location, cities, $rootScope, $window){
+.controller('SearchCtrl',['$scope', 'Search', '$location', '$rootScope', '$window',
+function($scope, Search, $location, $rootScope, $window){
   $scope.searches = [];
-  $scope.cities = [];
-  cities.forEach(function (element, index) {
-    $scope.cities[element.id] = element;
-  });
+  $scope.cardUser = {};
 
   // получение события обновления фильтров
-  $rootScope.$on('appleFilters', function(event, args){
+  $rootScope.$on('applyFilters', function(event, args){
     update();
   });
 
@@ -26,18 +23,45 @@ function($scope, Search, $location, cities, $rootScope, $window){
     var search = $location.search();
 
     // запрашивает данные с применением фильтров
-    Search.query(search).then(function (data) {
-      // разделение данных на партии по 3 штуки для колонок
-      var parts = [], chunk = 3;
-      for (var i = 0, j = data.length; i < j; i += chunk) {
-          parts.push(data.slice(i, i + chunk));
-      }
-      $scope.searches = parts;
-    }, function () {
+    switch (search.type) {
+      case "executers":
+        Search.executers(search).then(function (data) {
+          $scope.searches = splitParts(data);
+        }, function () {
+          $scope.searches = [];
+        });
+        break;
+      case "projects":
+        Search.projects(search).then(function (data) {
+          $scope.searches = splitParts(data);
+        }, function (errors) {
+          console.log(errors);
+          $scope.searches = [];
+        });
+        break;
+      case "orders":
+        Search.orders(search).then(function (data) {
+          console.log(data);
+          $scope.searches = splitParts(data);
+        }, function (errors) {
+          console.log(errors);
+          $scope.searches = [];
+        });
+        break;
+      default:
       $scope.searches = [];
-    });
+    }
 
     $scope.listSrc = "search/lists/_"+search.type+".html";
+  }
+
+  function splitParts(data, chunk = 3) {
+    // разделение данных на партии по chunk штук для колонок
+    var parts = [];
+    for (var i = 0, j = data.length; i < j; i += chunk) {
+        parts.push(data.slice(i, i + chunk));
+    }
+    return parts;
   }
 
 }]);

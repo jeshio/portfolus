@@ -16,8 +16,11 @@ class Tag < ApplicationRecord
   # afterwards we put attr related macros
   has_many :project_tags, :dependent => :destroy
 
-  has_many :projects, through: :project_tag
+  has_many :projects, through: :project_tags
 
+  has_many :order_project_tags, :dependent => :destroy
+
+  has_many :order_projects, through: :order_project_tags
 
   # followed by association macros
 

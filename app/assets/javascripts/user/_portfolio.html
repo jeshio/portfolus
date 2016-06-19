@@ -30,8 +30,8 @@
       <md-card-header>
         <md-card-header-text>
           <span class="md-title">{{project.name}}</span>
-          <span class="md-subhead" ng-hide="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - настоящее время</span>
-          <span class="md-subhead" ng-show="project.finish_date">{{project.start_date * 1000 | date:'dd/MM/yy'}} - {{project.finish_date * 1000 | date:'dd/MM/yy'}}</span>
+          <span class="md-subhead" ng-show="project.startDate && !project.finishDate">{{project.startDate | date:'dd/MM/yy'}} - настоящее время</span>
+          <span class="md-subhead" ng-show="project.startDate && project.finishDate">{{project.startDate | date:'dd/MM/yy'}} - {{project.finishDate | date:'dd/MM/yy'}}</span>
         </md-card-header-text>
       </md-card-header>
 

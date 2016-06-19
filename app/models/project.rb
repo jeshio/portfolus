@@ -18,10 +18,10 @@
 #  creater_id      :integer
 #
 
-
-
 class Project < ApplicationRecord
   # keep the default scope first (if any)
+  # scope :min_projects, -> min { where('"users"."executed_projects_count" >= ?', min) }
+  scope :category_id, -> category_id { where(category_id: category_id) }
 
   # constants come up next
 

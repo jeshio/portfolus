@@ -15,8 +15,8 @@ class Category < ApplicationRecord
   # constants come up next
 
   # afterwards we put attr related macros
-  has_many :project
-  has_many :order_project
+  has_many :projects
+  has_many :order_projects
 
   # followed by association macros
 
