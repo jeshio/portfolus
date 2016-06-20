@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :countries
     resources :emails
 
+    get 'messages/dialogs', to: 'messages#dialogs'
+    get 'messages/:first/:second', to: 'messages#get_dialog'
+    resources :messages
+
     resources :project_confirms
     post 'project_confirms/create_with_project_and_user', to: 'project_confirms#create_with_project_and_user'
     post 'project_confirms/search_with_project_and_user', to: 'project_confirms#search_with_project_and_user'

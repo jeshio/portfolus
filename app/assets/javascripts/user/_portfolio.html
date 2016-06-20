@@ -1,5 +1,5 @@
 <div layout="column" id="portfolio" flex>
-  <h2>Активность</h2>
+  <!-- <h2>Активность</h2>
   <div layout="column" class="activity" layout-gt-md="row" flex>
     <md-list flex>
       <md-list-item>
@@ -21,7 +21,15 @@
       </md-list-item>
       <md-divider ></md-divider>
     </md-list>
-  </div>
+  </div> -->
+
+  <section layout="row" layout-sm="column" layout-wrap ng-show="authUser">
+    <!-- Для зареганых -->
+    <section layout="row" layout-sm="column" layout-wrap ng-show="userId != authUser.id">
+      <!-- Не для самого пользователя -->
+      <a ui-sref="dialog({second: userId})">Открыть диалог</a>
+    </section>
+  </section>
 
 
   <h2>Проекты</h2>
@@ -58,7 +66,7 @@
         </div>
       </md-card-footer>
   </md-virtual-repeat-container>
-
+<!--
   <div layout="column" layout-gt-md="row" flex>
     <div flex flex-gt-md="50">
       <h2>Статистика</h2>
@@ -68,6 +76,6 @@
       <h2>Отзывы</h2>
     </div>
 
-  </div>
+  </div> -->
 
 </div>

@@ -1,0 +1,39 @@
+<div flex-offset-gt-lg="25" flex-gt-lg="50" flex-offset-gt-md="15" flex-gt-md="70" flex>
+  <h2 class="md-title">Переписка с <a ng-href="/{{second.id}}">{{second.email}}</a></h2>
+
+  <!-- Переписка -->
+  <p ng-hide="messages.length" class="text gray" layout-padding>
+    Сообщений ещё не было написано.
+  </p>
+
+  <md-list flex>
+    <md-list-item class="md-3-line" ng-repeat="msg in messages">
+      <div class="md-list-item-text" layout="column" ng-class="{'text-right': msg.fromId == second.id}">
+        <h3>{{ msg.from.email }}</h3>
+        <p>{{ msg.text }}</p>
+        <p class="text gray">{{ msg.createdAt | date:'yyyy, MMM dd - HH:mm:ss' }}</p>
+      </div>
+    </md-list-item>
+  </md-list>
+
+
+  <md-divider></md-divider>
+  <!-- Форма сообщения -->
+  <form name="Message" ng-submit="sendMessage()" novalidate="" layout="row">
+      <md-input-container class="md-block" flex>
+        <label>Текст сообщения</label>
+        <textarea ng-model="message.text" name="text" rows="5" required></textarea>
+
+        <div ng-messages="Message.text.$error" role="alert" md-auto-hide="false">
+          <div ng-message="serverMessage">{{Message.text.$error.serverMessage}}</div>
+          <span ng-show="!Message.$submitted && Message.text.$touched">
+            <div ng-messages-include="errorMessages.html" ></div>
+          </span>
+        </div>
+      </md-input-container>
+      <md-button type="submit" ng-disabled="Message.$invalid && !Message.$submitted" class="btn">
+        Отправить
+      </md-button>
+  </form>
+
+</div>

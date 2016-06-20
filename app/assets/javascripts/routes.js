@@ -197,6 +197,14 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
       controller: 'CreateOrderExecuterRequestCtrl',
       parent: 'onlyusers'
     })
+    // сообщения
+    .state('dialog', {
+      title: 'Диалог',
+      url: '/dialog/{second:int}',
+      templateUrl: 'message/tmpl/_dialog.html',
+      controller: 'DialogMessageCtrl',
+      parent: 'onlyusers'
+    })
     // Поиск
     .state('search', {
       parent: 'getuser',

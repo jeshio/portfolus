@@ -45,10 +45,12 @@ class User < ApplicationRecord
   has_many :emails, :dependent => :destroy
   has_many :executed_projects, through: :project_executers, source: :project
   has_many :executed_order_projects, :foreign_key => "executer_id", :class_name => "OrderProject", :dependent => :destroy
+  has_many :in_messages, :foreign_key => "to_id", :class_name => "Message", :dependent => :destroy
   has_many :order_executer_requests, :foreign_key => "executer_id", :dependent => :destroy
   has_many :ordered_projects, :foreign_key => "client_id", :class_name => "Project", :dependent => :nullify
   has_many :order_projects, :foreign_key => "customer_id", :class_name => "OrderProject", :dependent => :destroy
   has_many :organization, through: :user_organization
+  has_many :out_messages, :foreign_key => "from_id", :class_name => "Message", :dependent => :destroy
   has_many :project_executers, -> { where creater_confirmed: true, executer_confirmed: true }, :foreign_key => "executer_id", :dependent => :destroy
   has_many :user_organizations, :dependent => :destroy
 

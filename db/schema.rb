@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616114314) do
+ActiveRecord::Schema.define(version: 20160619210630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20160616114314) do
     t.index ["confirm_hash"], name: "index_emails_on_confirm_hash", unique: true, using: :btree
     t.index ["email"], name: "index_emails_on_email", unique: true, using: :btree
     t.index ["user_id"], name: "index_emails_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "text"
+    t.boolean  "readed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "from_id"
+    t.integer  "to_id"
+    t.index ["from_id"], name: "index_messages_on_from_id", using: :btree
+    t.index ["to_id"], name: "index_messages_on_to_id", using: :btree
   end
 
   create_table "order_executer_requests", force: :cascade do |t|
@@ -232,6 +243,8 @@ ActiveRecord::Schema.define(version: 20160616114314) do
 
   add_foreign_key "cities", "countries", on_delete: :nullify
   add_foreign_key "emails", "users"
+  add_foreign_key "messages", "users", column: "from_id"
+  add_foreign_key "messages", "users", column: "to_id"
   add_foreign_key "order_executer_requests", "order_projects"
   add_foreign_key "order_executer_requests", "users", column: "executer_id"
   add_foreign_key "order_project_tags", "order_projects"
