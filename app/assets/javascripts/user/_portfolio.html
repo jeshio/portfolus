@@ -31,8 +31,44 @@
     </section>
   </section>
 
+  <section layout="column" layout-gt-md="row" flex-gt-md="50">
+    <section flex-gt-md="50">
+      <h2 class="md-title">Участник организаций</h2>
+      <md-list>
+        <md-list-item  class="md-3-line" ng-repeat="userOrganization in userOrganizations">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ userOrganization.organization.name }} ({{ userOrganization.organization.url }})</h3>
+            <p>
+              Участник с {{userOrganization.startDate | date}} по
+              <span ng-hide="userOrganization.finishDate">настоящее время</span>
+              <span ng-hide="!userOrganization.finishDate" ng-bind="userOrganization.finishDate | date"></span>
+            </p>
+            <p>{{ userOrganization.organization.description }}</p>
+          </div>
+        </md-list-item>
+        <md-list-item  class="md-3-line" ng-hide="userOrganizations.length > 0">
+          <div class="md-list-item-text" layout="column">
+            <h3>Пользователь не состоит ни в одной организации</h3>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
 
-  <h2>Проекты</h2>
+
+    <section ng-show="organizations.length > 0" flex-gt-md="50">
+      <h2 class="md-title">Администрирует организации</h2>
+      <md-list>
+        <md-list-item class="md-3-line" ng-repeat="organization in organizations">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ organization.name }} ({{ organization.url }})</h3>
+            <p>{{ organization.description }}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+  </section>
+
+  <h2 class="md-title">Проекты</h2>
   <md-virtual-repeat-container class="projects" md-orient-horizontal>
     <md-card md-virtual-repeat="project in projects" class="project" layout-padding>
       <md-card-header>

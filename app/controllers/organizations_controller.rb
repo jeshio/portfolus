@@ -3,7 +3,7 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations
   def index
-    @organizations = Organization.all
+    @organizations = Organization.where({creater_id: params[:user_id]}).all
 
     render json: @organizations
   end

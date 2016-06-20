@@ -29,6 +29,12 @@ class UsersController < ApplicationController
       project_executers: { include: { project_confirms: {}, executer: {} } } })
   end
 
+  def organizations
+    organizations = UserOrganization.select(:organizations).where({user_id: params[:id]}).joins(:organizations).all
+
+    render json: organizations
+  end
+
   # запросы других пользователей об участии в проектах текущего пользвоателя
   def executer_requests
     # не подтверждённые создателем записи об участии

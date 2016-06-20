@@ -31,5 +31,9 @@ angular.module('rails').factory('User', ['railsResourceFactory', '$http', functi
       return resource.$get(resource.$url(this.id + '/order_executer_requests'));
     }
 
+    resource.prototype.organizations = function () {
+      return resource.$get(resource.$url(this.id + '/organizations'));
+    }
+
     return resource;
 }]);

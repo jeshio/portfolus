@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       resources :order_projects
       resources :order_executer_requests
       resources :user_organizations
+      resources :organizations
     end
 
     resources :categories
