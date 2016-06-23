@@ -26,14 +26,14 @@ function($scope, Search, $location, $rootScope, $window){
     switch (search.type) {
       case "executers":
         Search.executers(search).then(function (data) {
-          $scope.searches = splitParts(data);
+          $scope.searches = splitParts(data, 3);
         }, function () {
           $scope.searches = [];
         });
         break;
       case "projects":
         Search.projects(search).then(function (data) {
-          $scope.searches = splitParts(data);
+          $scope.searches = splitParts(data, 3);
         }, function (errors) {
           console.log(errors);
           $scope.searches = [];
@@ -42,7 +42,7 @@ function($scope, Search, $location, $rootScope, $window){
       case "orders":
         Search.orders(search).then(function (data) {
           console.log(data);
-          $scope.searches = splitParts(data);
+          $scope.searches = splitParts(data, 3);
         }, function (errors) {
           console.log(errors);
           $scope.searches = [];
@@ -55,7 +55,7 @@ function($scope, Search, $location, $rootScope, $window){
     $scope.listSrc = "search/lists/_"+search.type+".html";
   }
 
-  function splitParts(data, chunk = 3) {
+  function splitParts(data, chunk) {
     // разделение данных на партии по chunk штук для колонок
     var parts = [];
     for (var i = 0, j = data.length; i < j; i += chunk) {
