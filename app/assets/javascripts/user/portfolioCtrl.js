@@ -17,8 +17,11 @@ function($scope, User, $stateParams){
       startDate = new Date(startTime),
       finishDate = new Date(finishTime);
 
-    return startCompare >= startDate && finishTime == null ||
-      startCompare >= startDate && finishDate >= compare;
+    if (finishTime == null) {
+      finishDate = new Date();
+    }
+
+    return startCompare >= startDate && finishDate >= compare;
   }
 
   User.getAllProjects($stateParams.id).then(function (result) {
@@ -45,5 +48,36 @@ function($scope, User, $stateParams){
       $scope.organizations = organizations;
     });
   });
+
+  $scope.slickConfig = {
+      enabled: true,
+      centerMode: true,
+      adaptiveHeight: true,
+      arrows: false,
+      autoplay: true,
+      draggable: false,
+      autoplaySpeed: 3000,
+      method: {},
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    };
 
 }]);

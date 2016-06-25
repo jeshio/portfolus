@@ -1,4 +1,4 @@
-angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate', 'ngMessages', 'Devise', 'ng-rails-csrf', 'rails', 'isolateForm', 'angular-loading-bar'])
+angular.module('portfolus', ['ui.router', 'templates', 'ngMaterial', 'ngAnimate', 'ngMessages', 'Devise', 'ng-rails-csrf', 'rails', 'isolateForm', 'angular-loading-bar', 'slickCarousel'])
 .config(['$mdThemingProvider', function($mdThemingProvider) {
   // расширение стандартной палитры
   var colorMap = $mdThemingProvider.extendPalette('blue', {

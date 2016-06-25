@@ -32,11 +32,11 @@
   </section>
 
   <h2 class="md-title">Проекты</h2>
-  <md-virtual-repeat-container class="projects" md-orient-horizontal>
-    <md-card md-virtual-repeat="project in projects" class="project" layout-padding>
+  <slick settings="slickConfig" class="projects" slides-to-show=3 slides-to-scroll=1 ng-if="projects.length > 0">
+    <md-card class="project" layout-padding ng-repeat="project in projects">
       <md-card-header>
         <md-card-header-text>
-          <span class="md-title">{{project.name}}</span>
+          <span class="md-title"><a ng-href="/{{userId}}/projects/{{project.id}}">{{project.name}}</a></span>
           <span class="md-subhead" ng-show="project.startDate && !project.finishDate">{{project.startDate | date:'dd/MM/yy'}} - настоящее время</span>
           <span class="md-subhead" ng-show="project.startDate && project.finishDate">{{project.startDate | date:'dd/MM/yy'}} - {{project.finishDate | date:'dd/MM/yy'}}</span>
         </md-card-header-text>
@@ -49,22 +49,28 @@
         <a ng-href="/{{userId}}/projects/{{project.id}}">Подробнее</a>
       </md-card-content>
 
-      <md-card-footer ng-show="project.tags || project.projectTechnologies">
+      <md-card-footer ng-show="project.tags || project.projectTechnologies" hide show-gt-md>
         <div ng-show="project.tags">
-          <b>Теги:</b>
-          <span ng-repeat="tag in project.tags">
-            <span class="tag">{{tag.name}}</span>
-          </span>
+          <md-chips ng-model="project.tags" readonly="true">
+            <md-chip-template>
+              {{$chip.name}}
+            </md-chip-template>
+          </md-chips>
         </div>
 
-        <div ng-show="project.projectTechnologies">
+        <div ng-show="project.projectTechnologies" layout-padding="">
           <b>Технологии:</b>
           <span ng-repeat="tech in project.projectTechnologies">
             <span class="tag">{{tech.technology.name}} ({{tech.power}}/10)</span>
           </span>
         </div>
       </md-card-footer>
-  </md-virtual-repeat-container>
+    </md-card>
+  </slick>
+  <div layout="row" layout-align="center center" ng-show="projects.length > 3">
+    <md-button ng-click="slickConfig.method.slickPrev()"><md-icon>chevron_left</md-icon></md-button>
+    <md-button ng-click="slickConfig.method.slickNext()"><md-icon>chevron_right</md-icon></md-button>
+  </div>
 
   <div layout="column" layout-gt-md="row" flex>
     <div flex flex-gt-md="50">

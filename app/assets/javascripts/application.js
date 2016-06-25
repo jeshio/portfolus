@@ -1,4 +1,5 @@
 /*
+= require jquery
 = require angular
 = require ng-rails-csrf
 = require angular-messages
@@ -11,5 +12,7 @@
 = require angularjs/rails/resource
 = require angular-isolate-form
 = require angular-loading-bar
+= require slick-carousel
+= require angular-slick-carousel
 = require_tree .
 */

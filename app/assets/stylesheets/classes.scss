@@ -68,9 +68,23 @@ md-menu-content {
     .project {
       display: inline-block;
       width: 400px;
-      height: 280px;
+      height: 300px;
       overflow: hidden;
       white-space: normal;
+      background-color: #f8fAFf;
+
+      .md-title {
+        color: #5c6bc0;
+      }
+      md-card-content {
+        color: #5c6bc0;
+      }
+      .md-subhead {
+        color: #9fa8da;
+      }
+      md-card-footer {
+        color: #7986cb;
+      }
     }
   }
 }
