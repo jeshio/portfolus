@@ -1,8 +1,8 @@
 angular.module('portfolus')
 .controller('MainCtrl',['$scope', '$mdSidenav', '$mdUtil', '$location', 'Auth', '$state', '$rootScope',
 function($scope, $mdSidenav, $mdUtil, $location, Auth, $state, $rootScope) {
-  $scope.test = 'Hello world!';
-  $scope.openLeftMenu = buildToggler('left');
+
+  $scope.toggleLeftMenu = buildToggler('left');
 
   function buildToggler(navID) {
     var debounceFn = $mdUtil.debounce(function () {
@@ -12,5 +12,5 @@ function($scope, $mdSidenav, $mdUtil, $location, Auth, $state, $rootScope) {
     return debounceFn;
   }
 
-  
+
 }]);

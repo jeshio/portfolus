@@ -18,31 +18,31 @@
     </button>
     <md-menu-content>
       <md-menu-item>
-        <a href="/home" active-link="active"><md-icon>bookmark</md-icon> Главная</a>
+        <md-button ng-href="/home" active-link="active"><md-icon>bookmark</md-icon> Главная</md-button>
       </md-menu-item>
       <md-menu-item>
-        <a href="/search" active-link="active"><md-icon>search</md-icon> Поиск</a>
+        <md-button ng-href="/search" active-link="active"><md-icon>search</md-icon> Поиск</md-button>
       </md-menu-item>
       <md-menu-item ng-hide="signedIn">
-        <a ng-hide="signedIn" href="/auth" active-link="active"><md-icon>person</md-icon> Войти</a>
+        <md-button ng-ng-hide="signedIn" href="/auth" active-link="active"><md-icon>person</md-icon> Войти</md-button>
       </md-menu-item>
       <md-menu-item ng-hide="signedIn">
-        <a href="/register" active-link="active"><md-icon>input</md-icon> Присоединиться</a>
+        <md-button ng-href="/register" active-link="active"><md-icon>input</md-icon> Присоединиться</md-button>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/projects" active-link="active"><md-icon>work</md-icon>Мои проекты</a>
+        <md-button ng-href="/projects" active-link="active"><md-icon>work</md-icon>Мои проекты</md-button>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/order-executer-requests" active-link="active"><md-icon>comment</md-icon> Предложения</a>
+        <md-button ng-href="/order-executer-requests" active-link="active"><md-icon>comment</md-icon> Предложения</md-button>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/order-projects" active-link="active"><md-icon>gavel</md-icon> Заказ проектов</a>
+        <md-button ng-href="/order-projects" active-link="active"><md-icon>gavel</md-icon> Заказ проектов</md-button>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="/settings/emails" active-link="active"><md-icon>settings</md-icon> {{authUser.email }}</a>
+        <md-button ng-href="/settings/emails" active-link="active"><md-icon>settings</md-icon> {{authUser.email }}</md-button>
       </md-menu-item>
       <md-menu-item ng-show="signedIn">
-        <a href="#" active-link="active" ng-click="logout()"><md-icon>person_outline</md-icon> Выйти</a>
+        <md-button ng-href="#" active-link="active" ng-click="logout()"><md-icon>person_outline</md-icon> Выйти</md-button>
       </md-menu-item>
     </md-menu-content>
   </md-menu>

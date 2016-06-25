@@ -41,9 +41,10 @@ md-menu-content {
     height: auto !important;
 
     a {
-      color: white;
+      color: white !important;
       margin: 0;
-      padding: 15px 35px;
+      height: auto !important;
+      padding: 15px 35px !important;
       text-decoration: none;
     }
   }
