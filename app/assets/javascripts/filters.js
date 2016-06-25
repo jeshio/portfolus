@@ -40,10 +40,17 @@ angular.module('portfolus')
     return input;
   };
 })
-.filter('monthName', [function() {
+.filter('shortMonthName', [function() {
     return function (monthNumber) {
         var monthNames = [ 'Я', 'Ф', 'М', 'А', 'М', 'И',
             'И', 'А', 'С', 'О', 'Н', 'Д' ];
+        return monthNames[monthNumber - 1];
+    }
+}])
+.filter('monthName', [function() {
+    return function (monthNumber) {
+        var monthNames = [ 'ЯНВ', 'ФЕВ', 'МАР', 'АПР', 'МАЙ', 'ИЮН',
+            'ИЮЛ', 'АВГ', 'СЕН', 'ОКТ', 'НОЯ', 'ДЕК' ];
         return monthNames[monthNumber - 1];
     }
 }]);

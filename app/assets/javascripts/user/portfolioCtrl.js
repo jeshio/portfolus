@@ -6,6 +6,7 @@ function($scope, User, $stateParams){
   $scope.userOrganizations = [];
   $scope.userId = $stateParams.id;
   $scope.year = 2016;
+  $scope.years = [];
 
   $scope.dateMonthCompare = function (year, month, startTime, finishTime) {
     if (startTime == null) {
@@ -22,8 +23,18 @@ function($scope, User, $stateParams){
 
   User.getAllProjects($stateParams.id).then(function (result) {
     $scope.projects = result;
-  }, function (error) {
-    console.log(error);
+
+    // получаем все года работы над проектами для диаграммы Ганта
+    angular.forEach(result, function (project) {
+      if (project.startDate)
+        $scope.years.push(new Date(project.startDate).getFullYear());
+      if (project.finishDate)
+        $scope.years.push(new Date(project.finishDate).getFullYear());
+      if (project.devFinishDate)
+        $scope.years.push(new Date(project.devFinishDate).getFullYear());
+    });
+    // уникальные значения
+    $scope.years = $scope.years.filter(function(item, i, ar){ return ar.indexOf(item) === i; })
   });
 
   User.get($stateParams.id).then(function (user) {

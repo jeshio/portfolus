@@ -66,13 +66,17 @@
       </md-card-footer>
   </md-virtual-repeat-container>
 
-  <h2 class="md-title">Диаграмма работы</h2>
   <div layout="column" layout-gt-md="row" flex>
-    <div flex flex-gt-md="50" ng-include="'user/tmpl/_statistics.html'">
+    <div flex flex-gt-md="50">
+      <div layout-padding="">
+        <h2 class="md-title">Диаграмма работы</h2>
+      </div>
+      <div ng-include="'user/tmpl/_statistics.html'">
+      </div>
     </div>
     <div flex-gt-md="50" layout-padding="">
+        <h2 class="md-title">Участник организаций</h2>
         <section>
-          <h2 class="md-title">Участник организаций</h2>
           <md-list>
             <md-list-item  class="md-3-line" ng-repeat="userOrganization in userOrganizations">
               <div class="md-list-item-text" layout="column">
@@ -94,8 +98,8 @@
         </section>
 
 
+        <h2 class="md-title" ng-show="organizations.length > 0">Администрирует организации</h2>
         <section ng-show="organizations.length > 0">
-          <h2 class="md-title">Администрирует организации</h2>
           <md-list>
             <md-list-item class="md-3-line" ng-repeat="organization in organizations">
               <div class="md-list-item-text" layout="column">
@@ -107,16 +111,5 @@
         </section>
     </div>
   </div>
-<!--
-  <div layout="column" layout-gt-md="row" flex>
-    <div flex flex-gt-md="50">
-      <h2>Статистика</h2>
-    </div>
-
-    <div flex flex-gt-md="50">
-      <h2>Отзывы</h2>
-    </div>
-
-  </div> -->
 
 </div>
