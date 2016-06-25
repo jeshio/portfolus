@@ -1,0 +1,36 @@
+<table class="gant-block" width="100%">
+  <thead>
+    <tr>
+      <th width="35%">
+        Проект
+      </th>
+      <th width="5%" ng-repeat="n in [] | range:12">
+        {{ ($index + 1) | monthName }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="project in projects" ng-if="(project.startDate | date: 'yyyy') <= year || (project.finishDate | date: 'yyyy') == year">
+      <td class="project-info">
+        <div class="name">
+          <a ng-href="/{{userId}}/projects/{{project.id}}">{{project.name}}</a>
+        </div>
+        <div class="text gray" ng-show="project.startDate && !project.finishDate">
+          {{project.startDate | date:'dd/MM/yy'}} - наст. время
+        </div>
+        <div class="text gray" ng-show="project.startDate && project.finishDate">
+          {{project.startDate | date:'dd/MM/yy'}} - {{project.finishDate | date:'dd/MM/yy'}}
+        </div>
+        <div class="text gray" ng-show="project.devFinishDate">
+          Разработка закончилась {{project.devFinishDate | date:'dd/MM/yy'}}
+        </div>
+      </td>
+      <td ng-repeat="n in [] | range:12" class="line">
+        <div ng-class="{worked: dateMonthCompare(year, n, project.startDate, project.devFinishDate),
+          released: dateMonthCompare(year, n, project.devFinishDate, project.finishDate)}">
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

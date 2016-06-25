@@ -28,4 +28,22 @@ angular.module('portfolus')
 
     return rootDomain;
   };
-});
+})
+.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
+
+    for (var i=0; i<total; i++) {
+      input.push(i);
+    }
+
+    return input;
+  };
+})
+.filter('monthName', [function() {
+    return function (monthNumber) {
+        var monthNames = [ 'Я', 'Ф', 'М', 'А', 'М', 'И',
+            'И', 'А', 'С', 'О', 'Н', 'Д' ];
+        return monthNames[monthNumber - 1];
+    }
+}]);
