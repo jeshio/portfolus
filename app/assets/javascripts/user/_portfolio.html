@@ -50,7 +50,7 @@
       </md-card-content>
 
       <md-card-footer ng-show="project.tags || project.projectTechnologies" hide show-gt-md>
-        <div ng-show="project.tags">
+        <div ng-show="project.tags.length > 0">
           <md-chips ng-model="project.tags" readonly="true">
             <md-chip-template>
               {{$chip.name}}
@@ -58,7 +58,7 @@
           </md-chips>
         </div>
 
-        <div ng-show="project.projectTechnologies" layout-padding="">
+        <div ng-show="project.projectTechnologies.length > 0" layout-padding="">
           <b>Технологии:</b>
           <span ng-repeat="tech in project.projectTechnologies">
             <span class="tag">{{tech.technology.name}} ({{tech.power}}/10)</span>

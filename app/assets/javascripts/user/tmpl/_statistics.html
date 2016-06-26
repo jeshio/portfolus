@@ -24,7 +24,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="project in projects" ng-if="(project.startDate | date: 'yyyy') <= year || (project.finishDate | date: 'yyyy') == year">
+    <tr ng-repeat="project in projects" ng-if="project.startDate != null &&
+      ((project.startDate | date: 'yyyy') <= year || (project.finishDate | date: 'yyyy') == year)">
       <td class="project-info">
         <div class="name">
           <a ng-href="/{{userId}}/projects/{{project.id}}">{{project.name}}</a>

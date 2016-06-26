@@ -38,6 +38,7 @@ function($scope, User, $stateParams){
     });
     // уникальные значения
     $scope.years = $scope.years.filter(function(item, i, ar){ return ar.indexOf(item) === i; })
+    $scope.year = $scope.years[0];
   });
 
   User.get($stateParams.id).then(function (user) {
