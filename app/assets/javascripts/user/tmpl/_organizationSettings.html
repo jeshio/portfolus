@@ -54,15 +54,15 @@
     <h2 class="md-title">Администрируемые организации</h2>
 
     <md-list flex>
-      <md-list-item class="md-3-line" ng-repeat="organization in adminOrganizations" ng-click="null">
+      <md-list-item class="md-3-line" ng-repeat="organization in adminOrganizations">
         <div class="md-list-item-text" layout="column">
           <h3>{{ organization.name }}</h3>
           <h4>{{ organization.url }}</h4>
           <p>{{ organization.description }}</p>
         </div>
-        <!-- Передать права <md-button class="md-secondary md-icon-button" ng-click="delete(organization)" aria-label="Убрать из списка">
-          <md-icon>delete</md-icon>
-        </md-button> -->
+        <md-button class="md-secondary md-icon-button" ui-sref="userOrganizationAdmin({id:organization.id})" aria-label="Участники">
+          <md-icon>people</md-icon>
+        </md-button>
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
 

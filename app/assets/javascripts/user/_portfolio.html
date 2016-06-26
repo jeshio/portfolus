@@ -1,33 +1,10 @@
 <div layout="column" id="portfolio" flex>
-  <!-- <h2>Активность</h2>
-  <div layout="column" class="activity" layout-gt-md="row" flex>
-    <md-list flex>
-      <md-list-item>
-       <div class="md-list-item-text" layout="row">
-         2016, 19 мая в 07:15 | Добавлен проект в портфолио. <a href="#">Ссылка на проект</a>
-       </div>
-      </md-list-item>
-      <md-divider ></md-divider>
-      <md-list-item>
-       <div class="md-list-item-text" layout="row">
-         2016, 19 мая в 09:42 | Написан отзыв заказчику. <a href="#">Прочитать отзыв</a>
-       </div>
-      </md-list-item>
-      <md-divider ></md-divider>
-      <md-list-item>
-       <div class="md-list-item-text" layout="row">
-         2016, 20 мая в 15:39 | Приоединён к организации
-       </div>
-      </md-list-item>
-      <md-divider ></md-divider>
-    </md-list>
-  </div> -->
-
+  <h1 class="md-title">{{user.family}} {{user.name}} {{user.middlename}} ({{user.email}})</h1>
   <section layout="row" layout-sm="column" layout-wrap ng-show="authUser">
     <!-- Для зареганых -->
-    <section layout="row" layout-sm="column" layout-wrap ng-show="userId != authUser.id">
+    <section layout="row" layout-sm="column" layout-wrap ng-show="user.id != authUser.id">
       <!-- Не для самого пользователя -->
-      <a ui-sref="dialog({second: userId})">Открыть диалог</a>
+      <a ui-sref="dialog({second: user.id})">Открыть диалог</a>
     </section>
   </section>
 
@@ -36,7 +13,7 @@
     <md-card class="project" layout-padding ng-repeat="project in projects">
       <md-card-header>
         <md-card-header-text>
-          <span class="md-title"><a ng-href="/{{userId}}/projects/{{project.id}}">{{project.name}}</a></span>
+          <span class="md-title"><a ng-href="/{{user.id}}/projects/{{project.id}}">{{project.name}}</a></span>
           <span class="md-subhead" ng-show="project.startDate && !project.finishDate">{{project.startDate | date:'dd/MM/yy'}} - настоящее время</span>
           <span class="md-subhead" ng-show="project.startDate && project.finishDate">{{project.startDate | date:'dd/MM/yy'}} - {{project.finishDate | date:'dd/MM/yy'}}</span>
         </md-card-header-text>
@@ -46,7 +23,7 @@
 
       <md-card-content layout-padding>
         {{project.description | limitTo:150}}{{project.description.length > 150 ? '...' : ''}}
-        <a ng-href="/{{userId}}/projects/{{project.id}}">Подробнее</a>
+        <a ng-href="/{{user.id}}/projects/{{project.id}}">Подробнее</a>
       </md-card-content>
 
       <md-card-footer ng-show="project.tags || project.projectTechnologies" hide show-gt-md>

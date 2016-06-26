@@ -4,7 +4,7 @@ function($scope, User, $stateParams){
   $scope.projects = [];
   $scope.organizations = [];
   $scope.userOrganizations = [];
-  $scope.userId = $stateParams.id;
+  $scope.user = {};
   $scope.year = 2016;
   $scope.years = [];
 
@@ -42,6 +42,8 @@ function($scope, User, $stateParams){
   });
 
   User.get($stateParams.id).then(function (user) {
+    $scope.user = user;
+
     user.userOrganizations().then(function (userOrganizations) {
       $scope.userOrganizations = userOrganizations;
     });

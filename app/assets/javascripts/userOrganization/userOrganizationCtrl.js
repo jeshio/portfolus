@@ -1,6 +1,6 @@
 angular.module('portfolus')
-.controller('UserOrganizationCtrl',['$scope', 'UserOrganization', 'Organization', 'User', '$parse', '$mdDialog', '$mdMedia', '$mdToast',
-function($scope, UserOrganization, Organization, User, $parse, $mdDialog, $mdMedia, $mdToast){
+.controller('UserOrganizationCtrl',['$scope', 'UserOrganization', 'Organization', 'User', '$parse', '$mdDialog', '$mdMedia', '$mdToast', '$state',
+function($scope, UserOrganization, Organization, User, $parse, $mdDialog, $mdMedia, $mdToast, $state){
   $scope.userOrganizations = [];
   $scope.availableOrganizations = [];
 

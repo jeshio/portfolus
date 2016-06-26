@@ -94,6 +94,17 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
       }
     })
+    // организации
+    .state('userOrganizationAdmin', {
+      title: 'Администрирование организации',
+      url: '/organization/{id:int}/admin',
+      sideNav: true,
+      parent: 'onlyusers',
+      views: {
+        '@': { templateUrl: 'userOrganization/tmpl/_usersList.html', controller: 'UserOrganizationAdminCtrl' },
+        'sideNav@': { templateUrl: 'user/tmpl/_sideNavSettings.html', controller: 'SideNavSettingsCtrl' },
+      }
+    })
     // просмотр порфтолио
     .state('user', {
       title: 'Портфолио пользователя',
