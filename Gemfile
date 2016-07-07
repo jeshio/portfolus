@@ -21,10 +21,10 @@ gem "autoprefixer-rails"
 gem 'email_validator'
 gem 'sprockets'
 gem 'sprockets-rails'
-gem 'sass-rails'
-gem 'uglifier'
 gem 'angular-rails-templates'
 gem 'material_icons'
+gem 'therubyracer' # javascript runtime
+gem 'execjs' # javascript runtime
 
 gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem "rails-assets-angular-devise", :source => 'https://rails-assets.org'
@@ -36,24 +36,33 @@ gem 'has_scope'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', :require => 'rack/cors'
 
+group :assets do
+  gem 'coffee-rails'
+  gem 'sass-rails'
+  gem 'uglifier'
+end
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'jazz_fingers'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'bullet'
   gem 'rails-footnotes'
   gem "parallel_tests"
   gem 'rb-inotify'
   gem 'guard-spring'
   gem 'faker'
+  gem 'jasmine-rails'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-jasmine'
 end
 
 group :development do
   gem 'listen', '~> 3.0.5'
+  gem 'better_errors'
+  gem 'bullet'
   gem 'annotate'
-  gem 'guard-rails'
-  gem 'guard-rspec'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'capistrano',         require: false
@@ -65,12 +74,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', github: 'rspec/rspec'
-  gem 'rspec-mocks', github: 'rspec/rspec-mocks'
-  gem 'rspec-expectations', github: 'rspec/rspec-expectations'
-  gem 'rspec-support', github: 'rspec/rspec-support'
-  gem 'rspec-core', github: 'rspec/rspec-core'
-  gem 'rspec-rails', github: 'rspec/rspec-rails'
+  gem 'rspec-rails'
   gem 'factory_girl_rails', :require => false
   gem 'capybara'
   gem 'capybara-webkit'

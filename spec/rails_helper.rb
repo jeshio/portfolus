@@ -36,24 +36,29 @@ SimpleCov.start 'rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.order = :random
+
+  # make output colorful
+  # config.color_enabled = true
+
   config.example_status_persistence_file_path = "spec/tmp/examples.txt"
 
-  config.include Capybara::DSL
+  # config.include Capybara::DSL
 
-  Capybara.javascript_driver = :webkit
+  # Capybara.javascript_driver = :webkit
 
-  Capybara::Webkit.configure do |cconfig|
-    # Silently return an empty 200 response for any requests to unknown URLs.
-    cconfig.block_unknown_urls
-
-    # Timeout if requests take longer than 5 seconds
-    cconfig.timeout = 5
-
-    # Don't raise errors when SSL certificates can't be validated
-    cconfig.ignore_ssl_errors
-    # Don't load images
-    cconfig.skip_image_loading
-  end
+  # Capybara::Webkit.configure do |cconfig|
+  #   # Silently return an empty 200 response for any requests to unknown URLs.
+  #   cconfig.block_unknown_urls
+  #
+  #   # Timeout if requests take longer than 5 seconds
+  #   cconfig.timeout = 5
+  #
+  #   # Don't raise errors when SSL certificates can't be validated
+  #   cconfig.ignore_ssl_errors
+  #   # Don't load images
+  #   cconfig.skip_image_loading
+  # end
 
   # show retry status in spec process
   # config.verbose_retry = true
@@ -65,7 +70,7 @@ RSpec.configure do |config|
   #  ex.run_with_retry retry: 2
   # end
 
-  @headless = Headless.new(display: 100, reuse: true, destroy_at_exit: false).start
+  # @headless = Headless.new(display: 100, reuse: true, destroy_at_exit: false).start
 
   # DatabaseCleaner
   config.before(:suite) do
