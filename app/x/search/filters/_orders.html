@@ -1,0 +1,32 @@
+<div class="text-center">
+  <h2 class="md-title">Заказы</h2>
+</div>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Категория</label>
+  <md-select ng-model="filters.category_id">
+    <md-option ng-value="">Любая</md-option>
+    <md-option ng-repeat="categoty in categories" ng-value="{{categoty.id}}">
+      {{categoty.name}}
+    </md-option>
+  </md-select>
+</md-input-container>
+
+<h2 class="md-subheader">Указатели</h2>
+<md-chips ng-model="tags" placeholder="Теги">
+  <md-chip-template>
+    <strong>{{$chip}}</strong>
+  </md-chip-template>
+  <button md-chip-remove class="md-primary vegetablechip">
+    <md-icon>delete</md-icon>
+  </button>
+</md-chips>
+
+<md-chips ng-model="technologies" placeholder="Технологии">
+  <md-chip-template>
+    <strong>{{$chip}}</strong>
+  </md-chip-template>
+  <button md-chip-remove class="md-primary vegetablechip">
+    <md-icon>delete</md-icon>
+  </button>
+</md-chips>

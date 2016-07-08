@@ -1,0 +1,23 @@
+<h1 class="md-title">Организация {{organizaton.name}}</h1>
+<h2 class="md-subhead">Список участников</h2>
+<md-list flex>
+  <md-list-item class="md-3-line" ng-repeat="userOrganization in organizaton.userOrganizations" layout-padding="">
+    <div class="md-list-item-text" layout="column">
+      <h3><a ng-href="/{{userOrganization.userId}}">{{ userOrganization.user.email }}</a></h3>
+      <p>
+        Участник с {{userOrganization.startDate | date}} по
+        <span ng-hide="userOrganization.finishDate">настоящее время</span>
+        <span ng-hide="!userOrganization.finishDate" ng-bind="userOrganization.finishDate | date"></span>
+      </p>
+      <md-button class="md-secondary md-icon-button" ng-click="delete(userOrganization)" aria-label="Убрать из списка">
+        <md-icon>delete</md-icon>
+      </md-button>
+    </div>
+    <md-divider ng-if="!$last"></md-divider>
+  </md-list-item>
+  <md-list-item class="md-3-line" ng-hide="organizaton.userOrganizations.length > 0">
+    <div class="md-list-item-text" layout="column">
+      <p>Список пуст.</p>
+    </div>
+  </md-list-item>
+</md-list>

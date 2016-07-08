@@ -1,0 +1,24 @@
+<h2 class="md-title">New message</h2>
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Название</label>
+  <input ng-model="message.name" name="name" required type="text">
+
+  <div ng-messages="Message.name.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{Message.name.$error.serverMessage}}</div>
+    <span ng-show="!Message.$submitted && Message.name.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Краткая информация</label>
+  <textarea ng-model="message.description" name="description" rows="5" required></textarea>
+
+  <div ng-messages="Message.description.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{Message.description.$error.serverMessage}}</div>
+    <span ng-show="!Message.$submitted && Message.description.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>

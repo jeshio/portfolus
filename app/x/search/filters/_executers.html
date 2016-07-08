@@ -1,0 +1,29 @@
+<div class="text-center">
+  <h2 class="md-title">Исполнители</h2>
+</div>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Город</label>
+  <md-select ng-model="filters.city_id">
+    <md-option ng-value="">Любой</md-option>
+    <md-option ng-repeat="city in cities" ng-value="{{city.id}}">
+      {{city.name}}
+    </md-option>
+  </md-select>
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Минимальное количество проектов</label>
+  <input type="number" ng-model="filters.min_projects">
+</md-input-container>
+
+<!-- <div layout>
+  <div flex="10" layout layout-align="center center">
+    <span class="md-body-1"></span>
+  </div>
+  <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class>
+  </md-slider>
+  <div flex="20" layout layout-align="center center">
+    <input flex type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
+  </div>
+</div> -->

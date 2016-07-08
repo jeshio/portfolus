@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get 'users/:id/to_executer_requests', to: 'users#to_executer_requests'
     get 'users/:id/executer_requests', to: 'users#executer_requests'
     resources :users do
+      # FIXME  исключить index
       resources :emails
       resources :order_projects
       resources :order_executer_requests

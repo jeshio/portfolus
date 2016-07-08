@@ -1,0 +1,143 @@
+<h2 class="md-title">Основная информация</h2>
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Название</label>
+  <input ng-model="orderProject.name" name="name" required type="text">
+
+  <div ng-messages="OrderProject.name.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{OrderProject.name.$error.serverMessage}}</div>
+    <span ng-show="!OrderProject.$submitted && OrderProject.name.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>
+
+<div layout-gt-sm="row">
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Категория</label>
+    <md-select name="category_id" ng-model="orderProject.category_id" required>
+      <md-option ng-repeat="category in categories" ng-value="{{category.id}}">
+        {{category.name}}
+      </md-option>
+    </md-select>
+
+    <div ng-messages="OrderProject.category_id.$error" role="alert" md-auto-hide="false">
+      <div ng-message="serverMessage">{{OrderProject.category_id.$error.serverMessage}}</div>
+      <span ng-show="!OrderProject.$submitted && OrderProject.category_id.$touched">
+        <div ng-messages-include="errorMessages.html" ></div>
+      </span>
+    </div>
+  </md-input-container>
+</div>
+
+<md-input-container class="md-block" flex-gt-sm>
+  <label>Описание</label>
+  <textarea ng-model="orderProject.description" name="description" rows="5" required></textarea>
+
+  <div ng-messages="OrderProject.description.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{OrderProject.description.$error.serverMessage}}</div>
+    <span ng-show="!OrderProject.$submitted && OrderProject.description.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</md-input-container>
+
+<h2 class="md-title">Вознаграждение за выполнение (в рублях)</h2>
+
+<div layout="row">
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>От</label>
+    <input type="number" name="number" ng-model="orderProject.priceMin" />
+
+    <div ng-messages="OrderProject.priceMin.$error" role="alert" md-auto-hide="false">
+      <div ng-message="serverMessage">{{OrderProject.priceMin.$error.serverMessage}}</div>
+      <span ng-show="!OrderProject.$submitted && OrderProject.priceMin.$touched">
+        <div ng-messages-include="errorMessages.html" ></div>
+      </span>
+    </div>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>До</label>
+    <input type="number" name="number" ng-model="orderProject.priceMax" />
+
+    <div ng-messages="OrderProject.priceMax.$error" role="alert" md-auto-hide="false">
+      <div ng-message="serverMessage">{{OrderProject.priceMax.$error.serverMessage}}</div>
+      <span ng-show="!OrderProject.$submitted && OrderProject.priceMax.$touched">
+        <div ng-messages-include="errorMessages.html" ></div>
+      </span>
+    </div>
+  </md-input-container>
+
+</div>
+
+<h2 class="md-title">Краткая информация</h2>
+
+<h4 class="md-subhead">Теги</h4>
+<div flex>
+  <md-chips ng-model="orderProject.tags" name="tags" md-max-chips="10" placeholder="Добавить тег (Enter)">
+    <md-chip-template>
+      <strong>{{$chip}}</strong>
+    </md-chip-template>
+    <button md-chip-remove class="md-primary vegetablechip">
+      <md-icon>delete</md-icon>
+    </button>
+  </md-chips>
+  <div ng-messages="OrderProject.tags.$error" role="alert" md-auto-hide="false">
+    <div ng-message="serverMessage">{{OrderProject.tags.$error.serverMessage}}</div>
+    <span ng-show="!OrderProject.$submitted && OrderProject.tags.$touched">
+      <div ng-messages-include="errorMessages.html" ></div>
+    </span>
+  </div>
+</div>
+
+<h4 class="md-subhead">Технологии</h4>
+<div layout-gt-sm="row" layout-fill>
+  <div flex>
+    <div ng-form="$parent.Technology" isolate-form>
+      <md-input-container class="md-block reset-margin" flex-gt-sm>
+        <label>Название</label>
+        <input ng-model="technology.name" name="name" required type="text">
+
+        <div ng-messages="Technology.name.$error" role="alert" md-auto-hide="false">
+          <div ng-message="serverMessage">{{Technology.name.$error.serverMessage}}</div>
+          <span ng-show="!OrderProject.$submitted && Technology.name.$touched">
+            <div ng-messages-include="errorMessages.html" ></div>
+          </span>
+        </div>
+      </md-input-container>
+
+      <div class="text-center">
+        <md-button class="md-raised" ng-disabled="Technology.technology.$invalid" ng-click="addTehnology()">Добавить технологию</md-button>
+      </div>
+    </div>
+  </div>
+
+  <div flex>
+    <md-list>
+      <md-list-item class="md-2-line veggie-option" layout="row" ng-hide="orderProject.technologies.length"
+          layout-wrap>
+          <div class="md-item-text md-whiteframe-z1" flex>
+            <p>Технологий не добавлено</p>
+          </div>
+      </md-list-item>
+      <md-list-item class="md-2-line veggie-option" ng-repeat="technology in orderProject.technologies" layout="row"
+          layout-wrap>
+        <div class="md-item-text md-whiteframe-z1" flex>
+          <div layout="row">
+            <div flex>
+              <h3>
+                {{technology.name}}
+              </h3>
+            </div>
+
+            <md-button class="md-icon-button vegetablechip" ng-click="deleteTech(technology)">
+              <md-icon>delete</md-icon>
+            </md-button>
+          </div>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+</div>

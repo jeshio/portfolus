@@ -1,0 +1,22 @@
+<h2 class="md-title" hide show-gt-md>{{title}}</h2>
+<h3 ng-bind="organization.name"></h3>
+
+<div flex-gt-md="40">
+  <md-datepicker ng-model="userOrganization.start_date" required md-placeholder="Дата, когда вы стали частью организации">
+  </md-datepicker>
+
+  <div layout-padding="">
+    <md-checkbox ng-model="nowTime" aria-label="По настоящее время">
+      По настоящее время
+    </md-checkbox>
+  </div>
+
+  <md-datepicker ng-model="userOrganization.finish_date" ng-hide="nowTime" md-placeholder="Дата, когда вы покинули организацию">
+  </md-datepicker>
+
+  <br />
+
+  <div class="text-center">
+    <md-button type="submit" ng-disabled="UserOrganization.$invalid && !UserOrganization.$submitted" class="btn">Присоединиться</md-button>
+  </div>
+</div>

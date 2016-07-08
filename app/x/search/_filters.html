@@ -1,0 +1,25 @@
+<div layout-padding="" flex="" layout="column" class="search-board">
+  <!-- Среди чего искать -->
+  <div layout="row">
+    <md-button flex aria-label="Исполнители" ng-click="setType('executers')" ng-class="getTypeClass('executers')" class="md-icon-button">
+      <md-icon>assignment_ind</md-icon>
+    </md-button>
+
+    <md-button flex aria-label="Проекты исполнителей" ng-click="setType('projects')" ng-class="getTypeClass('projects')" class="md-icon-button">
+      <md-icon>work</md-icon>
+    </md-button>
+
+    <md-button flex aria-label="Заказы" ng-click="setType('orders')" ng-class="getTypeClass('orders')" class="md-icon-button">
+      <md-icon>gavel</md-icon>
+    </md-button>
+
+    <!-- <md-button flex aria-label="Организации" ng-click="setType('organizations')" ng-class="getTypeClass('organizations')" class="md-icon-button">
+      <md-icon>business</md-icon>
+    </md-button> -->
+  </div>
+  <md-divider></md-divider>
+
+  <ng-include src="filterBlock"></ng-include>
+
+  <md-button ng-click="update(); toggleLeftMenu();">Применить</md-button>
+</div>

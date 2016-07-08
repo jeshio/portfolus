@@ -1,4 +1,5 @@
 include ActionView::Helpers::TextHelper
+# TODO переделать в CoffeeScript
 
 class AngularGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)

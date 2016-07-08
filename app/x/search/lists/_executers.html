@@ -1,0 +1,15 @@
+<p ng-hide="searches.length" class="text gray" layout-padding>
+  Список исполнителей по заданным фильтрам пуст.
+</p>
+
+<md-virtual-repeat-container id="vertical-container" ng-style="listStyle">
+  <div layout="column" layout-gt-md="row" md-virtual-repeat="user in searches" md-item-size="260">
+    <div ng-include="'search/lists/cards/_user.html'"
+       ng-repeat="cardUser in user" flex="">
+    </div>
+    <div flex-offset-gt-md="33" ng-hide="user[1]">
+    </div>
+    <div flex-offset-gt-md="33" ng-hide="user[2]">
+    </div>
+  </div>
+</md-virtual-repeat-container>

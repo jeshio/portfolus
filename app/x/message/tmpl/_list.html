@@ -1,0 +1,15 @@
+<md-list flex>
+  <md-subheader class="md-no-sticky">Список диалогов</md-subheader>
+  <md-list-item class="md-3-line" ng-repeat="msg in dialogs" ng-click="openDialog(msg)">
+    <div class="md-list-item-text" layout="column">
+      <h3><a ng-href="/{{msg.fromId}}">{{ msg.from.email }}</a> сообщение пользователю <a ng-href="/{{msg.toId}}">{{ msg.to.email }}</a></h3>
+      <p>{{ msg.text }}</p>
+      <p class="text gray">{{ msg.createdAt | date:'yyyy, MMM dd - HH:mm:ss' }}</p>
+    </div>
+  </md-list-item>
+  <md-list-item class="md-3-line" ng-hide="dialogs.length > 0">
+    <div class="md-list-item-text" layout="column">
+      <p>Список пуст.</p>
+    </div>
+  </md-list-item>
+</md-list>

@@ -1,0 +1,15 @@
+<p ng-hide="searches.length" class="text gray" layout-padding>
+  Список заказов по заданным фильтрам пуст.
+</p>
+
+<md-virtual-repeat-container id="vertical-container" ng-style="listStyle">
+  <div layout="column" layout-gt-md="row" md-virtual-repeat="order in searches">
+    <div ng-include="'search/lists/cards/_order.html'"
+       ng-repeat="cardOrder in order" flex="">
+    </div>
+    <div flex-offset-gt-md="33" ng-hide="order[1]">
+    </div>
+    <div flex-offset-gt-md="33" ng-hide="order[2]">
+    </div>
+  </div>
+</md-virtual-repeat-container>

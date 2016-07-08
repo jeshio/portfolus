@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:all_projects]
+  before_action :authenticate_user!, except: [:all_projects, :show]
   before_action :current_user?, only: [:update]
   before_action :set_user
 

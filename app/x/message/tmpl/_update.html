@@ -1,0 +1,14 @@
+<div flex-offset-md="20" flex-md="60" flex-offset-gt-md="30" flex-gt-md="40" flex="100">
+
+  <form name="Message" ng-submit="updateMessage()" novalidate="">
+    <div ng-include="'message/tmpl/_form.html'">
+    </div>
+    
+    <div class="text-center">
+      <md-button type="submit" ng-disabled="Message.$invalid && !Message.$submitted" class="btn">
+        Обновить
+      </md-button>
+    </div>
+  </form>
+
+</div>
